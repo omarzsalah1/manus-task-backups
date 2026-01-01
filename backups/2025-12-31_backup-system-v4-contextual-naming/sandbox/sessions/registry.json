@@ -2,7 +2,7 @@
   "schema_version": "4.1",
   "description": "Registry of all named sessions with AI-generated contextual shorthand IDs. Manus uses {CATEGORY}{N}, Claude uses {CATEGORY}X{N}.",
   "counters": {
-    "SANDBOX": 4,
+    "SANDBOX": 3,
     "SANDBOXX": 0,
     "VACATION": 0,
     "VACATIONX": 0,
@@ -78,23 +78,6 @@
       "sandbox_size": "~50KB",
       "todo_count": 8,
       "completion_pct": 85
-    },
-    {
-      "shorthand_id": "SANDBOX3",
-      "source": "manus",
-      "category": "SANDBOX",
-      "session_id": "backup-system-v4-contextual-naming",
-      "session_name": "Manus Backup & Continue System v4.0 - Contextual Naming",
-      "created_date": "2025-12-31",
-      "last_backup": "2025-12-31",
-      "backup_folder": "2025-12-31_backup-system-v4-contextual-naming",
-      "status": "active",
-      "tags": ["system", "infrastructure", "backup", "contextual-naming", "v4"],
-      "description": "Implemented AI-generated contextual naming system with multi-category counters (VACATION1, WEBSITE2, API1, etc.)",
-      "total_files": 13,
-      "sandbox_size": "~128KB",
-      "todo_count": 6,
-      "completion_pct": 90
     }
   ],
   "category_examples": {
