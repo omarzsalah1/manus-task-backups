@@ -47,6 +47,19 @@
   },
   "sessions": [
     {
+      "id": "BOOKCOVER1",
+      "session_name": "The Gatekeepers Society - Presidential Edition Book Cover",
+      "category": "Book Design",
+      "date": "2026-01-01",
+      "folder": "2026-01-01_gatekeepers-cover-final",
+      "files": 10,
+      "size": "9.4M",
+      "status": "complete",
+      "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/2026-01-01_gatekeepers-cover-final",
+      "notion_url": "pending",
+      "restore_command": "RESTORE BOOKCOVER1"
+    },
+    {
       "shorthand_id": "SANDBOX1",
       "source": "manus",
       "category": "SANDBOX",
@@ -92,7 +105,12 @@
       "backup_folder": "PROJECTX1",
       "status": "incomplete",
       "description": "Master verification docs - INCOMPLETE: master docs not uploaded",
-      "missing_files": ["MASTER_DESIGN_RULES.md", "BUILD_INSTRUCTIONS.md", "VERIFICATION_CHECKLIST.md", "COMPREHENSIVE_CONTINUATION_PROMPT.md"]
+      "missing_files": [
+        "MASTER_DESIGN_RULES.md",
+        "BUILD_INSTRUCTIONS.md",
+        "VERIFICATION_CHECKLIST.md",
+        "COMPREHENSIVE_CONTINUATION_PROMPT.md"
+      ]
     },
     {
       "shorthand_id": "AUTOMATIONX1",
@@ -126,5 +144,8 @@
     "list": "LIST BACKUPS",
     "backup": "BACKUP & CONTINUE",
     "cross_restore": "CROSS-RESTORE: Claude Sandbox={CLAUDE_ID} Manus Sandbox={MANUS_ID} Task: {description}"
+  },
+  "categories": {
+    "Book Design": 1
   }
 }
