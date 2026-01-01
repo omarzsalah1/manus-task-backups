@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Florence Works</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            padding: 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 32px;
+            border-left: 8px solid #008080;
+            padding-left: 24px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 40px;
+            color: #1A1A1A;
+            line-height: 1.2;
+        }
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #008080;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 48px;
+            flex: 1;
+        }
+        .steps-column {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .step-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .step-number {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #008080;
+            min-width: 32px;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .step-title {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #1A1A1A;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        .step-desc {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            color: #4A4A4A;
+            line-height: 1.4;
+        }
+        .step-item.escalate .step-number,
+        .step-item.escalate .step-title {
+            color: #FF6F61;
+        }
+        .thresholds-box {
+            margin-top: auto;
+            background-color: #FFF0EE;
+            border-left: 4px solid #FF6F61;
+            padding: 16px;
+            border-radius: 0 4px 4px 0;
+        }
+        .thresholds-title {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: #FF6F61;
+            margin-bottom: 8px;
+        }
+        .thresholds-text {
+            font-family: 'Lato', sans-serif;
+            font-size: 13px;
+            color: #4A4A4A;
+            line-height: 1.4;
+        }
+        .image-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FAFAFA;
+            border: 1px solid #EEEEEE;
+            padding: 24px;
+        }
+        .image-column img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #5A6872;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-shield {
+            width: 20px;
+            height: 20px;
+            background-color: #5A6872;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>How Florence Works—5-Step Clinical Workflow</h1>
+            <h2>Automated Care Management with Human Oversight</h2>
+        </div>
+        
+        <div class="content-grid">
+            <div class="steps-column">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <div class="step-title">Read</div>
+                        <div class="step-desc">Ingest ADT alerts, real-time clinical data via TEFCA/QHIN. Complete clinical context before first contact.</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <div class="step-title">Triage</div>
+                        <div class="step-desc">Apply Schmitt-Thompson protocols. Condition-specific assessment (dementia, CHF, COPD).</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <div class="step-title">Teach-Back</div>
+                        <div class="step-desc">SMS/voice adaptive outreach. Confirm member understanding.</div>
+                    </div>
+                </div>
+                <div class="step-item escalate">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <div class="step-title">Escalate</div>
+                        <div class="step-desc">RN handoff when thresholds met. Full conversation history and clinical assessment.</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <div class="step-title">Write</div>
+                        <div class="step-desc">Structured notes to EHR. HEDIS-compliant documentation.</div>
+                    </div>
+                </div>
+
+                <div class="thresholds-box">
+                    <div class="thresholds-title">RN Escalation Thresholds</div>
+                    <div class="thresholds-text">Temp >100.4°F, pain uncontrolled, low/no meds at home, suicidal ideation, unable to schedule follow-up, rapid cognitive decline.</div>
+                </div>
+            </div>
+            
+            <div class="image-column">
+                <img src="/home/ubuntu/upload/search_images/QAjSJNbUsCjQ.png" alt="Clinical Workflow Diagram">
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <div class="footer-shield"></div>
+        </div>
+    </div>
+</body>
+</html>

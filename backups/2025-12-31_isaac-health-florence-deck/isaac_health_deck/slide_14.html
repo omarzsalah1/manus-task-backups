@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Florence Advantage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            /* keep top padding (title spacing) but reduce bottom padding to lower overall height */
+            padding: 64px 64px 32px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 24px; /* slightly reduced to save height */
+            border-left: 8px solid #008080;
+            padding-left: 24px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 40px;
+            color: #1A1A1A;
+            line-height: 1.2;
+        }
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #008080;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+            width: 100%;
+            border-top: 2px solid #1A1A1A;
+        }
+        .cell {
+            /* shrink internal padding to reduce total height while keeping font size */
+            padding: 12px 20px;
+            border-bottom: 1px solid #E0E0E0;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #4A4A4A;
+            line-height: 1.3;
+        }
+        .header-cell {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #1A1A1A;
+            background-color: #F9FAFB;
+            border-bottom: 2px solid #1A1A1A;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+        .capability-cell {
+            font-weight: 700;
+            color: #1A1A1A;
+            background-color: #FFFFFF;
+        }
+        .florence-col {
+            background-color: #E0F2F1; /* Light Teal Tint */
+            color: #008080;
+            font-weight: 700;
+            border-bottom-color: #B2DFDB;
+        }
+        .florence-header {
+            background-color: #008080;
+            color: #FFFFFF;
+            border-bottom: 2px solid #004D40;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #5A6872;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-shield {
+            width: 20px;
+            height: 20px;
+            background-color: #5A6872;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>The Florence Advantage—Clinical Depth at Scale</h1>
+            <h2>Florence vs. Manual Outreach vs. Generic AI</h2>
+        </div>
+        
+        <div class="comparison-table">
+            <!-- Header Row -->
+            <div class="cell header-cell">Capability</div>
+            <div class="cell header-cell">Manual Outreach</div>
+            <div class="cell header-cell">Generic AI</div>
+            <div class="cell header-cell florence-header">Florence</div>
+
+            <!-- Row 1 -->
+            <div class="cell capability-cell">Reach Rate</div>
+            <div class="cell">20-40%</div>
+            <div class="cell">40-60%</div>
+            <div class="cell florence-col">&gt;75%</div>
+
+            <!-- Row 2 -->
+            <div class="cell capability-cell">Daily Capacity</div>
+            <div class="cell">10-12 members</div>
+            <div class="cell">50-100 members</div>
+            <div class="cell florence-col">1000+ members</div>
+
+            <!-- Row 3 -->
+            <div class="cell capability-cell">Clinical Protocols</div>
+            <div class="cell">RN-dependent</div>
+            <div class="cell">None</div>
+            <div class="cell florence-col">Schmitt-Thompson Licensed</div>
+
+            <!-- Row 4 -->
+            <div class="cell capability-cell">Quality Measures</div>
+            <div class="cell">Manual tracking</div>
+            <div class="cell">None</div>
+            <div class="cell florence-col">HEDIS-Certified</div>
+
+            <!-- Row 5 -->
+            <div class="cell capability-cell">Data Integration</div>
+            <div class="cell">EHR-dependent</div>
+            <div class="cell">Limited</div>
+            <div class="cell florence-col">Claims + TEFCA/QHIN</div>
+
+            <!-- Row 6 -->
+            <div class="cell capability-cell">Escalation Logic</div>
+            <div class="cell">RN judgment</div>
+            <div class="cell">Generic rules</div>
+            <div class="cell florence-col">Condition-specific thresholds</div>
+
+            <!-- Row 7 -->
+            <div class="cell capability-cell">Language Access</div>
+            <div class="cell">Limited</div>
+            <div class="cell">Limited</div>
+            <div class="cell florence-col">20+ languages</div>
+
+            <!-- Row 8 -->
+            <div class="cell capability-cell">Memory Persistence</div>
+            <div class="cell">None</div>
+            <div class="cell">None</div>
+            <div class="cell florence-col">Full context across encounters</div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <div class="footer-shield"></div>
+        </div>
+    </div>
+</body>
+</html>

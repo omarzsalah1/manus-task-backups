@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Pathways</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F2F3F4;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 64px 60px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 16px;
+            border-left: 8px solid #55B5B8;
+            padding-left: 24px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 34px;
+            color: #31393F;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color: #5A6872;
+            margin-top: 6px;
+        }
+        
+        .pathways-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            flex: 1;
+        }
+        .pathway-card {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .pathway-card.path1 { border-top: 6px solid #55B5B8; }
+        .pathway-card.path2 { border-top: 6px solid #F8CA44; }
+        .pathway-card.path3 { border-top: 6px solid #E45740; }
+        
+        .pathway-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .pathway-icon {
+            width: 64px;
+            height: 64px;
+            min-width: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+        .path1 .pathway-icon { background-color: #E8F6F6; }
+        .path2 .pathway-icon { background-color: #FEF9E7; }
+        .path3 .pathway-icon { background-color: #FDECEA; }
+        
+        .pathway-title-block {
+            flex: 1;
+        }
+        .pathway-title {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #31393F;
+            margin-bottom: 6px;
+        }
+        .risk-badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .path1 .risk-badge { background-color: #55B5B8; color: white; }
+        .path2 .risk-badge { background-color: #F8CA44; color: #31393F; }
+        .path3 .risk-badge { background-color: #E45740; color: white; }
+        
+        .pathway-content {
+            flex: 1;
+            font-size: 14px;
+            color: #31393F;
+            line-height: 1.5;
+        }
+        .pathway-content p {
+            margin-bottom: 10px;
+        }
+        .pathway-content strong {
+            font-weight: 700;
+        }
+        .path1 .pathway-content .timeline { color: #55B5B8; }
+        .path2 .pathway-content .timeline { color: #D4A000; }
+        .path3 .pathway-content .timeline { color: #E45740; }
+        
+        .best-for {
+            background-color: #F2F3F4;
+            padding: 10px 12px;
+            font-size: 13px;
+            margin-top: auto;
+        }
+        .best-for strong {
+            color: #31393F;
+        }
+        
+        .quote-box {
+            margin-top: 16px;
+            background-color: #55B5B8;
+            padding: 16px 24px;
+        }
+        .quote-text {
+            font-size: 14px;
+            color: white;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        .quote-attribution {
+            font-size: 12px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 8px;
+            text-align: right;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 64px;
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
+            color: #5A6872;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-shield {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Three Pathways: How Isaac Health Can Start With Florence</h1>
+            <div class="subtitle">Choose your comfort level—Florence adapts to your pace</div>
+        </div>
+        
+        <div class="pathways-grid">
+            <!-- Path 1: Co-Pilot -->
+            <div class="pathway-card path1">
+                <div class="pathway-header">
+                    <div class="pathway-icon">🛡️</div>
+                    <div class="pathway-title-block">
+                        <div class="pathway-title">Path 1: Co-Pilot Enabler</div>
+                        <span class="risk-badge">LOWEST RISK</span>
+                    </div>
+                </div>
+                <div class="pathway-content">
+                    <p><strong>What It Does:</strong> Florence sits in Chrome sidebar. Dials patients, warm-transfers to care navigator, does documentation. Care manager stays in control.</p>
+                    <p><strong class="timeline">Timeline:</strong> Weeks 1-4</p>
+                </div>
+                <div class="best-for"><strong>Best For:</strong> Immediate impact without changing workflows</div>
+            </div>
+            
+            <!-- Path 2: Hybrid -->
+            <div class="pathway-card path2">
+                <div class="pathway-header">
+                    <div class="pathway-icon">📊</div>
+                    <div class="pathway-title-block">
+                        <div class="pathway-title">Path 2: Hybrid</div>
+                        <span class="risk-badge">MEDIUM RISK</span>
+                    </div>
+                </div>
+                <div class="pathway-content">
+                    <p><strong>What It Does:</strong> Path 1 + Florence handles autonomous calls for small opt-in cohort (20-50 patients). Care manager supervises.</p>
+                    <p><strong class="timeline">Timeline:</strong> Months 2-3</p>
+                </div>
+                <div class="best-for"><strong>Best For:</strong> Train Florence on Isaac voice/protocols</div>
+            </div>
+            
+            <!-- Path 3: Full Autonomous -->
+            <div class="pathway-card path3">
+                <div class="pathway-header">
+                    <div class="pathway-icon">🚀</div>
+                    <div class="pathway-title-block">
+                        <div class="pathway-title">Path 3: Full Autonomous</div>
+                        <span class="risk-badge">HIGHER RISK</span>
+                    </div>
+                </div>
+                <div class="pathway-content">
+                    <p><strong>What It Does:</strong> Florence handles full care management for defined population. RN escalation on red flags.</p>
+                    <p><strong class="timeline">Timeline:</strong> Month 4+</p>
+                </div>
+                <div class="best-for"><strong>Best For:</strong> Scale after trust is built</div>
+            </div>
+        </div>
+        
+        <div class="quote-box">
+            <div class="quote-text">"Either we try this as the case management solution for a subset...or we do this very much as an enablement function for our care navigators, where this kind of runs in parallel."</div>
+            <div class="quote-attribution">— Julius, Isaac Health</div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <img src="/home/ubuntu/isaac_health_deck/shield-only.png" alt="NightingaleMD" class="footer-shield">
+        </div>
+    </div>
+</body>
+</html>

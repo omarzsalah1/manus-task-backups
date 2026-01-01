@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEDIS Care Gaps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding: 32px 64px 12px 64px;
+            border-left: 8px solid #55B5B8;
+            margin-left: 64px;
+            margin-right: 64px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 36px;
+            color: #31393F;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color: #5A6872;
+            margin-top: 4px;
+        }
+        
+        .measures-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            padding: 12px 64px 8px 64px;
+        }
+        
+        .measure-column {
+            background: #FAFAFA;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .measure-header {
+            padding: 10px 14px;
+            border-top: 5px solid #55B5B8;
+            background: linear-gradient(180deg, #F2F3F4 0%, #FAFAFA 100%);
+        }
+        .measure-header.medication { border-top-color: #E45740; }
+        .measure-header.comprehensive { border-top-color: #F8CA44; }
+        
+        .measure-title {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #31393F;
+            margin-bottom: 2px;
+        }
+        .measure-code {
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #5A6872;
+            margin-bottom: 4px;
+        }
+        .star-weight {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .stars {
+            color: #F8CA44;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .weight-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #55B5B8;
+            text-transform: uppercase;
+        }
+        .measure-header.medication .weight-label { color: #E45740; }
+        .measure-header.comprehensive .weight-label { color: #d4a000; }
+        
+        .measure-content {
+            padding: 10px 14px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .section-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: #5A6872;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+        
+        .baseline-box {
+            background: white;
+            padding: 6px 10px;
+            border-left: 3px solid #D0D0D0;
+        }
+        .baseline-text {
+            font-size: 12px;
+            color: #31393F;
+            line-height: 1.4;
+        }
+        .baseline-text strong {
+            color: #55B5B8;
+        }
+        
+        .automation-list {
+            list-style: none;
+        }
+        .automation-list li {
+            font-size: 12px;
+            color: #31393F;
+            margin-bottom: 4px;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.35;
+        }
+        .automation-list li::before {
+            content: "✓";
+            color: #28A745;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .impact-box {
+            background: linear-gradient(135deg, #55B5B8 0%, #3d9a9d 100%);
+            padding: 8px 10px;
+            margin-top: auto;
+        }
+        .measure-column:nth-child(2) .impact-box {
+            background: linear-gradient(135deg, #E45740 0%, #c94a36 100%);
+        }
+        .measure-column:nth-child(3) .impact-box {
+            background: linear-gradient(135deg, #F8CA44 0%, #e0b53d 100%);
+        }
+        .impact-item {
+            font-size: 11px;
+            color: white;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .impact-item:last-child { margin-bottom: 0; }
+        .impact-arrow { font-weight: bold; }
+        
+        .bottom-callout {
+            margin: 10px 64px 8px 64px;
+            background: #1a2332;
+            padding: 12px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+        .callout-section { text-align: center; }
+        .callout-label {
+            font-size: 10px;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .callout-value {
+            font-family: 'Merriweather', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #55B5B8;
+        }
+        .callout-value.coral { color: #E45740; }
+        .callout-value.gold { color: #F8CA44; }
+        .callout-subtext {
+            font-size: 10px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 2px;
+        }
+        
+        .guide-note {
+            margin: 8px 64px 50px 64px;
+            padding: 10px 16px;
+            background: rgba(85, 181, 184, 0.1);
+            border-left: 4px solid #55B5B8;
+        }
+        .guide-note p {
+            font-size: 13px;
+            color: #31393F;
+            line-height: 1.4;
+        }
+        .guide-note strong { color: #55B5B8; }
+        
+        .footer {
+            position: absolute;
+            bottom: 18px;
+            left: 64px;
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
+            color: #5A6872;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-shield {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Florence Closes Care Gaps & Drives HEDIS Compliance</h1>
+            <div class="subtitle">Isaac Health's highest-impact quality measures—automated in real-time</div>
+        </div>
+        
+        <div class="measures-grid">
+            <!-- Column 1: Depression Screening -->
+            <div class="measure-column">
+                <div class="measure-header">
+                    <div class="measure-title">Depression Screening</div>
+                    <div class="measure-code">DSF-E (Depression Screening & Follow-Up)</div>
+                    <div class="star-weight">
+                        <span class="stars">⭐⭐⭐</span>
+                        <span class="weight-label">3x Weighted</span>
+                    </div>
+                </div>
+                <div class="measure-content">
+                    <div>
+                        <div class="section-label">Industry Baseline</div>
+                        <div class="baseline-box">
+                            <div class="baseline-text">National avg: <strong>58-65%</strong></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="section-label">Florence Automation</div>
+                        <ul class="automation-list">
+                            <li>PHQ-9 screening on every call</li>
+                            <li>30-day follow-up auto-generated</li>
+                            <li>Escalation if positive screen</li>
+                        </ul>
+                    </div>
+                    <div class="impact-box">
+                        <div class="impact-item"><span class="impact-arrow">↑</span> 65% → 90%+ screening</div>
+                        <div class="impact-item"><span class="impact-arrow">↑</span> +$100K-$200K/yr bonus</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Column 2: Medication Adherence & Safety -->
+            <div class="measure-column">
+                <div class="measure-header medication">
+                    <div class="measure-title">Medication Adherence & Safety</div>
+                    <div class="measure-code">PDC ⭐⭐⭐ (3x) + DRR-E ⭐ (1x)</div>
+                    <div class="star-weight">
+                        <span class="stars">⭐⭐⭐⭐</span>
+                        <span class="weight-label">4x Combined</span>
+                    </div>
+                </div>
+                <div class="measure-content">
+                    <div>
+                        <div class="section-label">Industry Baseline</div>
+                        <div class="baseline-box">
+                            <div class="baseline-text">PDC ≥80%: <strong>70-75%</strong></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="section-label">Florence Automation</div>
+                        <ul class="automation-list">
+                            <li>Daily adherence tracking</li>
+                            <li>Missed dose SMS reminders</li>
+                            <li>Drug interaction alerts</li>
+                        </ul>
+                    </div>
+                    <div class="impact-box">
+                        <div class="impact-item"><span class="impact-arrow">↑</span> 72% → 80%+ adherence</div>
+                        <div class="impact-item"><span class="impact-arrow">↑</span> +$150K-$250K/yr bonus</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Column 3: Comprehensive Care -->
+            <div class="measure-column">
+                <div class="measure-header comprehensive">
+                    <div class="measure-title">Comprehensive Care</div>
+                    <div class="measure-code">COA (Care for Older Adults Assessment)</div>
+                    <div class="star-weight">
+                        <span class="stars">⭐⭐⭐</span>
+                        <span class="weight-label">3x Weighted</span>
+                    </div>
+                </div>
+                <div class="measure-content">
+                    <div>
+                        <div class="section-label">Industry Baseline</div>
+                        <div class="baseline-box">
+                            <div class="baseline-text">Assessment: <strong>45-55%</strong></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="section-label">Florence Automation</div>
+                        <ul class="automation-list">
+                            <li>Continuous functional tracking</li>
+                            <li>Cognitive & memory assessment</li>
+                            <li>Fall risk monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="impact-box">
+                        <div class="impact-item"><span class="impact-arrow">↑</span> 50% → 85%+ assessment</div>
+                        <div class="impact-item"><span class="impact-arrow">↑</span> +$75K-$150K/yr bonus</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-callout">
+            <div class="callout-section">
+                <div class="callout-label">Combined Star Weight</div>
+                <div class="callout-value">10x Points</div>
+                <div class="callout-subtext">DSF-E (3x) + PDC (3x) + DRR-E (1x) + COA (3x)</div>
+            </div>
+            <div class="callout-section">
+                <div class="callout-label">Estimated Star Rating Lift</div>
+                <div class="callout-value coral">2-3 Points*</div>
+                <div class="callout-subtext">*Aligns with Isaac Health's validated outcomes</div>
+            </div>
+            <div class="callout-section">
+                <div class="callout-label">Annual Quality Bonus Value</div>
+                <div class="callout-value gold">$350K-$600K</div>
+                <div class="callout-subtext">Based on 3,000-patient cohort</div>
+            </div>
+        </div>
+        
+        <div class="guide-note">
+            <p><strong>GUIDE Model Alignment:</strong> Florence automates the comprehensive documentation that satisfies both GUIDE Model Year 2 reporting AND HEDIS measure capture—in a single workflow.</p>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <img src="/home/ubuntu/isaac_health_deck/shield-only.png" alt="NightingaleMD" class="footer-shield">
+        </div>
+    </div>
+</body>
+</html>

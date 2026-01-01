@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  background: #f8f9fa;
+  padding: 0;
+}
+
+.sidebar {
+  width: 340px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.header {
+  background: linear-gradient(135deg, #E86850 0%, #d45a44 100%);
+  color: white;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-icon {
+  width: 28px;
+  height: 28px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.header-title {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.section {
+  border-bottom: 1px solid #eee;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px 10px;
+  background: #fafafa;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-badge {
+  background: #E86850;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.care-gap-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.care-gap-item:last-child {
+  border-bottom: none;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.gap-content {
+  flex: 1;
+}
+
+.gap-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gap-desc {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.status-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+
+.status-needs-improvement {
+  background: #fef3cd;
+  color: #856404;
+}
+
+.status-overdue {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-due {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.status-complete {
+  background: #d4edda;
+  color: #155724;
+}
+
+.triple-weighted {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #E86850;
+  font-weight: 500;
+}
+
+.visit-item {
+  padding: 10px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.visit-item:last-child {
+  border-bottom: none;
+}
+
+.visit-type {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.visit-desc {
+  font-size: 11px;
+  color: #777;
+  margin-top: 2px;
+}
+
+.visit-date {
+  font-size: 11px;
+  color: #999;
+  text-align: right;
+}
+
+.ai-section {
+  background: linear-gradient(180deg, #f8fffe 0%, #f0faf9 100%);
+  padding: 14px 16px;
+}
+
+.ai-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.ai-icon {
+  width: 22px;
+  height: 22px;
+  background: #4A9B9B;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+}
+
+.ai-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4A9B9B;
+}
+
+.ai-prompt {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.ai-input {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-input-icon {
+  color: #4A9B9B;
+}
+
+.launch-btn {
+  background: linear-gradient(135deg, #4A9B9B 0%, #3d8585 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 16px 16px;
+  width: calc(100% - 32px);
+  box-shadow: 0 2px 8px rgba(74, 155, 155, 0.3);
+}
+
+.launch-icon {
+  font-size: 16px;
+}
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <div class="header">
+    <div class="header-icon">🩺</div>
+    <div class="header-title">Florence Copilot</div>
+  </div>
+  
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Care Gaps to Address</span>
+      <span class="section-badge">5</span>
+    </div>
+    
+    <div class="care-gap-item">
+      <div class="checkbox"></div>
+      <div class="gap-content">
+        <div class="gap-title">
+          A1C Control
+          <span class="status-badge status-needs-improvement">Needs Improvement</span>
+        </div>
+        <div class="gap-desc">Last A1C was 7.8% (target &lt;7.0%). Discuss diet, medication adherence, and lifestyle modifications.</div>
+        <div class="triple-weighted">⚠️ Triple Weighted</div>
+      </div>
+    </div>
+    
+    <div class="care-gap-item">
+      <div class="checkbox"></div>
+      <div class="gap-content">
+        <div class="gap-title">
+          Diabetic Eye Exam
+          <span class="status-badge status-overdue">Overdue</span>
+        </div>
+        <div class="gap-desc">Annual diabetic retinopathy screening overdue by 11 months. Last completed: 2023-01-15</div>
+      </div>
+    </div>
+    
+    <div class="care-gap-item">
+      <div class="checkbox"></div>
+      <div class="gap-content">
+        <div class="gap-title">
+          Medication Adherence Review
+          <span class="status-badge status-due">Due</span>
+        </div>
+        <div class="gap-desc">Review all current medications, check for side effects, refill needs, and adherence barriers.</div>
+      </div>
+    </div>
+    
+    <div class="care-gap-item">
+      <div class="checkbox"></div>
+      <div class="gap-content">
+        <div class="gap-title">
+          Blood Pressure Control
+          <span class="status-badge status-due">Due</span>
+        </div>
+        <div class="gap-desc">Blood pressure slightly elevated. Review medication adherence and lifestyle factors.</div>
+      </div>
+    </div>
+    
+    <div class="care-gap-item">
+      <div class="checkbox"></div>
+      <div class="gap-content">
+        <div class="gap-title">
+          Flu Vaccine
+          <span class="status-badge status-due">Due</span>
+        </div>
+        <div class="gap-desc">Annual flu vaccine due for current flu season. Last completed: 2023-10-01</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Visit History</span>
+      <span class="section-badge">10</span>
+    </div>
+    
+    <div class="visit-item">
+      <div>
+        <div class="visit-type">PCP</div>
+        <div class="visit-desc">Follow-up for CHF management; medication reconciliation performed</div>
+      </div>
+      <div class="visit-date">2025-11-10</div>
+    </div>
+    
+    <div class="visit-item">
+      <div>
+        <div class="visit-type">Endocrinology</div>
+        <div class="visit-desc">Visit for diabetes control; A1C check ordered</div>
+      </div>
+      <div class="visit-date">2025-10-22</div>
+    </div>
+    
+    <div class="visit-item">
+      <div>
+        <div class="visit-type">Cardiology</div>
+        <div class="visit-desc">Routine CHF follow-up; stable on metoprolol and lisinopril</div>
+      </div>
+      <div class="visit-date">2025-09-30</div>
+    </div>
+    
+    <div class="visit-item">
+      <div>
+        <div class="visit-type">Nephrology</div>
+        <div class="visit-desc">CKD Stage 1 monitoring; labs reviewed</div>
+      </div>
+      <div class="visit-date">2025-04-03</div>
+    </div>
+  </div>
+  
+  <div class="ai-section">
+    <div class="ai-header">
+      <div class="ai-icon">✨</div>
+      <div class="ai-title">AI Assistant</div>
+    </div>
+    <div class="ai-prompt">Ask me anything about Jane Doe's care</div>
+    <div class="ai-input">
+      <span class="ai-input-icon">💬</span>
+      <span>Ask about patient care...</span>
+    </div>
+  </div>
+  
+  <button class="launch-btn">
+    <span class="launch-icon">▶</span>
+    Launch Call
+  </button>
+</div>
+</body>
+</html>

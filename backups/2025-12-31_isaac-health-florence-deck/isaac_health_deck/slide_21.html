@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Steps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 55% 45%;
+        }
+        .content-side {
+            padding: 50px 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .image-side {
+            position: relative;
+            background: linear-gradient(135deg, #55B5B8 0%, #3d9a9d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .image-side img {
+            width: 576px;
+            height: 720px;
+            object-fit: contain;
+        }
+        .accent-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 16px;
+            height: 100%;
+            background-color: #55B5B8;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 1.1;
+            color: #55B5B8;
+            margin-bottom: 16px;
+        }
+        .tagline {
+            font-family: 'Lato', sans-serif;
+            font-size: 17px;
+            color: #49545E;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        
+        .next-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .step-number {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background-color: #55B5B8;
+            color: #FFFFFF;
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .step-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .step-title {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #31393F;
+            margin-bottom: 3px;
+        }
+        .step-desc {
+            font-family: 'Lato', sans-serif;
+            font-size: 13px;
+            color: #5A6872;
+            line-height: 1.4;
+        }
+        
+        .cta-button {
+            background-color: #E45740;
+            padding: 14px 28px;
+            display: inline-block;
+            align-self: flex-start;
+            margin-bottom: 20px;
+        }
+        .cta-text {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-info {
+            border-top: 2px solid #E0E0E0;
+            padding-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .contact-item {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            color: #49545E;
+        }
+        .contact-item strong {
+            color: #55B5B8;
+        }
+        
+        .logo-container {
+            position: absolute;
+            bottom: 20px;
+            left: 64px;
+        }
+        .logo-container img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: white;
+            padding: 4px 8px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-side">
+            <div class="accent-bar"></div>
+            <h1>Let's Start the Conversation</h1>
+            <div class="tagline">A 90-day pilot with 100 patients is all it takes to prove the value.</div>
+            
+            <div class="next-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Schedule Pilot Planning Call</div>
+                        <div class="step-desc">30-minute session to define scope and success metrics</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Define 100-Patient Cohort</div>
+                        <div class="step-desc">High-risk dementia patients with active caregivers</div>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Launch 90-Day Pilot</div>
+                        <div class="step-desc">Full Florence deployment with weekly progress reviews</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-button">
+                <div class="cta-text">Schedule Pilot Planning Call →</div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item"><strong>Web:</strong> NightingaleMD.com</div>
+                <div class="contact-item"><strong>Email:</strong> hello@nightingale.md</div>
+            </div>
+            
+            <div class="logo-container">
+                <img src="/home/ubuntu/isaac_health_deck/full-logo.png" alt="NightingaleMD">
+            </div>
+        </div>
+        <div class="image-side">
+            <img src="/home/ubuntu/isaac_health_deck/brain_ai_clean.jpg" alt="AI-Powered Care">
+            <div class="footer">© NightingaleMD 2026 | NightingaleMD.com</div>
+        </div>
+    </div>
+</body>
+</html>

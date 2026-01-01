@@ -1,0 +1,192 @@
+{
+  "project_info": {
+    "title": "Title Slide",
+    "created": 1766781270.0639057,
+    "last_updated": 1767104510.215753,
+    "total_slides": 21
+  },
+  "slides": {
+    "slide_01": "edited",
+    "slide_01b": "edited",
+    "slide_04": "edited",
+    "slide_06": "edited",
+    "slide_05": "edited",
+    "slide_07": "edited",
+    "slide_08": "edited",
+    "caregiver_mental_health": "edited",
+    "slide_09": "edited",
+    "three_pathways": "edited",
+    "behavioral_coaching": "edited",
+    "escalation_protocol": "edited",
+    "sidebar_integration": "edited",
+    "slide_11": "edited",
+    "guide_compliance": "edited",
+    "hedis_care_gaps": "edited",
+    "slide_12b": "edited",
+    "pilot_timeline": "edited",
+    "slide_17": "edited",
+    "slide_19": "edited",
+    "slide_21": "edited",
+    "slide_02": "deleted",
+    "slide_03": "deleted",
+    "slide_10": "deleted",
+    "slide_12": "deleted",
+    "slide_13": "deleted",
+    "slide_14": "deleted",
+    "slide_15": "deleted",
+    "slide_16": "deleted",
+    "slide_15d": "deleted",
+    "slide_15e": "deleted",
+    "slide_18": "deleted",
+    "slide_20": "deleted"
+  },
+  "outline": [
+    {
+      "id": "slide_01",
+      "title": "Title Slide",
+      "summary": "Title slide introducing Florence for Isaac Health as an AI-powered dementia care navigation solution.",
+      "image_plan": "/home/ubuntu/upload/search_images/HG8xVQtZ0dyb.jpg - The title slide introduces AI-Powered Dementia Care Navigation. Image 10 shows a brain graphic with AI concepts related to dementia care, which is highly relevant.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_01b",
+      "title": "A Day in the Life: The Isaac Health Care Manager",
+      "summary": "Depicts the daily reality of an Isaac Health care manager: 150+ patients, 20-minute chart prep per call, missed discharges, and constant firefighting. Establishes the pain point before introducing Florence.",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_04",
+      "title": "The Independence Cliff—A One-Way Journey",
+      "summary": "Margaret Chen's story illustrating the journey from home to institutional care after hospitalization.",
+      "image_plan": "/home/ubuntu/diagrams_png/03_independence_cliff_journey.png - This slide details the \"Independence Cliff\" with specific statistics and a patient story. Image 2 is a custom infographic that visually represents the statistics and the concept of the cliff, making it the most appropriate choice.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_06",
+      "title": "Meet Florence—Context-Aware & Clinically Safe",
+      "summary": "Introduction to Florence's three pillars: Knows, Escalates, and Sounds Human.",
+      "image_plan": "/home/ubuntu/upload/search_images/VF33rvDk5q4C.png - This slide introduces Florence, an AI nurse. Image 14 is a professional-looking graphic of an AI robot/nurse, which visually represents the concept of Florence. Image 7 is also a good option, but 14 is a clearer depiction of an AI nurse. Re-selecting 14.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_05",
+      "title": "The Caregiver Burden Cascade",
+      "summary": "Explaining how caregiver stress leads to increased hospitalization risk using odds ratios.",
+      "image_plan": "/home/ubuntu/diagrams_png/04_caregiver_burden_impact.png - This slide focuses on the Caregiver Burden Cascade. Image 6 is a custom infographic that visually represents the cascade and the associated statistics, making it the best fit.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_07",
+      "title": "The Power of the Three-Way Call",
+      "summary": "Diagram showing the unified communication ecosystem connecting patient, caregiver, and care manager.",
+      "image_plan": "/home/ubuntu/diagrams_png/05_three_way_call_flow.png - This slide explains the \"Three-Way Call\" concept. Image 3 is a custom infographic that perfectly illustrates the three-way connection between Patient, Caregiver, and Care Manager via Florence.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_08",
+      "title": "The Florence AI Care Coordination Ecosystem",
+      "summary": "Visualizing the hybrid model of in-visit scribe and between-visit coordinator.",
+      "image_plan": "/home/ubuntu/diagrams_png/06_ai_care_coordination_ecosystem.png - This slide describes the Florence AI Care Coordination Ecosystem. Image 4 is a custom infographic that clearly breaks down the two modes (In-Visit Scribe and Between-Visit Coordinator) and the before/after comparison.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "caregiver_mental_health",
+      "title": "Florence Supports the Caregiver, Too",
+      "summary": "Linda Chen scenario showing how Florence detects caregiver burnout signals and triggers proactive support interventions",
+      "image_plan": "No image needed - use the detect → screen → act workflow visualization",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_09",
+      "title": "What Florence Does for Isaac Health Patients",
+      "summary": "Benefits for patients, providers, and Isaac Health, focusing on proactive care and retention.",
+      "image_plan": "/home/ubuntu/upload/search_images/pmm8X3kLRKgJ.jpg - This slide describes what Florence does for patients and providers. Image 13 shows a caregiver and a senior in a home setting, representing the in-home care aspect of Florence's monitoring.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "three_pathways",
+      "title": "Three Pathways: How Isaac Health Can Start With Florence",
+      "summary": "A 3-column visual showing Co-pilot Enabler (lowest risk, weeks 1-4), Hybrid (medium risk, months 2-3), and Full Autonomous (higher risk, month 4+) implementation options with risk levels and timelines.",
+      "image_plan": "No images needed - use icon-based visual design with shield/scales/rocket metaphors for each pathway",
+      "slide_template_key": ""
+    },
+    {
+      "id": "behavioral_coaching",
+      "title": "Florence Behavioral Coaching in Action",
+      "summary": "Concrete example showing how Florence detects increased wandering (2x/week to 5x/week), generates structured documentation, and escalates with behavioral alert to care manager with specific recommendations.",
+      "image_plan": "No images needed - use conversation flow visualization with Florence quote box",
+      "slide_template_key": ""
+    },
+    {
+      "id": "escalation_protocol",
+      "title": "Florence's Escalation Protocol: Safety Guardrails Built In",
+      "summary": "Multi-tiered escalation ladder showing triggers (high-risk keywords, suicidal ideation, behavioral crisis, confusion) mapped to responses (RN escalation, PHQ-9 screening, caregiver call) and outcomes.",
+      "image_plan": "No images needed - use color-coded escalation ladder visualization",
+      "slide_template_key": ""
+    },
+    {
+      "id": "sidebar_integration",
+      "title": "Florence Sidebar: Works Alongside Your Existing Platform",
+      "summary": "Visual showing the Florence Copilot Chrome extension sidebar operating alongside Isaac Health's proprietary Care Platform - no new logins, care managers stay in their workflow.",
+      "image_plan": "Use the provided screenshot: /home/ubuntu/isaac_health_deck/florence_sidebar_screenshot.png",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_11",
+      "title": "Florence Multiplies Your Care Team's Capacity by 8-10x",
+      "summary": "Comparison of capacity and reach rates before and after implementing Florence.",
+      "image_plan": "/home/ubuntu/upload/search_images/A1giR7UNWC4P.jpg - This slide discusses multiplying the care team's capacity. Image 12 shows a caregiver supporting a senior, which relates to the capacity and support theme. Alternatively, a graphic showing scale or efficiency would be better. Selecting 12 for the human element of care capacity.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "guide_compliance",
+      "title": "Florence Supports Isaac Health's GUIDE Model Compliance",
+      "summary": "Shows how Florence enables each of the 6 GUIDE model pillars: Comprehensive Assessment, Personalized Care Planning, Medication Management, Caregiver Support, 24/7 Access, and Respite Coordination",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "hedis_care_gaps",
+      "title": "Florence Closes Care Gaps & Drives HEDIS Compliance",
+      "summary": "Horizontal grid showing 4 key HEDIS measures (DSF-E, PDC, DRR-E, COA) with star weights, industry baselines, Florence automation capabilities, and Isaac Health impact. Bottom callout shows 10x combined star weight and $350K-$600K annual quality bonus value.",
+      "image_plan": "No images needed - use horizontal grid layout with star icons and checkmarks",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_12b",
+      "title": "Projected Impact: Clinical Outcomes & Financial ROI",
+      "summary": "Consolidated slide merging clinical outcomes (20-30% readmission reduction, 50% medication adherence improvement) with corrected financial ROI ($1,350/patient × 3,000 = $4.05M annual savings, 1.125x ROI).",
+      "image_plan": "",
+      "slide_template_key": ""
+    },
+    {
+      "id": "pilot_timeline",
+      "title": "90-Day Pilot: Your Path to Confident Deployment",
+      "summary": "Detailed 4-phase pilot timeline: Phase 1 (Weeks 1-2) Setup & Integration, Phase 2 (Weeks 3-4) Co-Pilot Launch with 50 patients, Phase 3 (Weeks 5-8) Hybrid Mode with 100 patients, Phase 4 (Weeks 9-12) Evaluation & Scale Decision. Includes specific milestones and success criteria.",
+      "image_plan": "No images needed - use horizontal timeline visualization with 4 phases",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_17",
+      "title": "Our Partnership—Your Brand, Your Protocols",
+      "summary": "Emphasizing the strategic partnership model with customization, white-labeling, and ongoing optimization.",
+      "image_plan": "/home/ubuntu/upload/search_images/QdFsqTHLKejb.jpg - This slide is about the partnership and customization. Image 8 shows a senior interacting with a friendly robot, symbolizing the personalized, branded AI care (Florence) being integrated.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_19",
+      "title": "Why Isaac Health Should Act Now",
+      "summary": "Three converging pressures creating urgency: quality measures, patient expectations, and workforce burnout.",
+      "image_plan": "/home/ubuntu/upload/search_images/egyDs6mHdMIC.png - This slide urges immediate action due to converging pressures. Image 18 is a project implementation diagram, which relates to the urgency of starting the project now.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_21",
+      "title": "Contact & Q&A",
+      "summary": "Closing slide with contact information and final tagline.",
+      "image_plan": "/home/ubuntu/diagrams_png/04_caregiver_burden_impact.png - This is the contact and Q&A slide. Image 7 is a clean, professional image of an AI robot, which reinforces the core product (Florence) in the closing slide.",
+      "slide_template_key": ""
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90-Day Pilot Timeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F2F3F4;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 64px 60px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 16px;
+            border-left: 8px solid #55B5B8;
+            padding-left: 24px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 34px;
+            color: #31393F;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 15px;
+            color: #5A6872;
+            margin-top: 6px;
+        }
+        
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .phase-card {
+            background-color: white;
+            padding: 16px;
+            border-top: 4px solid #55B5B8;
+        }
+        .phase-card.yellow { border-top-color: #F8CA44; }
+        .phase-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .phase-label {
+            font-family: 'Merriweather', serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #55B5B8;
+        }
+        .phase-card.yellow .phase-label { color: #D4A000; }
+        .phase-weeks {
+            font-size: 11px;
+            color: #5A6872;
+            background-color: #F2F3F4;
+            padding: 2px 8px;
+        }
+        .phase-title {
+            font-family: 'Merriweather', serif;
+            font-size: 15px;
+            color: #31393F;
+            margin-bottom: 10px;
+        }
+        .phase-list {
+            list-style: none;
+            font-size: 12px;
+            color: #31393F;
+            line-height: 1.5;
+        }
+        .phase-list li {
+            margin-bottom: 5px;
+            padding-left: 12px;
+            position: relative;
+        }
+        .phase-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #55B5B8;
+        }
+        .phase-list strong { font-weight: 700; }
+        .phase-milestone {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #F2F3F4;
+            font-size: 11px;
+            font-weight: 700;
+            color: #55B5B8;
+        }
+        .phase-card.yellow .phase-milestone { color: #D4A000; }
+        
+        .success-criteria {
+            background-color: #55B5B8;
+            padding: 14px 24px;
+            margin-bottom: 12px;
+        }
+        .success-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+        .success-list {
+            display: flex;
+            gap: 24px;
+        }
+        .success-item {
+            font-size: 13px;
+            color: white;
+        }
+        .success-item strong { font-weight: 700; }
+        
+        .bottom-callout {
+            background-color: white;
+            padding: 12px 24px;
+            text-align: center;
+        }
+        .bottom-callout p {
+            font-size: 14px;
+            color: #31393F;
+        }
+        .bottom-callout strong { font-weight: 700; }
+        
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 64px;
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
+            color: #5A6872;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-shield {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>90-Day Pilot: Your Path to Confident Deployment</h1>
+            <div class="subtitle">De-risked implementation with clear milestones and success criteria</div>
+        </div>
+        
+        <div class="timeline-grid">
+            <!-- Phase 1 -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <span class="phase-label">PHASE 1</span>
+                    <span class="phase-weeks">Weeks 1-2</span>
+                </div>
+                <div class="phase-title">Setup & Integration</div>
+                <ul class="phase-list">
+                    <li>API integration with Care Platform</li>
+                    <li>Protocol customization workshop</li>
+                    <li>Care manager training (2 hrs)</li>
+                    <li>Escalation workflow mapping</li>
+                </ul>
+                <div class="phase-milestone">✓ Milestone: Go-live ready</div>
+            </div>
+            
+            <!-- Phase 2 -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <span class="phase-label">PHASE 2</span>
+                    <span class="phase-weeks">Weeks 3-4</span>
+                </div>
+                <div class="phase-title">Co-Pilot Launch</div>
+                <ul class="phase-list">
+                    <li><strong>50 patients</strong> enrolled</li>
+                    <li>Florence dials, CM takes over</li>
+                    <li>Daily QA review of calls</li>
+                    <li>Escalation protocol testing</li>
+                </ul>
+                <div class="phase-milestone">✓ Milestone: 50+ calls completed</div>
+            </div>
+            
+            <!-- Phase 3 -->
+            <div class="phase-card yellow">
+                <div class="phase-header">
+                    <span class="phase-label">PHASE 3</span>
+                    <span class="phase-weeks">Weeks 5-8</span>
+                </div>
+                <div class="phase-title">Hybrid Mode</div>
+                <ul class="phase-list">
+                    <li><strong>100 patients</strong> enrolled</li>
+                    <li>Florence handles routine calls</li>
+                    <li>CM focuses on complex cases</li>
+                    <li>Weekly performance reviews</li>
+                </ul>
+                <div class="phase-milestone">✓ Milestone: 75%+ reach rate</div>
+            </div>
+            
+            <!-- Phase 4 -->
+            <div class="phase-card">
+                <div class="phase-header">
+                    <span class="phase-label">PHASE 4</span>
+                    <span class="phase-weeks">Weeks 9-12</span>
+                </div>
+                <div class="phase-title">Evaluate & Scale</div>
+                <ul class="phase-list">
+                    <li>ROI analysis & outcomes report</li>
+                    <li>Patient/caregiver satisfaction</li>
+                    <li>Care manager feedback</li>
+                    <li>Scale decision & roadmap</li>
+                </ul>
+                <div class="phase-milestone">✓ Milestone: Go/No-Go decision</div>
+            </div>
+        </div>
+        
+        <div class="success-criteria">
+            <div class="success-title">Success Criteria for Full Deployment</div>
+            <div class="success-list">
+                <span class="success-item"><strong>✓ Zero safety incidents</strong></span>
+                <span class="success-item">✓ 90%+ escalation accuracy</span>
+                <span class="success-item">✓ 75%+ patient reach rate</span>
+                <span class="success-item">✓ Care manager satisfaction ≥4/5</span>
+            </div>
+        </div>
+        
+        <div class="bottom-callout">
+            <p><strong>Total Investment:</strong> $15,000 pilot fee (credited toward full contract) | <strong>Risk:</strong> Cancel anytime after Phase 2</p>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <img src="/home/ubuntu/isaac_health_deck/shield-only.png" alt="NightingaleMD" class="footer-shield">
+        </div>
+    </div>
+</body>
+</html>

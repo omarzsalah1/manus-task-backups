@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of the Three-Way Call</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding: 36px 64px 20px 64px;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 44px;
+            color: #31393F;
+            line-height: 1.15;
+        }
+        .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            color: #5A6872;
+            margin-top: 8px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 16px 64px 50px 64px;
+        }
+        
+        /* Hub and Spoke Visualization */
+        .diagram-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hub-spoke-container {
+            position: relative;
+            width: 500px;
+            height: 400px;
+        }
+        
+        /* Center Hub - Florence */
+        .center-hub {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, #E45740 0%, #c94a36 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 10;
+            box-shadow: 0 0 0 8px rgba(228, 87, 64, 0.2), 0 0 0 16px rgba(228, 87, 64, 0.1);
+        }
+        
+        /* Florence Hub Icon - Replaces Robot */
+        .florence-hub-icon {
+            width: 56px;
+            height: 56px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+        .florence-hub-icon .center-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+        }
+        .florence-hub-icon .outer-node {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.75);
+            border-radius: 50%;
+        }
+        .florence-hub-icon .outer-node:nth-child(2) { top: 0; left: 50%; transform: translateX(-50%); }
+        .florence-hub-icon .outer-node:nth-child(3) { bottom: 4px; left: 6px; }
+        .florence-hub-icon .outer-node:nth-child(4) { bottom: 4px; right: 6px; }
+        .florence-hub-icon .connector {
+            position: absolute;
+            background: rgba(255,255,255,0.4);
+            height: 2px;
+        }
+        .florence-hub-icon .connector-1 {
+            width: 14px;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%) rotate(90deg);
+        }
+        .florence-hub-icon .connector-2 {
+            width: 18px;
+            bottom: 16px;
+            left: 12px;
+            transform: rotate(50deg);
+        }
+        .florence-hub-icon .connector-3 {
+            width: 18px;
+            bottom: 16px;
+            right: 12px;
+            transform: rotate(-50deg);
+            transform-origin: right center;
+        }
+        
+        .hub-title { font-family: 'Merriweather', serif; font-weight: 700; font-size: 24px; }
+        .hub-subtitle { font-family: 'Lato', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; opacity: 0.9; }
+        
+        /* Spoke Nodes */
+        .spoke-node { position: absolute; width: 120px; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; z-index: 10; }
+        .spoke-node.patient { top: 10px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #55B5B8 0%, #3d9a9d 100%); color: white; }
+        .spoke-node.caregiver { bottom: 30px; left: 30px; background: linear-gradient(135deg, #F8CA44 0%, #e0b53d 100%); color: #31393F; }
+        .spoke-node.navigator { bottom: 30px; right: 30px; background: linear-gradient(135deg, #55B5B8 0%, #3d9a9d 100%); color: white; }
+        .spoke-icon { font-size: 32px; margin-bottom: 6px; }
+        .spoke-label { font-family: 'Lato', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        /* Connection Lines */
+        .connection-line { position: absolute; background: linear-gradient(to bottom, #D0D0D0, #55B5B8); z-index: 1; }
+        .line-to-patient { width: 6px; height: 60px; top: 130px; left: 50%; transform: translateX(-50%); }
+        .line-to-caregiver { width: 6px; height: 90px; bottom: 130px; left: 140px; transform: rotate(40deg); transform-origin: bottom center; background: linear-gradient(to top, #F8CA44, #D0D0D0); }
+        .line-to-navigator { width: 6px; height: 90px; bottom: 130px; right: 140px; transform: rotate(-40deg); transform-origin: bottom center; }
+        
+        /* Participant Cards */
+        .cards-area { display: flex; flex-direction: column; gap: 12px; }
+        .participant-card { padding: 16px 20px; border-left: 6px solid #55B5B8; background: #F8FAFA; }
+        .participant-card.caregiver { border-left-color: #F8CA44; }
+        .participant-card.navigator { border-left-color: #E45740; }
+        .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+        .card-icon { font-size: 24px; }
+        .card-title { font-family: 'Merriweather', serif; font-weight: 700; font-size: 22px; color: #31393F; }
+        .card-desc { font-family: 'Lato', sans-serif; font-size: 16px; color: #5A6872; line-height: 1.4; }
+        
+        /* Hero Stat */
+        .hero-stat { background: linear-gradient(135deg, #1a2332 0%, #2d3a4d 100%); padding: 16px 20px; margin-top: auto; display: flex; align-items: center; gap: 20px; }
+        .stat-number { font-family: 'Merriweather', serif; font-weight: 700; font-size: 64px; color: #55B5B8; line-height: 1; }
+        .stat-text { font-family: 'Lato', sans-serif; font-size: 18px; color: white; line-height: 1.3; }
+        .stat-highlight { color: #F8CA44; font-weight: 700; }
+
+        .footer { position: absolute; bottom: 18px; left: 64px; right: 64px; font-family: 'Lato', sans-serif; font-size: 11px; color: #5A6872; display: flex; justify-content: space-between; align-items: center; }
+        .footer-shield { height: 35px; width: auto; object-fit: contain; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>The Power of the Three-Way Call</h1>
+            <div class="subtitle">Florence Orchestrates Seamless Communication Between All Stakeholders</div>
+        </div>
+        
+        <div class="main-content">
+            <div class="diagram-area">
+                <div class="hub-spoke-container">
+                    <!-- Connection Lines -->
+                    <div class="connection-line line-to-patient"></div>
+                    <div class="connection-line line-to-caregiver"></div>
+                    <div class="connection-line line-to-navigator"></div>
+                    
+                    <!-- Center Hub - Florence -->
+                    <div class="center-hub">
+                        <div class="florence-hub-icon">
+                            <div class="connector connector-1"></div>
+                            <div class="connector connector-2"></div>
+                            <div class="connector connector-3"></div>
+                            <div class="center-node"></div>
+                            <div class="outer-node"></div>
+                            <div class="outer-node"></div>
+                            <div class="outer-node"></div>
+                        </div>
+                        <div class="hub-title">FLORENCE</div>
+                        <div class="hub-subtitle">AI Coordinator</div>
+                    </div>
+                    
+                    <!-- Spoke Nodes -->
+                    <div class="spoke-node patient">
+                        <div class="spoke-icon">👤</div>
+                        <div class="spoke-label">Patient</div>
+                    </div>
+                    <div class="spoke-node caregiver">
+                        <div class="spoke-icon">👥</div>
+                        <div class="spoke-label">Caregiver</div>
+                    </div>
+                    <div class="spoke-node navigator">
+                        <div class="spoke-icon">🩺</div>
+                        <div class="spoke-label">Care Nav</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cards-area">
+                <div class="participant-card">
+                    <div class="card-header">
+                        <span class="card-icon">👤</span>
+                        <span class="card-title">Patient</span>
+                    </div>
+                    <div class="card-desc">Daily check-ins with voiceprint verification. Florence adapts to cognitive levels and speaks 20+ languages.</div>
+                </div>
+                
+                <div class="participant-card caregiver">
+                    <div class="card-header">
+                        <span class="card-icon">👥</span>
+                        <span class="card-title">Caregiver</span>
+                    </div>
+                    <div class="card-desc">Included in calls, receives real-time updates, and gets 24/7 support. Burnout signals detected early.</div>
+                </div>
+                
+                <div class="participant-card navigator">
+                    <div class="card-header">
+                        <span class="card-icon">🩺</span>
+                        <span class="card-title">Care Navigator</span>
+                    </div>
+                    <div class="card-desc">Receives escalations with full transcript and clinical summary. Warm handoff for urgent issues.</div>
+                </div>
+                
+                <div class="hero-stat">
+                    <div class="stat-number">400+</div>
+                    <div class="stat-text">Contacts per year<br>vs. <span class="stat-highlight">4 traditional visits</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <img src="/home/ubuntu/isaac_health_deck/shield-only.png" alt="NightingaleMD" class="footer-shield">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Isaac Health Should Act Now</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            padding: 36px 64px 60px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 14px;
+            border-left: 8px solid #E45740;
+            padding-left: 24px;
+        }
+        h1 { font-family: 'Merriweather', serif; font-weight: 700; font-size: 34px; color: #31393F; line-height: 1.2; }
+        h2 { font-family: 'Lato', sans-serif; font-weight: 700; font-size: 15px; color: #E45740; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; flex: 1; }
+        
+        .pressures-column { display: flex; flex-direction: column; gap: 10px; justify-content: flex-start; }
+        .pressure-block { background-color: #F2F3F4; padding: 12px 14px; border-left: 4px solid #55B5B8; }
+        .pressure-block.expectations { border-left-color: #F8CA44; }
+        .pressure-block.burnout { border-left-color: #E45740; }
+        .pressure-title { font-family: 'Merriweather', serif; font-weight: 700; font-size: 15px; color: #31393F; margin-bottom: 8px; }
+        .pressure-list { list-style: none; }
+        .pressure-list li { font-family: 'Lato', sans-serif; font-size: 13px; color: #31393F; margin-bottom: 6px; padding-left: 14px; position: relative; line-height: 1.4; }
+        .pressure-list li:last-child { margin-bottom: 0; }
+        .pressure-list li::before { content: "•"; color: #55B5B8; position: absolute; left: 0; font-weight: bold; }
+        .pressure-block.expectations .pressure-list li::before { color: #F8CA44; }
+        .pressure-block.burnout .pressure-list li::before { color: #E45740; }
+        
+        /* Timeline Section */
+        .timeline-column { 
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .timeline-box {
+            background: linear-gradient(135deg, #F2F3F4 0%, #FFFFFF 100%);
+            padding: 14px 18px;
+            border: 2px solid #55B5B8;
+        }
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #55B5B8;
+        }
+        .timeline-header h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 17px;
+            color: #55B5B8;
+            margin-bottom: 2px;
+        }
+        .timeline-header span {
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #5A6872;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #55B5B8 0%, #55B5B8 50%, #F8CA44 75%, #E45740 100%);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 14px;
+            padding-left: 18px;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 3px;
+            width: 14px;
+            height: 14px;
+            background-color: #55B5B8;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 0 0 2px #55B5B8;
+        }
+        .timeline-item.q3::before { background-color: #F8CA44; box-shadow: 0 0 0 2px #F8CA44; }
+        .timeline-item.q4::before { background-color: #E45740; box-shadow: 0 0 0 2px #E45740; }
+        .timeline-quarter {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: #31393F;
+            margin-bottom: 2px;
+        }
+        .first-mover-badge {
+            display: inline-block;
+            background-color: #E45740;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            margin-left: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .timeline-milestone {
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #49545E;
+            line-height: 1.35;
+        }
+        .timeline-milestone strong { color: #31393F; }
+        .first-mover-note {
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
+            color: #55B5B8;
+            font-style: italic;
+            margin-top: 3px;
+        }
+        
+        /* Competitive Landscape Callout - Enlarged */
+        .competitive-callout {
+            background: linear-gradient(135deg, #E45740 0%, #C93D2B 100%);
+            padding: 14px 16px;
+            color: white;
+        }
+        .competitive-header {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .competitive-body {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            line-height: 1.45;
+            margin-bottom: 8px;
+        }
+        .competitive-body strong {
+            color: #F8CA44;
+        }
+        .competitive-cta {
+            font-family: 'Lato', sans-serif;
+            font-size: 13px;
+            font-style: italic;
+            opacity: 0.95;
+        }
+        .competitive-source {
+            font-family: 'Lato', sans-serif;
+            font-size: 10px;
+            opacity: 0.7;
+            margin-top: 6px;
+        }
+        
+        .cta-box {
+            background-color: #55B5B8;
+            color: #FFFFFF;
+            padding: 10px 14px;
+            text-align: center;
+        }
+        .cta-box span {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .footer { position: absolute; bottom: 20px; left: 64px; right: 64px; font-family: 'Lato', sans-serif; font-size: 11px; color: #5A6872; display: flex; justify-content: space-between; align-items: center; }
+        .footer-shield {
+            height: 35px; width: auto; object-fit: contain; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Why Isaac Health Should Act Now</h1>
+            <h2>Three Converging Pressures + Competitive Window</h2>
+        </div>
+        
+        <div class="content-grid">
+            <div class="pressures-column">
+                <div class="pressure-block">
+                    <div class="pressure-title">Quality & Value-Based Care</div>
+                    <ul class="pressure-list">
+                        <li><strong>Isaac Health is a CMS GUIDE Model Provider</strong>—Florence helps meet 24/7 access requirement</li>
+                        <li><strong>NCQA quality measures</strong> tightening for dementia care programs</li>
+                        <li><strong>Joint Commission Gold Seal</strong> + SOC 2 compliance—Florence matches your standards</li>
+                    </ul>
+                </div>
+                
+                <div class="pressure-block expectations">
+                    <div class="pressure-title">Patient & Family Expectations</div>
+                    <ul class="pressure-list">
+                        <li>85% SMS response vs. &lt;40% answered calls</li>
+                        <li>Families expect immediate follow-up, not 48-72h delays</li>
+                        <li>Text-first outreach is table stakes for modern care</li>
+                    </ul>
+                </div>
+                
+                <div class="pressure-block burnout">
+                    <div class="pressure-title">Workforce Burnout</div>
+                    <ul class="pressure-list">
+                        <li>Care managers can see 10-12 patients/day max</li>
+                        <li>Florence elevates to 100+ patients/day</li>
+                        <li>Can't hire to scale—automation is the only path</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-column">
+                <div class="timeline-box">
+                    <div class="timeline-header">
+                        <h3>Your 2026 Roadmap</h3>
+                        <span>Start Q1 to show lift before annual reporting</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-quarter">Q1 2026 — Pilot Launch <span class="first-mover-badge">First-Mover</span></div>
+                            <div class="timeline-milestone"><strong>12-week pilot</strong> with 100 patients, Co-pilot mode</div>
+                            <div class="first-mover-note">→ First dementia program with AI care coordination at scale</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-quarter">Q2 2026 — Scale</div>
+                            <div class="timeline-milestone"><strong>Expand to 500+ patients</strong>, Hybrid mode</div>
+                        </div>
+                        <div class="timeline-item q3">
+                            <div class="timeline-quarter">Q3 2026 — Optimization</div>
+                            <div class="timeline-milestone"><strong>Full autonomous mode</strong>, Measure outcomes</div>
+                        </div>
+                        <div class="timeline-item q4">
+                            <div class="timeline-quarter">Q4 2026 — Results</div>
+                            <div class="timeline-milestone"><strong>Demonstrate ROI</strong>, GUIDE compliance data</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="competitive-callout">
+                    <div class="competitive-header">⚡ COMPETITIVE LANDSCAPE</div>
+                    <div class="competitive-body">CMS ACCESS Model launches <strong>July 2026</strong>—over <strong>500 tech-enabled care organizations</strong> are preparing to compete in Medicare chronic care.</div>
+                    <div class="competitive-cta">Isaac Health can be first in dementia-focused AI care coordination before the market gets crowded.</div>
+                    <div class="competitive-source">Source: CMS Innovation Center, December 2025</div>
+                </div>
+                
+                <div class="cta-box">
+                    <span>Start Now → Establish Leadership Position</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <img src="/home/ubuntu/isaac_health_deck/shield-only.png" alt="NightingaleMD" class="footer-shield">
+        </div>
+    </div>
+</body>
+</html>

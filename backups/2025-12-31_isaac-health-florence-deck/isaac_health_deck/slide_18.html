@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 90-Day Pilot Path</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px; /* keep as required */
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            /* keep top padding for title consistency, reduce other paddings to save height */
+            padding: 64px 48px 8px 48px; /* bottom reduced from 32 to 8 */
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 12px; /* reduced further to save height */
+            border-left: 8px solid #008080;
+            padding-left: 24px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 40px;
+            color: #1A1A1A;
+            line-height: 1.2;
+        }
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #008080;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px; /* reduced from 36 to save height */
+            align-items: start;
+        }
+        .phases-column {
+            display: flex;
+            flex-direction: column;
+            gap: 6px; /* reduced from 12 */
+            justify-content: flex-start;
+        }
+        .phase-block {
+            border-left: 4px solid #E0E0E0;
+            padding-left: 12px;
+        }
+        .phase-header {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #008080;
+            margin-bottom: 2px; /* tightened */
+        }
+        .phase-time {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            color: #5A6872;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 4px; /* tightened */
+        }
+        .phase-list {
+            list-style: none;
+        }
+        .phase-list li {
+            font-family: 'Lato', sans-serif;
+            font-size: 15px;
+            color: #4A4A4A;
+            margin-bottom: 2px; /* tightened */
+            padding-left: 12px;
+            position: relative;
+            line-height: 1.4;
+        }
+        .phase-list li::before {
+            content: "•";
+            color: #008080;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 12px;
+            top: 2px;
+        }
+        .phase-block:first-child {
+            border-left-color: #008080;
+        }
+
+        .image-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FAFAFA;
+            border: 1px solid #EEEEEE;
+            padding: 8px; /* reduced from 12 */
+        }
+        .image-column img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>The 90-Day Pilot Path</h1>
+            <h2>De-Risked Implementation with Measurable Milestones</h2>
+        </div>
+
+        <div class="content-grid">
+            <div class="phases-column">
+                <div class="phase-block">
+                    <div class="phase-header">Phase 1: Foundation</div>
+                    <div class="phase-time">Weeks 1-4</div>
+                    <ul class="phase-list">
+                        <li>Kickoff and discovery</li>
+                        <li>Clinical workflow mapping</li>
+                        <li>Integration planning</li>
+                        <li>Pilot cohort selection (500-1,000 patients)</li>
+                    </ul>
+                </div>
+                
+                <div class="phase-block">
+                    <div class="phase-header">Phase 2: Integration & Testing</div>
+                    <div class="phase-time">Weeks 5-8</div>
+                    <ul class="phase-list">
+                        <li>EHR connection and ADT feeds</li>
+                        <li>Sandbox testing</li>
+                        <li>RCT training on Florence workflows</li>
+                        <li>Escalation protocol validation</li>
+                    </ul>
+                </div>
+                
+                <div class="phase-block">
+                    <div class="phase-header">Phase 3: Scale Through ROI</div>
+                    <div class="phase-time">Weeks 9-16</div>
+                    <ul class="phase-list">
+                        <li>Expand to 5K+ members</li>
+                        <li>Quality measure impact analysis</li>
+                        <li>Readmission rate tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="phase-block">
+                    <div class="phase-header">Phase 4: Full Integration</div>
+                    <div class="phase-time">Week 17+</div>
+                    <ul class="phase-list">
+                        <li>Universal deployment</li>
+                        <li>Ongoing optimization</li>
+                        <li>Quarterly business reviews</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="image-column">
+                <img src="/home/ubuntu/upload/search_images/mi2ZznyGJRQo.png" alt="Implementation Timeline">
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 99% Care Gap Crisis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            padding: 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 32px;
+            border-left: 8px solid #FF6F61; /* Coral for Crisis */
+            padding-left: 24px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 48px;
+            color: #1A1A1A;
+            line-height: 1.2;
+        }
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #FF6F61;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .content-wrapper {
+            display: flex;
+            gap: 48px;
+            flex: 1;
+            align-items: center;
+        }
+        .text-side {
+            flex: 0 0 35%;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .stat-block {
+            border-bottom: 1px solid #E0E0E0;
+            padding-bottom: 16px;
+        }
+        .stat-number {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 56px;
+            color: #1A1A1A;
+            line-height: 1;
+        }
+        .stat-label {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            color: #4A4A4A;
+            margin-top: 8px;
+        }
+        .gap-description {
+            background-color: #F2F3F4;
+            padding: 24px;
+            border-radius: 4px;
+            font-family: 'Merriweather', serif;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #1A1A1A;
+            border-left: 4px solid #4A4A4A;
+        }
+        .image-side {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-side img {
+            width: 100%;
+            max-height: 480px;
+            object-fit: contain;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #5A6872;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-shield {
+            width: 20px;
+            height: 20px;
+            background-color: #5A6872;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>The 99% Care Gap Crisis</h1>
+            <h2>Only 1% of 6.7 Million Patients Receive Formal Care Planning</h2>
+        </div>
+        
+        <div class="content-wrapper">
+            <div class="text-side">
+                <div class="stat-block">
+                    <div class="stat-number" style="color: #FF6F61;">99%</div>
+                    <div class="stat-label">Receive fragmented, reactive care with no coordination</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-number" style="color: #008080;">1%</div>
+                    <div class="stat-label">Receive formal care planning and coordination (~67,000 patients)</div>
+                </div>
+                <div class="gap-description">
+                    "Between quarterly visits, patients deteriorate invisibly. Small problems become emergencies."
+                </div>
+            </div>
+            
+            <div class="image-side">
+                <img src="/home/ubuntu/diagrams_png/02_dementia_care_crisis_funnel.png" alt="Dementia Care Crisis Funnel Diagram">
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <div class="footer-shield"></div>
+        </div>
+    </div>
+</body>
+</html>

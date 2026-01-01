@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Florence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding: 40px 64px 24px 64px;
+            text-align: center;
+            background: linear-gradient(180deg, #F8FAFA 0%, #FFFFFF 100%);
+        }
+        .florence-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #55B5B8 0%, #3d9a9d 100%);
+            padding: 8px 24px;
+            margin-bottom: 16px;
+        }
+        
+        /* Hub/Node Icon - Replaces Robot */
+        .hub-icon {
+            width: 32px;
+            height: 32px;
+            position: relative;
+        }
+        .hub-icon .center-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+        }
+        .hub-icon .outer-node {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255,255,255,0.75);
+            border-radius: 50%;
+        }
+        .hub-icon .outer-node:nth-child(2) { top: 0; left: 50%; transform: translateX(-50%); }
+        .hub-icon .outer-node:nth-child(3) { bottom: 2px; left: 4px; }
+        .hub-icon .outer-node:nth-child(4) { bottom: 2px; right: 4px; }
+        .hub-icon .connector {
+            position: absolute;
+            background: rgba(255,255,255,0.4);
+            height: 2px;
+            transform-origin: left center;
+        }
+        .hub-icon .connector-1 {
+            width: 10px;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%) rotate(90deg);
+        }
+        .hub-icon .connector-2 {
+            width: 12px;
+            bottom: 10px;
+            left: 8px;
+            transform: rotate(50deg);
+        }
+        .hub-icon .connector-3 {
+            width: 12px;
+            bottom: 10px;
+            right: 8px;
+            transform: rotate(-50deg);
+            transform-origin: right center;
+        }
+        
+        .florence-name {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: white;
+            letter-spacing: 1px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 44px;
+            color: #31393F;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #55B5B8;
+            margin-bottom: 4px;
+        }
+        .tagline {
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color: #5A6872;
+            font-style: italic;
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            padding: 20px 64px 70px 64px;
+        }
+        
+        .pillar {
+            background-color: #FAFAFA;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pillar-header {
+            padding: 20px 24px 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-top: 6px solid #55B5B8;
+            background: linear-gradient(180deg, #F2F3F4 0%, #FAFAFA 100%);
+        }
+        .pillar.escalates .pillar-header { border-top-color: #E45740; }
+        .pillar.human .pillar-header { border-top-color: #F8CA44; }
+        
+        .pillar-icon {
+            width: 56px;
+            height: 56px;
+            background: #55B5B8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .pillar.escalates .pillar-icon { background: #E45740; }
+        .pillar.human .pillar-icon { background: #F8CA44; }
+        .pillar-icon span {
+            font-size: 28px;
+            color: white;
+        }
+        
+        .pillar-title-group {
+            flex: 1;
+        }
+        .pillar-title {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #31393F;
+            line-height: 1.1;
+        }
+        .pillar-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            color: #5A6872;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+        
+        .pillar-content {
+            padding: 16px 24px 24px 24px;
+            flex: 1;
+        }
+        
+        .pillar-list {
+            list-style: none;
+        }
+        .pillar-list li {
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color: #31393F;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.4;
+        }
+        .pillar-list li:last-child {
+            margin-bottom: 0;
+        }
+        .pillar-list li::before {
+            content: "✓";
+            color: #55B5B8;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .pillar.escalates .pillar-list li::before { color: #E45740; }
+        .pillar.human .pillar-list li::before { color: #F8CA44; }
+        
+        .pillar-list li strong {
+            font-weight: 700;
+            color: #31393F;
+        }
+        
+        .bottom-bar {
+            position: absolute;
+            bottom: 50px;
+            left: 64px;
+            right: 64px;
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+        }
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .stat-number {
+            font-family: 'Merriweather', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #55B5B8;
+        }
+        .stat-label {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            color: #5A6872;
+            line-height: 1.2;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 18px;
+            left: 64px;
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
+            color: #5A6872;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-shield {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="florence-badge">
+                <div class="hub-icon">
+                    <div class="connector connector-1"></div>
+                    <div class="connector connector-2"></div>
+                    <div class="connector connector-3"></div>
+                    <div class="center-node"></div>
+                    <div class="outer-node"></div>
+                    <div class="outer-node"></div>
+                    <div class="outer-node"></div>
+                </div>
+                <span class="florence-name">FLORENCE AI</span>
+            </div>
+            <h1>Meet Florence</h1>
+            <div class="subtitle">She's Not a Chatbot—She's YOUR AI Care Coordinator</div>
+            <div class="tagline">Clinically governed. Evidence-based. Purpose-built for dementia care.</div>
+        </div>
+        
+        <div class="pillars-grid">
+            <div class="pillar">
+                <div class="pillar-header">
+                    <div class="pillar-icon"><span>🧠</span></div>
+                    <div class="pillar-title-group">
+                        <div class="pillar-title">KNOWS</div>
+                        <div class="pillar-subtitle">Via TEFCA & National EHR Networks</div>
+                    </div>
+                </div>
+                <div class="pillar-content">
+                    <ul class="pillar-list">
+                        <li><strong>Real-time clinical data</strong> via TEFCA/QHIN integration</li>
+                        <li>Lab results, vitals, and provider notes</li>
+                        <li>Risk stratification & care gap identification</li>
+                        <li>Memory persistence across all encounters</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pillar escalates">
+                <div class="pillar-header">
+                    <div class="pillar-icon"><span>🛡️</span></div>
+                    <div class="pillar-title-group">
+                        <div class="pillar-title">ESCALATES</div>
+                        <div class="pillar-subtitle">To Clinicians with Protocols</div>
+                    </div>
+                </div>
+                <div class="pillar-content">
+                    <ul class="pillar-list">
+                        <li><strong>Schmitt-Thompson</strong> licensed triage protocols</li>
+                        <li><strong>PHQ-9 & PHQ-2</strong> depression screening</li>
+                        <li>Elder abuse/neglect detection protocols</li>
+                        <li>Active warm handoff for all red flags</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pillar human">
+                <div class="pillar-header">
+                    <div class="pillar-icon"><span>💬</span></div>
+                    <div class="pillar-title-group">
+                        <div class="pillar-title">SOUNDS HUMAN</div>
+                        <div class="pillar-subtitle">Trauma-Informed, Language Access</div>
+                    </div>
+                </div>
+                <div class="pillar-content">
+                    <ul class="pillar-list">
+                        <li><strong>Trauma-informed</strong> conversational design</li>
+                        <li>Speaks & texts in <strong>20+ languages</strong></li>
+                        <li>Adapts to cognitive impairment levels</li>
+                        <li><strong>Voiceprint verification</strong> for secure ID</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-bar">
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Languages<br>Supported</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Between-Visit<br>Coverage</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Clinician<br>Oversight</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <img src="/home/ubuntu/isaac_health_deck/shield-only.png" alt="NightingaleMD" class="footer-shield">
+        </div>
+    </div>
+</body>
+</html>

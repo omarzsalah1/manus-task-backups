@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partnership</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 64px 60px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 16px;
+            border-left: 8px solid #55B5B8;
+            padding-left: 24px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 34px;
+            color: #31393F;
+            line-height: 1.2;
+        }
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: #55B5B8;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 0.85fr;
+            gap: 24px;
+            flex: 1;
+        }
+        .list-column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .list-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .list-item.highlight {
+            background-color: #FEF9E7;
+            padding: 8px 10px;
+            margin: 0 -10px;
+        }
+        .item-number {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #55B5B8;
+            min-width: 28px;
+            padding-top: 1px;
+        }
+        .item-content {
+            flex: 1;
+        }
+        .item-title {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: #31393F;
+            margin-bottom: 2px;
+        }
+        .item-title.accent-yellow { color: #D4A000; }
+        .item-title.accent-red { color: #E45740; }
+        .item-desc {
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #5A6872;
+            line-height: 1.4;
+        }
+        .item-desc strong { color: #31393F; }
+        .item-desc .accountability { color: #E45740; font-weight: 700; }
+        
+        .image-column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 270px;
+            height: 340px;
+            object-fit: cover;
+        }
+        .success-vision {
+            background: linear-gradient(135deg, #55B5B8 0%, #3D9A9D 100%);
+            padding: 14px 18px;
+            color: white;
+        }
+        .success-vision-header {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .success-vision-list {
+            list-style: none;
+        }
+        .success-vision-list li {
+            font-family: 'Lato', sans-serif;
+            font-size: 13px;
+            margin-bottom: 6px;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.4;
+        }
+        .success-vision-list li:last-child { margin-bottom: 0; }
+        .success-vision-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #F8CA44;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 64px;
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
+            color: #5A6872;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-shield {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Our Partnership—Your Brand, Your Protocols</h1>
+            <h2>This Is Not a Vendor Relationship—This Is a Strategic Partnership</h2>
+        </div>
+        
+        <div class="content-grid">
+            <div class="list-column">
+                <div class="list-item">
+                    <div class="item-number">01</div>
+                    <div class="item-content">
+                        <div class="item-title">Customization to Isaac Health Protocols</div>
+                        <div class="item-desc">Florence adapts to your existing clinical workflows, escalation thresholds, and care coordination processes.</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="item-number">02</div>
+                    <div class="item-content">
+                        <div class="item-title">Branded as Isaac Health</div>
+                        <div class="item-desc">All member-facing interactions are white-labeled. Florence is your AI Care Coordinator, not a third-party vendor.</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="item-number">03</div>
+                    <div class="item-content">
+                        <div class="item-title">Seamless Integration + Data Priority</div>
+                        <div class="item-desc">Direct integration with your Care Platform. <strong>Isaac Health data takes priority</strong>—Florence flags discrepancies for review.</div>
+                    </div>
+                </div>
+                <div class="list-item highlight">
+                    <div class="item-number">04</div>
+                    <div class="item-content">
+                        <div class="item-title accent-yellow">Listen-In QA Feature</div>
+                        <div class="item-desc"><strong>Care managers can listen to Florence calls in real-time.</strong> Join any call, take over when needed.</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="item-number">05</div>
+                    <div class="item-content">
+                        <div class="item-title">Ongoing Optimization</div>
+                        <div class="item-desc">Quarterly business reviews with quality measure performance tracking and workflow refinement.</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="item-number">06</div>
+                    <div class="item-content">
+                        <div class="item-title">24/7 Support & RN Oversight</div>
+                        <div class="item-desc">Dedicated account team with clinical leadership and RN review of all high-risk interactions.</div>
+                    </div>
+                </div>
+                <div class="list-item highlight">
+                    <div class="item-number">07</div>
+                    <div class="item-content">
+                        <div class="item-title accent-red">Clinical Governance: AI Drafts, Clinician Decides</div>
+                        <div class="item-desc"><strong>Florence never acts autonomously on clinical decisions.</strong> All recommendations surfaced as drafts for clinician approval. <span class="accountability">This ensures Isaac Health remains legally & clinically accountable.</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-column">
+                <div class="image-container">
+                    <img src="/home/ubuntu/isaac_health_deck/partnership_care.jpg" alt="Partnership and Care">
+                </div>
+                <div class="success-vision">
+                    <div class="success-vision-header">By December 2026, Isaac Health Will Have:</div>
+                    <ul class="success-vision-list">
+                        <li>Validated AI care coordination at scale</li>
+                        <li>Published outcomes data for GUIDE compliance</li>
+                        <li>A replicable model for 50-state expansion</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <img src="/home/ubuntu/isaac_health_deck/shield-only.png" alt="NightingaleMD" class="footer-shield">
+        </div>
+    </div>
+</body>
+</html>

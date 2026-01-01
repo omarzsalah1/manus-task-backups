@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantified Financial Impact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            /* keep top padding for title consistency, reduce bottom and side padding */
+            padding: 64px 48px 40px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 32px;
+            border-left: 8px solid #008080;
+            padding-left: 24px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 40px;
+            color: #1A1A1A;
+            line-height: 1.2;
+        }
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #008080;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 32px; /* reduced from 48px */
+            flex: 1;
+        }
+        .metrics-column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* reduced from 24px */
+            justify-content: center;
+        }
+        .metric-box {
+            border-bottom: 1px solid #E0E0E0;
+            padding-bottom: 8px; /* reduced from 16px */
+        }
+        .metric-label {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            color: #5A6872;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .metric-value {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 48px;
+            color: #008080;
+            line-height: 1;
+        }
+        .metric-sub {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            color: #4A4A4A;
+            margin-top: 4px;
+        }
+        .highlight-box {
+            background-color: #E0F2F1;
+            padding: 12px; /* reduced from 20px */
+            border-radius: 4px;
+            border-left: 4px solid #008080;
+        }
+        .highlight-title {
+            font-weight: 700;
+            color: #008080;
+            margin-bottom: 4px;
+        }
+        .highlight-text {
+            font-size: 14px;
+            color: #4A4A4A;
+            line-height: 1.4;
+        }
+        .image-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FAFAFA;
+            border: 1px solid #EEEEEE;
+            padding: 12px; /* reduced from 24px */
+        }
+        .image-column img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .footer {
+            position: absolute;
+            bottom: 12px; /* moved up from 20px */
+            right: 48px; /* reduced from 64px to match side padding */
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #5A6872;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-shield {
+            width: 20px;
+            height: 20px;
+            background-color: #5A6872;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Quantified Financial Impact</h1>
+            <h2>1.125x First-Year ROI with Conservative Estimates</h2>
+        </div>
+        
+        <div class="content-grid">
+            <div class="metrics-column">
+                <div class="metric-box">
+                    <div class="metric-label">First-Year ROI</div>
+                    <div class="metric-value">1.125x</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Net Savings</div>
+                    <div class="metric-value">$150k</div>
+                    <div class="metric-sub">Per 1,000-Patient Cohort</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Per Patient</div>
+                    <div class="metric-value">$1,350</div>
+                    <div class="metric-sub">Annual Cost Avoidance</div>
+                </div>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title">Year 2+ Projection</div>
+                    <div class="highlight-text">ROI improves to 2.5-3.0x as implementation costs decrease and efficiencies compound.</div>
+                </div>
+            </div>
+            
+            <div class="image-column">
+                <img src="/home/ubuntu/diagrams_png/08_cost_avoidance_matrix.png" alt="Cost Avoidance Matrix Diagram">
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <div class="footer-shield"></div>
+        </div>
+    </div>
+</body>
+</html>

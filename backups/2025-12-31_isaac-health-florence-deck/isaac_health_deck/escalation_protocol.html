@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escalation Protocol</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F2F3F4;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 64px 60px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 16px;
+            border-left: 8px solid #E45740;
+            padding-left: 24px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 34px;
+            color: #31393F;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 15px;
+            color: #5A6872;
+            margin-top: 6px;
+        }
+        
+        .table-container {
+            flex: 1;
+        }
+        .table-row {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 2px;
+        }
+        .table-row:last-child { margin-bottom: 0; }
+        .cell {
+            padding: 12px 16px;
+        }
+        .cell.trigger { flex: 2.5; }
+        .cell.response { flex: 2; }
+        .cell.outcome { flex: 1.5; }
+        
+        .header-row .cell {
+            background-color: #49545E;
+        }
+        .header-row .cell p {
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .cell-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .cell-icon {
+            font-size: 18px;
+        }
+        .cell-desc {
+            font-size: 12px;
+            line-height: 1.35;
+        }
+        .cell-action {
+            font-size: 13px;
+            color: #31393F;
+        }
+        .cell-outcome {
+            font-size: 13px;
+            font-weight: 700;
+        }
+        
+        /* Critical rows */
+        .row-critical .trigger { background-color: #E45740; }
+        .row-critical .trigger .cell-title { color: white; }
+        .row-critical .trigger .cell-desc { color: rgba(255,255,255,0.9); }
+        .row-critical .response { background-color: #FDECEA; }
+        .row-critical .outcome { background-color: #FDECEA; }
+        .row-critical .cell-outcome { color: #E45740; }
+        
+        /* Medium rows */
+        .row-medium .trigger { background-color: #F8CA44; }
+        .row-medium .trigger .cell-title { color: #31393F; }
+        .row-medium .trigger .cell-desc { color: #5A6872; }
+        .row-medium .response { background-color: #FEF9E7; }
+        .row-medium .outcome { background-color: #FEF9E7; }
+        .row-medium .cell-outcome { color: #B7950B; }
+        
+        /* Routine rows */
+        .row-routine .trigger { background-color: #55B5B8; }
+        .row-routine .trigger .cell-title { color: white; }
+        .row-routine .trigger .cell-desc { color: rgba(255,255,255,0.9); }
+        .row-routine .response { background-color: #E8F6F6; }
+        .row-routine .outcome { background-color: #E8F6F6; }
+        .row-routine .cell-outcome { color: #55B5B8; }
+        
+        .bottom-features {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .feature-box {
+            flex: 1;
+            background-color: white;
+            padding: 12px 16px;
+            text-align: center;
+        }
+        .feature-box p {
+            font-size: 14px;
+            color: #31393F;
+        }
+        .feature-box strong {
+            color: #55B5B8;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 64px;
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
+            color: #5A6872;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-shield {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Florence's Escalation Protocol: Safety Guardrails Built In</h1>
+            <div class="subtitle">Every scenario has a defined response—nothing falls through the cracks</div>
+        </div>
+        
+        <div class="table-container">
+            <!-- Header Row -->
+            <div class="table-row header-row">
+                <div class="cell trigger"><p>TRIGGER</p></div>
+                <div class="cell response"><p>RESPONSE</p></div>
+                <div class="cell outcome"><p>OUTCOME</p></div>
+            </div>
+            
+            <!-- Row 1: Medical Emergency -->
+            <div class="table-row row-critical">
+                <div class="cell trigger">
+                    <div class="cell-title"><span class="cell-icon">🚨</span> Medical Emergency</div>
+                    <div class="cell-desc">High-risk keywords: bleeding, chest pain, falls, unresponsive</div>
+                </div>
+                <div class="cell response">
+                    <div class="cell-action">Alert RN immediately + warm transfer to clinical team</div>
+                </div>
+                <div class="cell outcome">
+                    <div class="cell-outcome">Immediate escalation</div>
+                </div>
+            </div>
+            
+            <!-- Row 2: Suicidal Ideation -->
+            <div class="table-row row-critical">
+                <div class="cell trigger">
+                    <div class="cell-title"><span class="cell-icon">🚨</span> Suicidal Ideation</div>
+                    <div class="cell-desc">PHQ-9 Q9 positive, self-harm language</div>
+                </div>
+                <div class="cell response">
+                    <div class="cell-action">PHQ-9 screening protocol + RN escalation + safety plan</div>
+                </div>
+                <div class="cell outcome">
+                    <div class="cell-outcome">Non-interruptible handoff</div>
+                </div>
+            </div>
+            
+            <!-- Row 3: Elder Abuse -->
+            <div class="table-row row-critical">
+                <div class="cell trigger">
+                    <div class="cell-title"><span class="cell-icon">🚨</span> Elder Abuse / Neglect</div>
+                    <div class="cell-desc">Signs of abuse, financial exploitation, neglect indicators</div>
+                </div>
+                <div class="cell response">
+                    <div class="cell-action">Mandatory reporting protocol + social work referral</div>
+                </div>
+                <div class="cell outcome">
+                    <div class="cell-outcome">Clinician + SW review</div>
+                </div>
+            </div>
+            
+            <!-- Row 4: Behavioral Crisis -->
+            <div class="table-row row-medium">
+                <div class="cell trigger">
+                    <div class="cell-title"><span class="cell-icon">⚠️</span> Behavioral Crisis</div>
+                    <div class="cell-desc">Aggression, wandering safety risk, severe agitation</div>
+                </div>
+                <div class="cell response">
+                    <div class="cell-action">Escalation flag + full transcript to care navigator</div>
+                </div>
+                <div class="cell outcome">
+                    <div class="cell-outcome">Care manager review</div>
+                </div>
+            </div>
+            
+            <!-- Row 5: Confusion -->
+            <div class="table-row row-medium">
+                <div class="cell trigger">
+                    <div class="cell-title"><span class="cell-icon">⚠️</span> Confusion Detected</div>
+                    <div class="cell-desc">Patient unable to answer, disoriented, impaired</div>
+                </div>
+                <div class="cell response">
+                    <div class="cell-action">Request caregiver join call immediately</div>
+                </div>
+                <div class="cell outcome">
+                    <div class="cell-outcome">Three-way call</div>
+                </div>
+            </div>
+            
+            <!-- Row 6: Routine -->
+            <div class="table-row row-routine">
+                <div class="cell trigger">
+                    <div class="cell-title"><span class="cell-icon">✓</span> Routine Call</div>
+                    <div class="cell-desc">No flags, standard check-in</div>
+                </div>
+                <div class="cell response">
+                    <div class="cell-action">Document findings + schedule follow-up</div>
+                </div>
+                <div class="cell outcome">
+                    <div class="cell-outcome">Auto-note to EHR</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-features">
+            <div class="feature-box">
+                <p><strong>PHQ-9 & PHQ-2</strong> screening protocols built in</p>
+            </div>
+            <div class="feature-box">
+                <p><strong>24/7 RN Oversight</strong> for all escalations</p>
+            </div>
+            <div class="feature-box">
+                <p><strong>Full Audit Trail</strong> for every interaction</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <img src="/home/ubuntu/isaac_health_deck/shield-only.png" alt="NightingaleMD" class="footer-shield">
+        </div>
+    </div>
+</body>
+</html>

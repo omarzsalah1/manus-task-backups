@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caregiver Mental Health</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; }
+        .slide-container { width: 1280px; min-height: 720px; background: #FFFFFF; font-family: 'Lato', sans-serif; position: relative; box-sizing: border-box; padding: 40px 64px 60px 64px; }
+        .header { margin-bottom: 20px; border-left: 8px solid #55B5B8; padding-left: 24px; }
+        h1 { font-family: 'Merriweather', serif; font-size: 34px; color: #31393F; margin: 0 0 6px 0; }
+        .subtitle { font-size: 15px; color: #5A6872; margin: 0; }
+        .workflow { display: flex; gap: 16px; margin-bottom: 16px; }
+        .workflow-step { flex: 1; background: #F2F3F4; padding: 14px; border-top: 5px solid #55B5B8; }
+        .workflow-step.screen { border-top-color: #F8CA44; }
+        .workflow-step.act { border-top-color: #E45740; }
+        .step-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .step-number { width: 28px; height: 28px; background: #55B5B8; color: white; font-family: 'Merriweather', serif; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+        .workflow-step.screen .step-number { background: #F8CA44; color: #31393F; }
+        .workflow-step.act .step-number { background: #E45740; }
+        .step-title { font-family: 'Merriweather', serif; font-size: 16px; color: #31393F; }
+        .step-list { list-style: none; padding: 0; margin: 0; }
+        .step-list li { font-size: 12px; color: #31393F; margin-bottom: 5px; padding-left: 12px; position: relative; line-height: 1.35; }
+        .step-list li::before { content: "•"; color: #55B5B8; position: absolute; left: 0; font-weight: bold; }
+        .workflow-step.screen .step-list li::before { color: #F8CA44; }
+        .workflow-step.act .step-list li::before { color: #E45740; }
+        .scenario-box { background: #55B5B8; padding: 14px 18px; margin-bottom: 10px; }
+        .scenario-header { font-family: 'Merriweather', serif; font-size: 14px; color: white; margin-bottom: 8px; }
+        .scenario-content { display: flex; gap: 20px; }
+        .scenario-quote { flex: 1; }
+        .scenario-quote p { font-size: 13px; color: white; margin: 0 0 6px 0; line-height: 1.4; }
+        .scenario-quote .speaker { font-weight: 700; }
+        .scenario-outcome { flex: 1; background: rgba(255,255,255,0.15); padding: 10px; }
+        .scenario-outcome p { font-size: 12px; color: white; margin: 0 0 4px 0; line-height: 1.35; }
+        .scenario-outcome strong { color: #F8CA44; }
+        .stats-bar { display: flex; gap: 16px; }
+        .stat-item { flex: 1; background: #F2F3F4; padding: 10px; text-align: center; }
+        .stat-number { font-family: 'Merriweather', serif; font-size: 24px; color: #E45740; font-weight: 700; }
+        .stat-label { font-size: 11px; color: #5A6872; margin-top: 2px; }
+        .footer { position: absolute; bottom: 20px; left: 64px; right: 64px; display: flex; justify-content: space-between; align-items: center; }
+        .footer span { font-size: 11px; color: #5A6872; }
+        .footer img { height: 35px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Florence Supports the Caregiver, Too</h1>
+            <p class="subtitle">Caregiver burnout detection and proactive intervention—before crisis</p>
+        </div>
+        
+        <!-- Detect → Screen → Act Workflow -->
+        <div class="workflow">
+            <div class="workflow-step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">DETECT</div>
+                </div>
+                <ul class="step-list">
+                    <li><strong>Sleep disruption:</strong> "I've been up every night this week"</li>
+                    <li><strong>Social isolation:</strong> "I haven't left the house in days"</li>
+                    <li><strong>Emotional exhaustion:</strong> "I just can't do this anymore"</li>
+                    <li><strong>Physical symptoms:</strong> "My back is killing me from lifting"</li>
+                </ul>
+            </div>
+            
+            <div class="workflow-step screen">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">SCREEN</div>
+                </div>
+                <ul class="step-list">
+                    <li><strong>Zarit Burden Interview</strong> (short form)</li>
+                    <li><strong>PHQ-2</strong> depression screening</li>
+                    <li><strong>Caregiver strain index</strong> assessment</li>
+                    <li>Pattern analysis across multiple calls</li>
+                </ul>
+            </div>
+            
+            <div class="workflow-step act">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">ACT</div>
+                </div>
+                <ul class="step-list">
+                    <li><strong>Alert care navigator</strong> with burnout risk score</li>
+                    <li><strong>Respite care</strong> coordination (GUIDE requirement)</li>
+                    <li><strong>Support groups</strong> via Alzheimer's Assoc.</li>
+                    <li><strong>24/7 support line</strong> access</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Linda Chen Scenario -->
+        <div class="scenario-box">
+            <div class="scenario-header">Real Scenario: Linda Chen (Caregiver for mother with moderate dementia)</div>
+            <div class="scenario-content">
+                <div class="scenario-quote">
+                    <p><span class="speaker">Week 1:</span> "Mom's been wandering at night. I'm exhausted."</p>
+                    <p><span class="speaker">Week 2:</span> "I had to quit my part-time job. I can't leave her."</p>
+                    <p><span class="speaker">Week 3:</span> "I snapped at her yesterday. I feel terrible."</p>
+                </div>
+                <div class="scenario-outcome">
+                    <p><strong>Florence Action:</strong> Flagged burnout risk (score: 8/10)</p>
+                    <p><strong>Care Navigator Alert:</strong> "Linda Chen showing signs of caregiver burnout. Recommend respite care discussion."</p>
+                    <p><strong>Outcome:</strong> Respite care arranged within 5 days; Linda reports improved sleep and mood. <strong style="color:#F8CA44">Returned to part-time work within 3 weeks.</strong></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">OR 8.44x</div>
+                <div class="stat-label">Higher depression risk for dementia caregivers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">OR 10.67x</div>
+                <div class="stat-label">Higher anxiety risk for dementia caregivers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">40%</div>
+                <div class="stat-label">Of caregivers die before the patient they care for</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <img src="/home/ubuntu/isaac_health_deck/shield-only.png" alt="NightingaleMD">
+        </div>
+    </div>
+</body>
+</html>

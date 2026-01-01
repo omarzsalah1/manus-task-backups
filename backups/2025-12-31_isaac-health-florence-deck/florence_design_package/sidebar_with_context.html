@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  background: #f0f0f0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  width: 780px;
+  background: #e8e8e8;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.browser-panel {
+  width: 430px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+}
+
+.browser-bar {
+  background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #ff5f57; }
+.dot-yellow { background: #febc2e; }
+.dot-green { background: #28c840; }
+
+.url-bar {
+  flex: 1;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 11px;
+  color: #666;
+}
+
+.ehr-content {
+  padding: 16px;
+  background: #fafafa;
+  min-height: 500px;
+}
+
+.ehr-header {
+  background: #4A9B9B;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px 6px 0 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.patient-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.patient-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.patient-info {
+  font-size: 12px;
+  color: #666;
+}
+
+.info-section {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.info-header {
+  background: #f5f5f5;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.info-row {
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: #666;
+}
+
+.info-value {
+  color: #333;
+  font-weight: 500;
+}
+
+.sidebar {
+  width: 350px;
+  background: white;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  background: linear-gradient(135deg, #E86850 0%, #d45a44 100%);
+  color: white;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-icon {
+  width: 26px;
+  height: 26px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.header-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.section {
+  border-bottom: 1px solid #eee;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px 8px;
+  background: #fafafa;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-badge {
+  background: #E86850;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+
+.care-gap-item {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.care-gap-item:last-child {
+  border-bottom: none;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.gap-content {
+  flex: 1;
+}
+
+.gap-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.gap-desc {
+  font-size: 10px;
+  color: #666;
+  line-height: 1.35;
+}
+
+.status-badge {
+  font-size: 8px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.status-needs-improvement {
+  background: #fef3cd;
+  color: #856404;
+}
+
+.status-overdue {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-due {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.status-complete {
+  background: #d4edda;
+  color: #155724;
+}
+
+.triple-weighted {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 3px;
+  font-size: 9px;
+  color: #E86850;
+  font-weight: 600;
+}
+
+.visit-item {
+  padding: 8px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.visit-item:last-child {
+  border-bottom: none;
+}
+
+.visit-type {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.visit-desc {
+  font-size: 10px;
+  color: #777;
+  margin-top: 1px;
+}
+
+.visit-date {
+  font-size: 10px;
+  color: #999;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ai-section {
+  background: linear-gradient(180deg, #f8fffe 0%, #f0faf9 100%);
+  padding: 12px 14px;
+}
+
+.ai-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.ai-icon {
+  width: 18px;
+  height: 18px;
+  background: #4A9B9B;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 10px;
+}
+
+.ai-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #4A9B9B;
+}
+
+.ai-prompt {
+  font-size: 11px;
+  color: #4A9B9B;
+  margin-bottom: 8px;
+}
+
+.ai-input {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 11px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.launch-btn {
+  background: linear-gradient(135deg, #4A9B9B 0%, #3d8585 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 12px 14px 14px;
+  width: calc(100% - 28px);
+  box-shadow: 0 2px 8px rgba(74, 155, 155, 0.3);
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="browser-panel">
+    <div class="browser-bar">
+      <div class="browser-dots">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+      </div>
+      <div class="url-bar">care.isaachealth.com/patients</div>
+    </div>
+    <div class="ehr-content">
+      <div class="ehr-header">Isaac Health Care Platform</div>
+      <div class="patient-card">
+        <div class="patient-name">Patient: Margaret Chen</div>
+        <div class="patient-info">ID: 78294 • Age: 78 • Dx: Alzheimer's</div>
+      </div>
+      
+      <div class="info-section">
+        <div class="info-header">Last Contact</div>
+        <div class="info-row">
+          <span class="info-label">Date</span>
+          <span class="info-value">Dec 15, 2025</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Type</span>
+          <span class="info-value">Quarterly Review</span>
+        </div>
+      </div>
+      
+      <div class="info-section">
+        <div class="info-header">Care Plan</div>
+        <div class="info-row">
+          <span class="info-label">Focus</span>
+          <span class="info-value">Medication review, caregiver support</span>
+        </div>
+      </div>
+      
+      <div class="info-section">
+        <div class="info-header">Alerts</div>
+        <div class="info-row">
+          <span class="info-label">Status</span>
+          <span class="info-value" style="color: #28a745;">None pending</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="header-icon">🩺</div>
+      <div class="header-title">Florence Copilot</div>
+    </div>
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Care Gaps to Address</span>
+        <span class="section-badge">5</span>
+      </div>
+      
+      <div class="care-gap-item">
+        <div class="checkbox"></div>
+        <div class="gap-content">
+          <div class="gap-title">
+            A1C Control
+            <span class="status-badge status-needs-improvement">Needs Improvement</span>
+          </div>
+          <div class="gap-desc">Last A1C was 7.8% (target &lt;7.0%). Discuss diet and lifestyle.</div>
+          <div class="triple-weighted">⚠️ Triple Weighted</div>
+        </div>
+      </div>
+      
+      <div class="care-gap-item">
+        <div class="checkbox"></div>
+        <div class="gap-content">
+          <div class="gap-title">
+            Diabetic Eye Exam
+            <span class="status-badge status-overdue">Overdue</span>
+          </div>
+          <div class="gap-desc">Screening overdue by 11 months. Last: 2023-01-15</div>
+        </div>
+      </div>
+      
+      <div class="care-gap-item">
+        <div class="checkbox"></div>
+        <div class="gap-content">
+          <div class="gap-title">
+            Medication Adherence
+            <span class="status-badge status-due">Due</span>
+          </div>
+          <div class="gap-desc">Review medications, side effects, adherence barriers.</div>
+        </div>
+      </div>
+      
+      <div class="care-gap-item">
+        <div class="checkbox"></div>
+        <div class="gap-content">
+          <div class="gap-title">
+            Blood Pressure Control
+            <span class="status-badge status-due">Due</span>
+          </div>
+          <div class="gap-desc">BP slightly elevated. Review adherence and lifestyle.</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Visit History</span>
+        <span class="section-badge">10</span>
+      </div>
+      
+      <div class="visit-item">
+        <div>
+          <div class="visit-type">PCP</div>
+          <div class="visit-desc">CHF follow-up; med reconciliation</div>
+        </div>
+        <div class="visit-date">2025-11-10</div>
+      </div>
+      
+      <div class="visit-item">
+        <div>
+          <div class="visit-type">Endocrinology</div>
+          <div class="visit-desc">Diabetes control; A1C ordered</div>
+        </div>
+        <div class="visit-date">2025-10-22</div>
+      </div>
+      
+      <div class="visit-item">
+        <div>
+          <div class="visit-type">Cardiology</div>
+          <div class="visit-desc">Routine CHF; stable on meds</div>
+        </div>
+        <div class="visit-date">2025-09-30</div>
+      </div>
+    </div>
+    
+    <div class="ai-section">
+      <div class="ai-header">
+        <div class="ai-icon">✨</div>
+        <div class="ai-title">AI Assistant</div>
+      </div>
+      <div class="ai-prompt">Ask me anything about Margaret's care</div>
+      <div class="ai-input">
+        <span>💬</span>
+        <span>Ask about patient care...</span>
+      </div>
+    </div>
+    
+    <button class="launch-btn">
+      <span>▶</span>
+      Launch Call
+    </button>
+  </div>
+</div>
+</body>
+</html>

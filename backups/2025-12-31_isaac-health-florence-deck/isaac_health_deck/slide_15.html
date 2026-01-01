@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dementia-Specific Capabilities</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            padding: 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 32px;
+            border-left: 8px solid #008080;
+            padding-left: 24px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 40px;
+            color: #1A1A1A;
+            line-height: 1.2;
+        }
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #008080;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 48px;
+            flex: 1;
+        }
+        .image-column {
+            height: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        .image-column img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 32px;
+        }
+        .cap-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .cap-title {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #008080;
+            border-bottom: 2px solid #E0E0E0;
+            padding-bottom: 8px;
+        }
+        .cap-list {
+            list-style: none;
+        }
+        .cap-list li {
+            font-family: 'Lato', sans-serif;
+            font-size: 15px;
+            color: #4A4A4A;
+            margin-bottom: 8px;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.4;
+        }
+        .cap-list li::before {
+            content: "•";
+            color: #008080;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .stat-highlight {
+            background-color: #FFF0EE;
+            padding: 12px;
+            border-left: 4px solid #FF6F61;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #1A1A1A;
+            line-height: 1.4;
+        }
+        .stat-highlight strong {
+            color: #FF6F61;
+            font-weight: 700;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #5A6872;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-shield {
+            width: 20px;
+            height: 20px;
+            background-color: #5A6872;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Dementia-Specific Capabilities</h1>
+            <h2>Florence Is Purpose-Built for Memory Care Populations</h2>
+        </div>
+        
+        <div class="content-grid">
+            <div class="image-column">
+                <img src="/home/ubuntu/upload/search_images/0143IDEEvss9.jpg" alt="AI Robot and Senior">
+            </div>
+            
+            <div class="capabilities-grid">
+                <div class="cap-block">
+                    <div class="cap-title">Cognitive Monitoring</div>
+                    <ul class="cap-list">
+                        <li>Daily cognitive check-ins with validated assessments</li>
+                        <li>Trend detection for subtle decline patterns</li>
+                        <li>Voiceprint verification for patient identity</li>
+                    </ul>
+                </div>
+                
+                <div class="cap-block">
+                    <div class="cap-title">Behavioral Symptom Mgmt</div>
+                    <ul class="cap-list">
+                        <li>BPSD monitoring (agitation, wandering, sleep)</li>
+                        <li>Early intervention before crisis escalation</li>
+                    </ul>
+                    <div class="stat-highlight">
+                        <strong>90-97%</strong> of patients experience BPSD<br>
+                        <strong>68%</strong> of ED visits are BPSD-related
+                    </div>
+                </div>
+                
+                <div class="cap-block">
+                    <div class="cap-title">Caregiver Support</div>
+                    <ul class="cap-list">
+                        <li>Three-way calls include family caregivers</li>
+                        <li>Real-time updates and support</li>
+                        <li>Respite coordination and resource referrals</li>
+                    </ul>
+                </div>
+                
+                <div class="cap-block">
+                    <div class="cap-title">Care Transitions</div>
+                    <ul class="cap-list">
+                        <li>Post-discharge follow-up within 15 minutes</li>
+                        <li>Medication reconciliation and teach-back</li>
+                        <li>Appointment scheduling and reminders</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <div class="footer-shield"></div>
+        </div>
+    </div>
+</body>
+</html>

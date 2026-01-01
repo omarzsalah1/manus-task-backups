@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration with Isaac Health Workflows</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* keep title top padding intact */
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: flex-start; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px; /* required, do not remove */
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            /* keep top padding 64px (title spacing) but reduce bottom padding to shrink overall height */
+            padding: 64px 64px 24px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 16px; /* reduced from 32 */
+            border-left: 8px solid #008080;
+            padding-left: 24px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 40px;
+            color: #1A1A1A;
+            line-height: 1.2;
+        }
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #008080;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        /* Layout refreshed: image on left, text blocks reflowed into two columns to reduce vertical stacking */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 32px; /* reduced from 48 */
+            align-items: start;
+            flex: 1 1 auto;
+        }
+        .image-column {
+            background-color: #FAFAFA;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            align-self: start; /* don't stretch to full container height */
+        }
+        .image-column img {
+            width: 100%;
+            height: auto; /* let image size follow its intrinsic height */
+            display: block;
+        }
+        .text-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* two-column layout for the three blocks */
+            gap: 12px 20px; /* smaller vertical gap */
+            align-items: start;
+        }
+        .integration-block {
+            padding: 12px; /* reduced from 20 */
+            border-left: 4px solid #E0E0E0;
+            background-color: #FFFFFF;
+        }
+        .integration-block.escalation { grid-column: 1 / -1; } /* make escalation span both columns */
+        .block-title {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #1A1A1A;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .block-list {
+            list-style: none;
+        }
+        .block-list li {
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color: #4A4A4A;
+            margin-bottom: 6px;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.4;
+        }
+        .block-list li::before {
+            content: "•";
+            color: #008080;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .data-sources { border-left-color: #008080; }
+        .data-sources .block-title { color: #008080; }
+        .write-back { border-left-color: #1A1A1A; }
+        .write-back .block-title { color: #1A1A1A; }
+        .write-back .block-list li::before { color: #1A1A1A; }
+        .escalation { border-left-color: #FF6F61; }
+        .escalation .block-title { color: #FF6F61; }
+        .escalation .block-list li::before { color: #FF6F61; }
+        .footer {
+            position: absolute;
+            bottom: 12px; /* slightly closer to bottom to save space */
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #5A6872;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-shield {
+            width: 20px;
+            height: 20px;
+            background-color: #5A6872;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Integration with Isaac Health Workflows</h1>
+            <h2>No New Portals—Florence Integrates with Your Existing Infrastructure</h2>
+        </div>
+        
+        <div class="content-grid">
+            <div class="image-column">
+                <img src="/home/ubuntu/upload/search_images/PDjFFXW0HyBr.png" alt="Workflow Integration">
+            </div>
+            
+            <div class="text-column">
+                <div class="integration-block data-sources">
+                    <div class="block-title">Data Sources (Ingest)</div>
+                    <ul class="block-list">
+                        <li>ADT feeds from hospital systems</li>
+                        <li>EHR integration via FHIR</li>
+                        <li>Real-time clinical data via TEFCA for risk stratification</li>
+                        <li>Care gap identification</li>
+                    </ul>
+                </div>
+                
+                <div class="integration-block write-back">
+                    <div class="block-title">Write-Back (Record)</div>
+                    <ul class="block-list">
+                        <li>Structured notes directly to EHR</li>
+                        <li>HEDIS-compliant documentation tags</li>
+                        <li>Care plan updates & quality measures</li>
+                    </ul>
+                </div>
+                
+                <div class="integration-block escalation">
+                    <div class="block-title">Escalation Pathways (Action)</div>
+                    <ul class="block-list">
+                        <li>Warm handoff to Isaac Health clinicians</li>
+                        <li>Full conversation history & clinical context</li>
+                        <li>RN review of all high-risk interactions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <div class="footer-shield"></div>
+        </div>
+    </div>
+</body>
+</html>

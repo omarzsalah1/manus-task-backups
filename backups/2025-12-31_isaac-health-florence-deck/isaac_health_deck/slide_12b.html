@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projected Impact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            padding: 64px 64px 20px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            margin-bottom: 20px;
+            border-left: 8px solid #55B5B8;
+            padding-left: 24px;
+        }
+        h1 { font-family: 'Merriweather', serif; font-weight: 700; font-size: 40px; color: #31393F; line-height: 1.2; }
+        h2 { font-family: 'Lato', sans-serif; font-weight: 700; font-size: 18px; color: #55B5B8; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            flex: 1;
+        }
+        
+        .column {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+        .column-header {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 22px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid;
+        }
+        .clinical-col {
+            background-color: #E8F5F4;
+        }
+        .clinical-col .column-header {
+            color: #55B5B8;
+            border-color: #55B5B8;
+        }
+        .financial-col {
+            background-color: #FFF8E1;
+        }
+        .financial-col .column-header {
+            color: #31393F;
+            border-color: #F8CA44;
+        }
+        
+        .metric-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex: 1;
+        }
+        .metric-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .metric-number {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 28px;
+            min-width: 100px;
+        }
+        .clinical-col .metric-number { color: #55B5B8; }
+        .financial-col .metric-number { color: #31393F; }
+        .metric-detail {
+            display: flex;
+            flex-direction: column;
+        }
+        .metric-title {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: #31393F;
+            margin-bottom: 2px;
+        }
+        .metric-desc {
+            font-family: 'Lato', sans-serif;
+            font-size: 13px;
+            color: #5A6872;
+        }
+        
+        .source-note {
+            margin-top: 12px;
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
+            color: #5A6872;
+            font-style: italic;
+        }
+        
+        .roi-callout {
+            margin-top: 16px;
+            background-color: #55B5B8;
+            padding: 20px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .roi-main {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .roi-number {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 48px;
+            color: #FFFFFF;
+        }
+        .roi-label {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            color: #FFFFFF;
+            line-height: 1.3;
+        }
+        .roi-detail {
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color: #FFFFFF;
+            text-align: right;
+        }
+        
+                .footer {
+            position: absolute;
+            bottom: 12px;
+            right: 64px;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #5A6872;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-shield {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Projected Impact: Clinical Outcomes & Financial ROI</h1>
+            <h2>Enhancing Isaac Health's Validation Institute-Verified Outcomes</h2>
+        </div>
+        
+        <div class="content-grid">
+            <div class="column clinical-col">
+                <div class="column-header">Clinical Outcomes</div>
+                <div class="metric-list">
+                    <div class="metric-item">
+                        <div class="metric-number">38%</div>
+                        <div class="metric-detail">
+                            <div class="metric-title">ED Visit Reduction</div>
+                            <div class="metric-desc">Isaac Health validated baseline</div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">28%</div>
+                        <div class="metric-detail">
+                            <div class="metric-title">Hospital Day Reduction</div>
+                            <div class="metric-desc">Isaac Health validated baseline</div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">288x</div>
+                        <div class="metric-detail">
+                            <div class="metric-title">Faster Post-Discharge Contact</div>
+                            <div class="metric-desc">T+15 min vs. 48-72 hours</div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">>75%</div>
+                        <div class="metric-detail">
+                            <div class="metric-title">Patient Reach Rate</div>
+                            <div class="metric-desc">Text-first engagement strategy</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="source-note">Source: Isaac Health Validation Institute Report 2024</div>
+            </div>
+            
+            <div class="column financial-col">
+                <div class="column-header">Financial Impact</div>
+                <div class="metric-list">
+                    <div class="metric-item">
+                        <div class="metric-number">$4.8K</div>
+                        <div class="metric-detail">
+                            <div class="metric-title">MedEx Savings Per Member/Year</div>
+                            <div class="metric-desc">Isaac Health validated baseline</div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">$14.4M</div>
+                        <div class="metric-detail">
+                            <div class="metric-title">Annual Savings (3,000 Lives)</div>
+                            <div class="metric-desc">$4,800 × 3,000 patients</div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">$3.6M</div>
+                        <div class="metric-detail">
+                            <div class="metric-title">Annual Florence Investment</div>
+                            <div class="metric-desc">$100/patient/month × 3,000</div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-number">1.125x</div>
+                        <div class="metric-detail">
+                            <div class="metric-title">Net Year 1 ROI</div>
+                            <div class="metric-desc">$4.05M savings ÷ $3.6M cost = 1.125x</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="source-note">Source: Isaac Health Validation Institute Report 2024</div>
+            </div>
+        </div>
+        
+        <div class="roi-callout">
+            <div class="roi-main">
+                <div class="roi-number">4:1</div>
+                <div class="roi-label">Gross Savings-to-Cost Ratio<br>(Isaac Health Validated Benchmark)</div>
+            </div>
+            <div class="roi-detail">1.125x = Conservative Year 1 Net Return<br>4:1 = Full Program Gross Savings Potential</div>
+        </div>
+
+                <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <img src="/home/ubuntu/isaac_health_deck/shield-only.png" alt="NightingaleMD" class="footer-shield">
+        </div>
+    </div>
+</body>
+</html>

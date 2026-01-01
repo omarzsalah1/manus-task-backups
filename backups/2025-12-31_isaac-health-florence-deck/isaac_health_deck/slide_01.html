@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florence for Isaac Health</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 55% 45%;
+        }
+        .content-side {
+            padding: 80px 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .image-side {
+            position: relative;
+            background: linear-gradient(135deg, #55B5B8 0%, #3d9a9d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .image-side img {
+            width: 576px;
+            height: 720px;
+            object-fit: contain;
+        }
+        .accent-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 16px;
+            height: 100%;
+            background-color: #55B5B8;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 1.1;
+            color: #55B5B8;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #31393F;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .tagline {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            color: #49545E;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 4px solid #E45740;
+            max-width: 90%;
+            line-height: 1.5;
+        }
+        .logo-container {
+            position: absolute;
+            bottom: 40px;
+            left: 64px;
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            height: 100px;
+            width: auto;
+            object-fit: contain;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: white;
+            padding: 4px 8px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-side">
+            <div class="accent-bar"></div>
+            <h1>Florence for<br>Isaac Health</h1>
+            <h2>Your Care Team's Force Multiplier</h2>
+            <div class="tagline">Your Care Team's Force Multiplier—24/7 between-visit support</div>
+            
+            <div class="logo-container">
+                <img src="/home/ubuntu/isaac_health_deck/full-logo.png" alt="NightingaleMD">
+            </div>
+        </div>
+        <div class="image-side">
+            <img src="/home/ubuntu/isaac_health_deck/brain_ai_clean.jpg" alt="AI-Powered Care">
+            <div class="footer">© NightingaleMD 2026 | NightingaleMD.com</div>
+        </div>
+    </div>
+</body>
+</html>

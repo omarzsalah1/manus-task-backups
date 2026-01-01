@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florence Copilot Sidebar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Lato', sans-serif; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #F2F3F4;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            padding: 28px 64px 12px 64px;
+            border-left: 8px solid #55B5B8;
+            margin-left: 64px;
+            margin-right: 64px;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 36px;
+            color: #31393F;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            color: #5A6872;
+            margin-top: 4px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 20px;
+            /* reduced bottom padding to reclaim height */
+            padding: 12px 64px 22px 64px;
+        }
+        
+        /* Browser Mockup */
+        .browser-mockup {
+            background: #e8e8e8;
+            overflow: hidden;
+        }
+        .browser-bar {
+            background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+            padding: 6px 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+        .browser-dots { display: flex; gap: 4px; }
+        .dot { width: 8px; height: 8px; }
+        .dot-red { background: #ff5f57; }
+        .dot-yellow { background: #febc2e; }
+        .dot-green { background: #28c840; }
+        .url-bar { flex: 1; background: white; border: 1px solid #ccc; padding: 4px 8px; font-size: 9px; color: #666; }
+        
+        /* slightly reduced browser content height to fit within 720px */
+        .browser-content { display: flex; height: 500px; }
+        
+        /* Isaac Health Platform Panel */
+        .platform-panel {
+            width: 280px;
+            background: #fafafa;
+            padding: 8px;
+            border-right: 1px solid #ddd;
+        }
+        .platform-header {
+            background: #4A9B9B;
+            color: white;
+            padding: 8px 10px;
+            font-weight: 600;
+            font-size: 11px;
+            margin-bottom: 8px;
+        }
+        .patient-card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 6px;
+            margin-bottom: 8px;
+        }
+        .patient-name { font-size: 12px; font-weight: 700; color: #222; }
+        .patient-info { font-size: 9px; color: #666; margin-top: 2px; }
+        .info-section {
+            background: white;
+            border: 1px solid #ddd;
+            margin-bottom: 6px;
+        }
+        .info-header {
+            background: #f5f5f5;
+            padding: 5px 8px;
+            font-weight: 600;
+            font-size: 10px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+        }
+        .info-row {
+            padding: 4px 8px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 9px;
+            border-bottom: 1px solid #eee;
+        }
+        .info-row:last-child { border-bottom: none; }
+        .info-label { color: #666; }
+        .info-value { color: #333; font-weight: 500; }
+        
+        /* Florence Copilot Sidebar - REDESIGNED */
+        .florence-sidebar {
+            flex: 1;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        /* Live Call Header */
+        .live-header {
+            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+            color: white;
+            padding: 8px 10px;
+        }
+        .live-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+        }
+        .live-text { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+        .call-info { font-size: 10px; opacity: 0.95; }
+        .call-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 4px;
+            font-size: 9px;
+            opacity: 0.9;
+        }
+        .waveform {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            height: 12px;
+        }
+        .wave-bar {
+            width: 2px;
+            background: white;
+        }
+        .wave-bar:nth-child(1) { height: 4px; }
+        .wave-bar:nth-child(2) { height: 8px; }
+        .wave-bar:nth-child(3) { height: 12px; }
+        .wave-bar:nth-child(4) { height: 6px; }
+        .wave-bar:nth-child(5) { height: 10px; }
+        
+        /* Sidebar Sections */
+        .sidebar-section {
+            border-bottom: 1px solid #eee;
+            padding: 6px 10px;
+        }
+        .section-title {
+            font-size: 8px;
+            font-weight: 700;
+            color: #5A6872;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        
+        /* Call Reason */
+        .reason-list {
+            list-style: none;
+        }
+        .reason-list li {
+            font-size: 9px;
+            color: #31393F;
+            padding-left: 10px;
+            position: relative;
+            margin-bottom: 2px;
+        }
+        .reason-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #55B5B8;
+        }
+        
+        /* Being Assessed */
+        .assess-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+        .assess-icon {
+            width: 14px;
+            height: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            flex-shrink: 0;
+        }
+        .icon-complete { color: #22C55E; }
+        .icon-progress { color: #F59E0B; }
+        .icon-pending { color: #94A3B8; }
+        .assess-content { flex: 1; }
+        .assess-title { font-size: 9px; font-weight: 600; color: #31393F; }
+        .assess-status { font-size: 8px; color: #5A6872; }
+        .assess-status.alert { color: #DC2626; font-weight: 600; }
+        
+        /* Clinical Alert */
+        .alert-box {
+            background: #FEF3C7;
+            border-left: 3px solid #F59E0B;
+            padding: 6px 8px;
+            margin: 4px 0;
+        }
+        .alert-header {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            color: #92400E;
+            margin-bottom: 3px;
+        }
+        .alert-icon { font-size: 10px; }
+        .alert-finding { font-size: 8px; color: #78350F; margin-bottom: 2px; }
+        .alert-recommend { font-size: 8px; color: #92400E; }
+        .alert-actions {
+            display: flex;
+            gap: 4px;
+            margin-top: 4px;
+        }
+        .action-btn {
+            font-size: 7px;
+            font-weight: 600;
+            padding: 3px 6px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-escalate { background: #DC2626; color: white; }
+        .btn-snooze { background: #E5E7EB; color: #374151; }
+        .btn-noted { background: #E5E7EB; color: #374151; }
+        
+        /* Escalation Confirmation */
+        .escalation-confirm {
+            background: #DCFCE7;
+            border-left: 3px solid #22C55E;
+            padding: 5px 8px;
+            margin: 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .confirm-icon { color: #22C55E; font-size: 10px; }
+        .confirm-text { font-size: 8px; color: #166534; }
+        
+        /* Care Gaps Follow-Up */
+        .gap-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: 3px;
+        }
+        .gap-urgency {
+            width: 6px;
+            height: 6px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .urgency-overdue { background: #DC2626; }
+        .urgency-needed { background: #F59E0B; }
+        .gap-content { flex: 1; }
+        .gap-title { font-size: 9px; font-weight: 600; color: #31393F; }
+        .gap-action { font-size: 8px; color: #5A6872; }
+        
+        /* Transcript Preview */
+        .transcript-preview {
+            background: #F8FAFC;
+            padding: 6px 8px;
+            font-size: 8px;
+            color: #475569;
+            line-height: 1.4;
+        }
+        .transcript-line { margin-bottom: 2px; }
+        .speaker { font-weight: 600; color: #334155; }
+        
+        /* Right Column */
+        .info-column { display: flex; flex-direction: column; gap: 8px; }
+        .column-title { font-family: 'Merriweather', serif; font-size: 18px; color: #55B5B8; margin-bottom: 4px; }
+        .step-card { background-color: white; padding: 10px; }
+        .step-number { display: inline-block; width: 24px; height: 24px; background-color: #55B5B8; color: white; font-weight: 700; font-size: 12px; text-align: center; line-height: 24px; margin-right: 8px; }
+        .step-title { display: inline; font-weight: 700; font-size: 14px; color: #31393F; }
+        .step-desc { font-size: 12px; color: #5A6872; margin-top: 4px; padding-left: 32px; line-height: 1.4; }
+        
+        .benefits-card { background: linear-gradient(135deg, #55B5B8 0%, #3D9A9D 100%); padding: 10px; color: white; }
+        .benefits-title { font-family: 'Merriweather', serif; font-weight: 700; font-size: 16px; margin-bottom: 8px; }
+        .benefits-list { display: flex; flex-direction: column; gap: 4px; }
+        .benefit-item { font-size: 12px; display: flex; align-items: center; gap: 6px; }
+        .benefit-check { color: #F8CA44; font-weight: 700; }
+        
+        /* footer slightly adjusted to save a few pixels */
+        .footer { position: absolute; bottom: 12px; left: 64px; right: 64px; font-family: 'Lato', sans-serif; font-size: 11px; color: #5A6872; display: flex; justify-content: space-between; align-items: center; }
+        .footer-shield { height: 35px; width: auto; object-fit: contain; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <h1>Florence Copilot: Real-Time Clinical Intelligence</h1>
+            <div class="subtitle">While Florence is on the call, care managers see live assessments—not static data.</div>
+        </div>
+        
+        <div class="content-grid">
+            <!-- Left: Browser Mockup -->
+            <div class="browser-mockup">
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <div class="dot dot-red"></div>
+                        <div class="dot dot-yellow"></div>
+                        <div class="dot dot-green"></div>
+                    </div>
+                    <div class="url-bar">isaachealth.com/care-navigator/dashboard</div>
+                </div>
+                
+                <div class="browser-content">
+                    <!-- Isaac Health Platform -->
+                    <div class="platform-panel">
+                        <div class="platform-header">ISAAC HEALTH CARE NAVIGATOR</div>
+                        <div class="patient-card">
+                            <div class="patient-name">Jane Doe</div>
+                            <div class="patient-info">72F | Moderate Dementia | MRN: 847291</div>
+                        </div>
+                        <div class="info-section">
+                            <div class="info-header">Recent Activity</div>
+                            <div class="info-row">
+                                <span class="info-label">Last Visit</span>
+                                <span class="info-value">Nov 10, 2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Care Plan</span>
+                                <span class="info-value">Active</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Risk Level</span>
+                                <span class="info-value" style="color:#E45740;">High</span>
+                            </div>
+                        </div>
+                        <div class="info-section">
+                            <div class="info-header">Upcoming</div>
+                            <div class="info-row">
+                                <span class="info-label">Neurology</span>
+                                <span class="info-value">Dec 15</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">PCP Follow-up</span>
+                                <span class="info-value">Dec 22</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Florence Sidebar - REDESIGNED -->
+                    <div class="florence-sidebar">
+                        <!-- Live Call Header -->
+                        <div class="live-header">
+                            <div class="live-badge">
+                                <div class="live-dot"></div>
+                                <span class="live-text">LIVE CALL IN PROGRESS</span>
+                            </div>
+                            <div class="call-info">Patient: Jane Doe | Caregiver: Son (on call)</div>
+                            <div class="call-meta">
+                                <span>Duration: 3:47</span>
+                                <span>|</span>
+                                <div class="waveform">
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                </div>
+                                <span>Transcribing...</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Call Reason -->
+                        <div class="sidebar-section">
+                            <div class="section-title">Call Reason (Auto-Detected)</div>
+                            <ul class="reason-list">
+                                <li>Post-hospital discharge safety check (Day 5)</li>
+                                <li>Medication reconciliation</li>
+                                <li>Caregiver support assessment</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Being Assessed -->
+                        <div class="sidebar-section">
+                            <div class="section-title">Being Assessed on This Call</div>
+                            <div class="assess-item">
+                                <div class="assess-icon icon-complete">✓</div>
+                                <div class="assess-content">
+                                    <div class="assess-title">Medication Adherence Review</div>
+                                    <div class="assess-status">Compliance 85% confirmed</div>
+                                </div>
+                            </div>
+                            <div class="assess-item">
+                                <div class="assess-icon icon-complete">✓</div>
+                                <div class="assess-content">
+                                    <div class="assess-title">Fall Risk Screening</div>
+                                    <div class="assess-status alert">YES - one fall detected (escalate)</div>
+                                </div>
+                            </div>
+                            <div class="assess-item">
+                                <div class="assess-icon icon-progress">◐</div>
+                                <div class="assess-content">
+                                    <div class="assess-title">Behavioral/Cognitive Status</div>
+                                    <div class="assess-status">Patient reports increased wandering</div>
+                                </div>
+                            </div>
+                            <div class="assess-item">
+                                <div class="assess-icon icon-pending">○</div>
+                                <div class="assess-content">
+                                    <div class="assess-title">Caregiver Burden Assessment</div>
+                                    <div class="assess-status">Zarit Interview starting</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Clinical Alert -->
+                        <div class="sidebar-section">
+                            <div class="alert-box">
+                                <div class="alert-header">
+                                    <span class="alert-icon">⚠</span>
+                                    CLINICAL ALERT DETECTED
+                                </div>
+                                <div class="alert-finding">Fall Risk + Increased Wandering</div>
+                                <div class="alert-recommend">→ Recommend: Home safety eval, door alarm</div>
+                                <div class="alert-recommend">→ Escalate: Consider neurology urgent eval</div>
+                                <div class="alert-actions">
+                                    <button class="action-btn btn-escalate">ESCALATE TO RN</button>
+                                    <button class="action-btn btn-snooze">SNOOZE</button>
+                                    <button class="action-btn btn-noted">NOTED</button>
+                                </div>
+                            </div>
+                            <div class="escalation-confirm">
+                                <span class="confirm-icon">✓</span>
+                                <span class="confirm-text">Escalation sent to RN Sarah M. at 3:52 PM</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Care Gaps Follow-Up -->
+                        <div class="sidebar-section">
+                            <div class="section-title">Care Gaps for Follow-Up</div>
+                            <div class="gap-item">
+                                <div class="gap-urgency urgency-overdue"></div>
+                                <div class="gap-content">
+                                    <div class="gap-title">Neurology Re-eval (OVERDUE)</div>
+                                    <div class="gap-action">→ Schedule within 7 days</div>
+                                </div>
+                            </div>
+                            <div class="gap-item">
+                                <div class="gap-urgency urgency-needed"></div>
+                                <div class="gap-content">
+                                    <div class="gap-title">PT/OT Evaluation (NEEDED)</div>
+                                    <div class="gap-action">→ Fall detected, mobility concerns</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Transcript Preview -->
+                        <div class="sidebar-section" style="border-bottom:none;">
+                            <div class="section-title">Transcript Preview</div>
+                            <div class="transcript-preview">
+                                <div class="transcript-line"><span class="speaker">Florence:</span> "Have you noticed any changes in memory?"</div>
+                                <div class="transcript-line"><span class="speaker">Jane:</span> "I forget things more now..."</div>
+                                <div class="transcript-line"><span class="speaker">Son:</span> "Yeah, she's been very confused lately"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="info-column">
+                <div class="column-title">How It Works</div>
+                <div class="step-card">
+                    <span class="step-number">1</span>
+                    <span class="step-title">Florence Calls</span>
+                    <div class="step-desc">Daily check-ins with patient and caregiver, adapting to cognitive levels.</div>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">2</span>
+                    <span class="step-title">Real-Time Intelligence</span>
+                    <div class="step-desc">Care managers see live assessments, alerts, and transcript as the call progresses.</div>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">3</span>
+                    <span class="step-title">Instant Escalation</span>
+                    <div class="step-desc">One-click escalation to RN with full context and recommended actions.</div>
+                </div>
+                
+                <div class="benefits-card">
+                    <div class="benefits-title">Key Capabilities</div>
+                    <div class="benefits-list">
+                        <div class="benefit-item"><span class="benefit-check">✓</span> Live transcription</div>
+                        <div class="benefit-item"><span class="benefit-check">✓</span> Auto-detected call reason</div>
+                        <div class="benefit-item"><span class="benefit-check">✓</span> Clinical alert detection</div>
+                        <div class="benefit-item"><span class="benefit-check">✓</span> One-click escalation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© NightingaleMD 2026 | NightingaleMD.com</span>
+            <img src="/home/ubuntu/isaac_health_deck/shield-only.png" alt="NightingaleMD" class="footer-shield">
+        </div>
+    </div>
+</body>
+</html>
