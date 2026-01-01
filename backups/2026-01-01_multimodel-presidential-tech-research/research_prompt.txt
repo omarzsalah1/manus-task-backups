@@ -1,0 +1,52 @@
+# ESOTERIC PRESIDENTIAL TECHNOLOGY RESEARCH
+
+## CRITICAL INSTRUCTION
+This research requires **hyper-specific, esoteric, radical, and little-known technology details** about U.S. Presidential communications and personal technology throughout history.
+
+**❌ DON'T give us:** "Air Force One has phones" (obvious)
+**✅ DO give us:** "The NSA-modified BlackBerry with camera removed, model Sectera Edge, AES-256 encryption..."
+
+## RESEARCH TARGETS
+
+### Eisenhower Era
+Not "car phone" but: exact Motorola model, weight (47 lbs?), VHF frequency, relay system specs, installation cost vs. civilian car prices
+
+**Example of what we want:**
+> "The Motorola RV-25 weighing forty-seven pounds in the trunk of his Chrysler Imperial, connected via VHF relay to a Pentagon switchboard, allowing John Foster Dulles to interrupt Ike's backswing at Burning Tree with news that Nasser had nationalized the Suez Canal. Installation cost $1,400—roughly what a new Chevrolet cost in 1956."
+
+### LBJ Era
+Not "liked phones" but: bathroom phone brand, waterproofing, how many buttons on his console, direct dial list by name
+
+### Nixon Era
+Not "taped conversations" but: Sony model numbers (TC-800B?), microphone count/placement, voice-activation trigger specs
+
+### Obama Era
+Not "kept BlackBerry" but: exact modified model (Sectera Edge? Custom RIM 8830?), which features removed, encryption standard, who could contact him (exact number of people)
+
+### Trump Era
+Which iPhone model, documented security failures, what apps were on it
+
+### Biden Era
+Peloton modifications required (camera disabled? Air-gapped? Secure room?)
+
+## ADDITIONAL ESOTERIC CATEGORIES TO EXPLORE
+- Pneumatic tubes in the White House (still operational?)
+- The "nuclear football" updates by administration (briefcase model, contents evolution)
+- White House Communications Agency gear (brands, models, specifications)
+- Failed technology experiments in presidential communications
+- Comparison to foreign leaders' tech setups
+- Secret Service communication equipment evolution
+- Presidential limousine communication systems (The Beast specs)
+- Camp David secure communications
+- Air Force One communication suite evolution with specific equipment
+
+## DELIVERABLE FORMAT
+Provide comprehensive analysis with:
+1. Direct answer/solution - specific model numbers, weights, frequencies, costs, dates
+2. Supporting evidence and reasoning - cite sources, declassified documents, memoirs, technical manuals
+3. Confidence assessment (1-10) - how certain are you about each specific detail
+4. Key strengths of this approach
+5. Potential limitations or caveats
+6. Alternative perspectives to consider
+
+Return as structured JSON with fields: model_name, main_response, evidence, confidence_score, strengths, limitations, alternatives
