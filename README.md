@@ -1,28 +1,56 @@
-# Manus Task Backups v2.0
+# Manus Task Backups v4.1
 
-**Comprehensive backup and continuation system for Manus AI tasks.**
+**Unified backup and continuation system for Manus AI and Claude AI tasks.**
 
 This repository stores sandbox snapshots, environment configurations, and continuation prompts for seamless task resumption across sessions.
 
-## 🆕 What's New in v2.0
+## 🆕 What's New in v4.1
 
-- **Named Sessions:** Each backup has a descriptive session ID for easy identification
-- **One-Command Restoration:** Full environment rebuild including all packages
+- **Contextual Naming:** AI-generated category IDs (VACATION1, WEBSITE2, API1, etc.)
+- **Unified System:** Both Manus and Claude backups in one repo
+- **Source Identification:** Manus = `{CATEGORY}{N}`, Claude = `{CATEGORY}X{N}`
+- **Multi-Category Counters:** Each category tracks its own sequence
 - **Notion Integration:** Automatic documentation and TODO task creation
-- **Roadmap/TODO Tracking:** Structured tracking of completed and remaining work
-- **Auto-Triggers:** Automatic checkpoints and error recovery backups
 - **Environment Capture:** Full pip, npm, and apt package snapshots
 
-## 🎯 Purpose
+## 🏷️ ID Convention
 
-When working on complex tasks with Manus, you can trigger a full backup of all sandbox files and generate a detailed continuation prompt. This allows you to:
+| Source | Format | Examples |
+|--------|--------|----------|
+| **Manus** | `{CATEGORY}{N}` | VACATION1, PROJECT2, API1 |
+| **Claude** | `{CATEGORY}X{N}` | VACATIONX1, PROJECTX2, APIX1 |
 
-- **Resume any task** from exactly where you left off
-- **Access all files** (code, assets, documents) created during a session
-- **Restore the full environment** with all dependencies
-- **Track TODO items** across sessions
-- **Get explicit instructions** on what was done and what remains
-- **Seamlessly continue** in a new Manus session
+The **X** before the number denotes Claude origin.
+
+## 📂 Available Categories
+
+| Category | Use For |
+|----------|---------|
+| `SANDBOX` | System tools, backup infrastructure |
+| `VACATION` | Travel planning, trips, bookings |
+| `WEBSITE` | Web development, landing pages |
+| `API` | API integrations, webhooks |
+| `DATA` | Data analysis, spreadsheets |
+| `REPORT` | Reports, presentations |
+| `PROJECT` | Project management, planning |
+| `RESEARCH` | Research, investigations |
+| `CODE` | General coding, scripts |
+| `DESIGN` | UI/UX, graphics, branding |
+| `FINANCE` | Budgets, invoices, expenses |
+| `HEALTH` | Health tracking, wellness |
+| `LEARNING` | Education, courses |
+| `AUTOMATION` | Workflow automation |
+| `MISC` | Everything else |
+
+## 🚀 Commands
+
+| Command | Description |
+|---------|-------------|
+| `BACKUP & CONTINUE` | Full backup with AI-selected category |
+| `RESTORE VACATION1` | Restore specific Manus backup |
+| `RESTORE VACATIONX1` | Restore specific Claude backup |
+| `RESTORE LATEST` | Restore most recent (any source) |
+| `LIST BACKUPS` | Show all available backups |
 
 ## 📁 Repository Structure
 
@@ -33,82 +61,49 @@ manus-task-backups/
 │       ├── sandbox/                  # Full sandbox file snapshot
 │       ├── CONTINUATION.md           # Detailed continuation prompt
 │       ├── manifest.json             # File inventory and metadata
-│       ├── requirements.txt          # Python packages
-│       ├── npm-global-packages.txt   # Node.js packages
-│       ├── apt-packages.txt          # System packages
 │       └── restore-env.sh            # Environment restoration script
-├── sessions/                         # Session management
-│   └── registry.json                 # All sessions registry
-├── config/                           # Configuration files
+├── sessions/
+│   └── registry.json                 # Multi-category counter registry
+├── docs/
+│   ├── BACKUP-COMMANDS.md            # Manus quick reference
+│   └── CLAUDE-BACKUP-COMMANDS.md     # Claude quick reference
+├── config/
 │   └── notion-integration.json       # Notion sync settings
-├── templates/                        # Reusable templates
-│   ├── continuation-template.md      # Basic template
-│   └── continuation-template-v2.md   # Enhanced template with TODOs
-├── scripts/                          # Utility scripts
-│   ├── backup-inventory.sh           # File manifest generator
-│   ├── capture-env.sh                # Environment capture
-│   └── restore-env.sh                # Environment restoration
-├── README.md                         # This file
-├── TRIGGER-PHRASE.md                 # Original trigger phrases
-└── TRIGGER-PHRASE-v2.md              # Enhanced trigger phrases
-```
-
-## 🚀 Trigger Commands
-
-### Full Backup & Continue
-```
-BACKUP & CONTINUE [session-name]: Full backup with TODO tracking and Notion sync.
-```
-
-### Quick Checkpoint
-```
-CHECKPOINT [session-name]: Save current progress snapshot.
-```
-
-### Error Recovery
-```
-ERROR BACKUP [session-name]: Backup on failure for debugging.
-```
-
-### Restore Session
-```
-RESTORE SESSION [session-id]: Pull and restore full environment.
-```
-
-### List Sessions
-```
-LIST SESSIONS: Show all available backup sessions.
+└── templates/
+    └── continuation-template-v2.md   # CONTINUATION.md template
 ```
 
 ## 📥 How to Resume a Task
 
-### Option 1: One-Command Restore
-```bash
-gh repo clone omarzsalah1/manus-task-backups ~/manus-task-backups 2>/dev/null || (cd ~/manus-task-backups && git pull)
-cp -r ~/manus-task-backups/backups/[backup-folder]/sandbox/* ~/
-cd ~/manus-task-backups/backups/[backup-folder] && bash restore-env.sh
+### Restore Command
+```
+RESTORE VACATION1      # Manus backup
+RESTORE VACATIONX1     # Claude backup
+RESTORE LATEST         # Most recent
 ```
 
-### Option 2: Paste Continuation Prompt
-1. Start a new Manus session
-2. Paste the contents of `backups/[session]/CONTINUATION.md`
-3. Manus will restore your working state automatically
+### Manual Restoration
+```bash
+gh repo clone omarzsalah1/manus-task-backups ~/manus-task-backups
+cp -r ~/manus-task-backups/backups/[backup-folder]/sandbox/* ~/
+```
 
-## 📋 What Gets Backed Up
+## ⌨️ iOS/macOS Shortcuts
 
-| Category | Items |
-|----------|-------|
-| **Files** | All files in `/home/ubuntu/` (excluding system directories) |
-| **Code** | Scripts, source files, configurations |
-| **Assets** | Images, PDFs, documents, data files |
-| **Environment** | pip packages, npm packages, apt packages |
-| **Context** | Task objective, completed work, TODO items |
+| Shortcut | Expands To |
+|----------|------------|
+| `rr` | `RESTORE ` |
+| `rsl` | `RESTORE LATEST` |
+| `lsb` | `LIST BACKUPS` |
+| `bkc` | `BACKUP & CONTINUE` |
+| `cntN` | Full Claude checkpoint prompt |
 
-## 🔗 Integrations
+## 🔗 Resources
 
 - **GitHub:** https://github.com/omarzsalah1/manus-task-backups
-- **Notion:** https://www.notion.so/2dbff518007781239528f3298aaecd79
+- **Notion Database:** https://www.notion.so/1337a26936fd4f4a9e82a30eea20c78d
+- **Notion Parent:** https://www.notion.so/2dbff518007781239528f3298aaecd79
 
 ---
 
-*Manus Task Backup System v2.0 - Created for seamless AI task continuity*
+*Unified Backup System v4.1 - Manus + Claude Integration*
