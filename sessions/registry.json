@@ -41,7 +41,9 @@
     "AUTOMATION": 0,
     "AUTOMATIONX": 0,
     "MISC": 0,
-    "MISCX": 0
+    "MISCX": 0,
+    "BOOK": 1,
+    "BOOKX": 0
   },
   "counter_description": "Each category has its own auto-incrementing counter. Manus uses {CATEGORY}{N}, Claude uses {CATEGORY}X{N} where X denotes Claude origin.",
   "sessions": [
@@ -55,7 +57,11 @@
       "last_backup": "2025-12-31",
       "backup_folder": "2025-12-31_continuation-skill-setup",
       "status": "complete",
-      "tags": ["system", "infrastructure", "backup"],
+      "tags": [
+        "system",
+        "infrastructure",
+        "backup"
+      ],
       "description": "Initial setup of the comprehensive backup and continuation system",
       "total_files": 6,
       "sandbox_size": "~20KB",
@@ -72,7 +78,12 @@
       "last_backup": "2025-12-31",
       "backup_folder": "2025-12-31_backup-system-v2-enhancement",
       "status": "complete",
-      "tags": ["system", "infrastructure", "backup", "enhancement"],
+      "tags": [
+        "system",
+        "infrastructure",
+        "backup",
+        "enhancement"
+      ],
       "description": "Enhanced backup system with named sessions, environment restoration, Notion integration, and TODO tracking",
       "total_files": 15,
       "sandbox_size": "~50KB",
@@ -89,12 +100,43 @@
       "last_backup": "2025-12-31",
       "backup_folder": "2025-12-31_backup-system-v4-contextual-naming",
       "status": "active",
-      "tags": ["system", "infrastructure", "backup", "contextual-naming", "v4"],
+      "tags": [
+        "system",
+        "infrastructure",
+        "backup",
+        "contextual-naming",
+        "v4"
+      ],
       "description": "Implemented AI-generated contextual naming system with multi-category counters (VACATION1, WEBSITE2, API1, etc.)",
       "total_files": 13,
       "sandbox_size": "~128KB",
       "todo_count": 6,
       "completion_pct": 90
+    },
+    {
+      "shorthand_id": "BOOK1",
+      "source": "manus",
+      "category": "BOOK",
+      "session_id": "gatekeepers-v37-fixes",
+      "session_name": "Gatekeepers Society V37 Fixes & Production",
+      "created_date": "2025-12-31",
+      "last_backup": "2025-12-31",
+      "backup_folder": "2025-12-31_gatekeepers-v37-fixes",
+      "status": "complete",
+      "tags": [
+        "book",
+        "production",
+        "pdf",
+        "manuscript",
+        "fixes"
+      ],
+      "description": "Fixed all critical issues in The Gatekeepers Society V37 manuscript - clock-star images, manuscript artifacts, validation text",
+      "total_files": 59,
+      "sandbox_size": "152M",
+      "todo_count": 3,
+      "completion_pct": 95,
+      "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/2025-12-31_gatekeepers-v37-fixes",
+      "notion_url": "https://www.notion.so/2dbff518007781459475fee55b710c56"
     }
   ],
   "category_examples": {
@@ -117,7 +159,8 @@
     "SHOPPING/SHOPPINGX": "Shopping lists, product research, purchases",
     "LEARNING/LEARNINGX": "Courses, tutorials, skill development, education",
     "AUTOMATION/AUTOMATIONX": "Workflow automation, scripts, integrations",
-    "MISC/MISCX": "Anything that doesn't fit other categories"
+    "MISC/MISCX": "Anything that doesn't fit other categories",
+    "BOOK/BOOKX": "Book production, manuscript editing, PDF generation, publishing"
   },
   "source_convention": {
     "manus": "{CATEGORY}{N} - e.g., VACATION1, PROJECT2",
@@ -130,8 +173,8 @@
     "backup": "BACKUP & CONTINUE"
   },
   "notion": {
-    "database_id": "8c85632d-9623-4b89-ac12-6035bd8f209b",
-    "database_url": "https://www.notion.so/1337a26936fd4f4a9e82a30eea20c78d",
+    "database_id": "33e63115-e073-4137-8f07-318660d56d09",
+    "database_url": "https://www.notion.so/33e63115e07341378f07318660d56d09",
     "parent_page_url": "https://www.notion.so/2dbff518007781239528f3298aaecd79"
   }
 }

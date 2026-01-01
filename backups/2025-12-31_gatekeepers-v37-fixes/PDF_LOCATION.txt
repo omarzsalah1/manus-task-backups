@@ -1,0 +1,2 @@
+Note: Large PDF files (127 MB each) excluded from GitHub backup due to 100 MB limit
+Rebuild from source: cd V37_FINAL_SOURCE && python3 build_book_v19_presidential.py
