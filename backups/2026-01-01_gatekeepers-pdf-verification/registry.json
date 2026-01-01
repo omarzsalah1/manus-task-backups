@@ -1,0 +1,79 @@
+{
+  "PROJECTX2": {
+    "id": "PROJECTX2",
+    "category": "PROJECT",
+    "origin": "Claude",
+    "title": "Gatekeepers PDF Verification & Manus Instructions",
+    "created": "2026-01-01T04:15:00Z",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": ["gatekeepers", "pdf", "verification", "manus", "design", "v32", "v37"],
+    "context": {
+      "project": "The Gatekeepers Society: The Schedule Is the Weapon",
+      "phase": "PDF verification and iterative design refinement",
+      "session": 4,
+      "previous_task": "PROJECTX1",
+      "pdf_version": "V37 with V32 design application"
+    },
+    "files": {
+      "uploaded": [
+        "THE_GATEKEEPERS_SOCIETY_V37_COMPRESSED.pdf"
+      ],
+      "reference": [
+        "MASTER_DESIGN_RULES.md",
+        "VERIFICATION_CHECKLIST.md",
+        "BUILD_INSTRUCTIONS.md"
+      ],
+      "awaiting": [
+        "THE_GATEKEEPERS_SOCIETY_V37_FULL.pdf (20-50 MB)"
+      ]
+    },
+    "completion": {
+      "completed": [
+        "Analyzed compressed PDF (3.3 MB, 521 pages)",
+        "Created comprehensive Manus instructions",
+        "Created Asana task (ID: 1212634646000570)",
+        "Identified critical requirements (clock-stars at 5:47)",
+        "Defined compression strategy (images yes, text no)"
+      ],
+      "in_progress": [
+        "Awaiting full uncompressed PDF from Manus",
+        "PROJECTX1 GitHub upload (registry.json pushed, 13 files pending)"
+      ],
+      "todo_critical": [
+        "Verify full PDF against 111-point checklist",
+        "Check all 8 critical items (especially clock-stars = 5:47)",
+        "Visual inspection of V32 design application",
+        "Create page-numbered feedback if issues found",
+        "Iterate with Manus until approval"
+      ],
+      "todo_high": [
+        "Complete PROJECTX1 file upload to GitHub",
+        "Document iteration process with Manus",
+        "Verify Manus can access GitHub documentation"
+      ],
+      "todo_medium": [
+        "Create automated verification script",
+        "Build V32 vs V37 comparison report",
+        "Prepare final deliverables checklist"
+      ]
+    },
+    "critical_requirements": {
+      "clock_stars": "MUST show 5:47 in all 15 instances (narratively significant)",
+      "color_scheme": "Aged cream #F5F0E6 background, presidential brown #3D2E1F text",
+      "typography": "EB Garamond body, Cinzel titles, Cormorant subtitles",
+      "compression": "Images OK to compress, text/formatting MUST stay full quality",
+      "page_count": "518-528 pages (currently 521 ✅)",
+      "file_sizes": "Full <50 MB, compressed <30 MB"
+    },
+    "asana": {
+      "task_id": "1212634646000570",
+      "project_id": "1212345311038456",
+      "due_date": "2026-01-05",
+      "link": "https://app.asana.com/1/1211547534421416/project/1212345311038456/task/1212634646000570"
+    },
+    "restore_command": "RESTORE PROJECTX2",
+    "notion_page": "1337a26936fd4f4a9e82a30eea20c78d",
+    "github_backup": "backups/2026-01-01_gatekeepers-pdf-verification/"
+  }
+}
