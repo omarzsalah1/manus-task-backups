@@ -42,7 +42,7 @@
     "AUTOMATIONX": 0,
     "MISC": 0,
     "MISCX": 0,
-    "BOOK": 1,
+    "BOOK": 2,
     "BOOKX": 0
   },
   "counter_description": "Each category has its own auto-incrementing counter. Manus uses {CATEGORY}{N}, Claude uses {CATEGORY}X{N} where X denotes Claude origin.",
@@ -137,6 +137,33 @@
       "completion_pct": 95,
       "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/2025-12-31_gatekeepers-v37-fixes",
       "notion_url": "https://www.notion.so/2dbff518007781459475fee55b710c56"
+    },
+    {
+      "shorthand_id": "BOOK2",
+      "source": "manus",
+      "category": "BOOK",
+      "session_id": "gatekeepers-v37-v38-complete",
+      "session_name": "Gatekeepers Society V37 Fixes & V38 Preparation",
+      "created_date": "2026-01-01",
+      "last_backup": "2026-01-01",
+      "backup_folder": "2026-01-01_gatekeepers-v37-v38-complete",
+      "status": "complete",
+      "tags": [
+        "book",
+        "production",
+        "pdf",
+        "manuscript",
+        "covers",
+        "github",
+        "v38-prep"
+      ],
+      "description": "Complete V37 fixes with covers, GitHub self-contained repository, enhanced markdown system, V38 preparation",
+      "total_files": 1222,
+      "sandbox_size": "2.3G",
+      "todo_count": 3,
+      "completion_pct": 95,
+      "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/2026-01-01_gatekeepers-v37-v38-complete",
+      "notion_url": "TBD"
     }
   ],
   "category_examples": {
