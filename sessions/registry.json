@@ -43,7 +43,9 @@
     "MISC": 0,
     "MISCX": 0,
     "BOOK": 1,
-    "BOOKX": 0
+    "BOOKX": 0,
+    "DECK": 1,
+    "DECKX": 0
   },
   "sessions": [
     {
@@ -137,6 +139,21 @@
       "files_count": 10,
       "total_size": "424KB",
       "todo_items": 4
+    },
+    {
+      "shorthand_id": "DECK1",
+      "source": "manus",
+      "category": "DECK",
+      "session_name": "Isaac Health Florence AI Presentation Deck",
+      "created_date": "2025-12-31",
+      "backup_folder": "2025-12-31_isaac-health-florence-deck",
+      "status": "active",
+      "description": "22-slide HTML presentation for NightingaleMD Florence AI product targeting Isaac Health (CMS GUIDE Model dementia care). Multiple design iterations, hub/node icon replacement, HEDIS care gaps slide.",
+      "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/2025-12-31_isaac-health-florence-deck",
+      "notion_url": "",
+      "files_count": 62,
+      "total_size": "3.1M",
+      "todo_items": 8
     }
   ],
   "commands": {
@@ -146,6 +163,7 @@
     "cross_restore": "CROSS-RESTORE: Claude Sandbox={CLAUDE_ID} Manus Sandbox={MANUS_ID} Task: {description}"
   },
   "categories": {
-    "Book Design": 1
+    "Book Design": 1,
+    "DECK": 1
   }
 }
