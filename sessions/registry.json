@@ -20,7 +20,7 @@
     "MEETINGX": 0,
     "PROJECT": 0,
     "PROJECTX": 1,
-    "RESEARCH": 0,
+    "RESEARCH": 1,
     "RESEARCHX": 0,
     "DESIGN": 0,
     "DESIGNX": 0,
@@ -104,6 +104,21 @@
       "status": "complete",
       "description": "Cross-AI Orchestration System v1.0 - CROSS-RESTORE command and xrr iOS shortcut",
       "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/AUTOMATIONX1"
+    },
+    {
+      "shorthand_id": "RESEARCH1",
+      "source": "manus",
+      "category": "RESEARCH",
+      "session_name": "Multi-Model Presidential Tech Research",
+      "created_date": "2026-01-01",
+      "backup_folder": "2026-01-01_multimodel-presidential-tech-research",
+      "status": "complete",
+      "description": "8 AI models queried in parallel via OpenRouter for esoteric presidential technology research. Claude Opus 4.5 synthesis. DeepSeek V3.2 ranked best overall.",
+      "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/2026-01-01_multimodel-presidential-tech-research",
+      "notion_url": "",
+      "files_count": 10,
+      "total_size": "424KB",
+      "todo_items": 4
     }
   ],
   "commands": {
