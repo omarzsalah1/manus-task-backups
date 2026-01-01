@@ -1,0 +1,35 @@
+{
+  "notion_integration": {
+    "enabled": true,
+    "backup_page_id": "2dbff518-0077-8123-9528-f3298aaecd79",
+    "backup_page_url": "https://www.notion.so/2dbff518007781239528f3298aaecd79",
+    "features": {
+      "create_backup_page": true,
+      "create_todo_tasks": true,
+      "update_session_registry": true,
+      "link_to_github": true
+    },
+    "task_creation": {
+      "default_project": "Strategy",
+      "tag": "#Manus",
+      "assignee": "Omar Salah"
+    }
+  },
+  "trigger_phrases": {
+    "full_backup": "BACKUP & CONTINUE: Create a comprehensive continuation package - back up all sandbox files to GitHub (manus-task-backups), generate a detailed continuation prompt with explicit context of everything done, what remains, file paths, and pull instructions for seamless resumption. Also create/update Notion documentation and TODO tasks.",
+    "checkpoint": "CHECKPOINT: Save current progress with session name [SESSION_NAME].",
+    "error_backup": "ERROR BACKUP: Something went wrong - backup current state for debugging and create error recovery documentation.",
+    "restore": "RESTORE SESSION: [SESSION_ID] - Pull from GitHub and restore full environment."
+  },
+  "auto_triggers": {
+    "hourly_backup": {
+      "enabled": true,
+      "interval_hours": 2,
+      "description": "Automatic checkpoint every 2 hours during long tasks"
+    },
+    "error_backup": {
+      "enabled": true,
+      "description": "Automatic backup on task failure or error"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "2.0",
+  "description": "Registry of all named sandbox sessions for easy restoration",
+  "sessions": [
+    {
+      "session_id": "continuation-skill-v1",
+      "session_name": "Backup & Continue Skill Setup",
+      "created_date": "2025-12-31",
+      "last_backup": "2025-12-31",
+      "backup_folder": "2025-12-31_continuation-skill-setup",
+      "status": "complete",
+      "tags": ["system", "infrastructure", "backup"],
+      "description": "Initial setup of the comprehensive backup and continuation system"
+    }
+  ],
+  "naming_convention": {
+    "format": "{short-descriptive-name}",
+    "examples": [
+      "website-redesign",
+      "api-integration-stripe",
+      "data-analysis-q4",
+      "morning-prep-automation"
+    ],
+    "rules": [
+      "Use lowercase with hyphens",
+      "Keep under 30 characters",
+      "Be descriptive but concise",
+      "Include project context"
+    ]
+  }
+}
