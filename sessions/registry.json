@@ -19,7 +19,7 @@
     "MEETING": 0,
     "MEETINGX": 0,
     "PROJECT": 0,
-    "PROJECTX": 0,
+    "PROJECTX": 1,
     "RESEARCH": 0,
     "RESEARCHX": 0,
     "DESIGN": 0,
@@ -39,142 +39,77 @@
     "LEARNING": 0,
     "LEARNINGX": 0,
     "AUTOMATION": 0,
-    "AUTOMATIONX": 0,
+    "AUTOMATIONX": 1,
     "MISC": 0,
     "MISCX": 0,
     "BOOK": 1,
     "BOOKX": 0
   },
-  "counter_description": "Each category has its own auto-incrementing counter. Manus uses {CATEGORY}{N}, Claude uses {CATEGORY}X{N} where X denotes Claude origin.",
   "sessions": [
     {
       "shorthand_id": "SANDBOX1",
       "source": "manus",
       "category": "SANDBOX",
-      "session_id": "continuation-skill-v1",
       "session_name": "Backup & Continue Skill Setup",
       "created_date": "2025-12-31",
-      "last_backup": "2025-12-31",
       "backup_folder": "2025-12-31_continuation-skill-setup",
-      "status": "complete",
-      "tags": [
-        "system",
-        "infrastructure",
-        "backup"
-      ],
-      "description": "Initial setup of the comprehensive backup and continuation system",
-      "total_files": 6,
-      "sandbox_size": "~20KB",
-      "todo_count": 0,
-      "completion_pct": 100
+      "status": "complete"
     },
     {
       "shorthand_id": "SANDBOX2",
       "source": "manus",
       "category": "SANDBOX",
-      "session_id": "backup-system-v2-enhancement",
-      "session_name": "Backup & Continue System v2.0 Enhancement",
+      "session_name": "Backup System v2.0 Enhancement",
       "created_date": "2025-12-31",
-      "last_backup": "2025-12-31",
       "backup_folder": "2025-12-31_backup-system-v2-enhancement",
-      "status": "complete",
-      "tags": [
-        "system",
-        "infrastructure",
-        "backup",
-        "enhancement"
-      ],
-      "description": "Enhanced backup system with named sessions, environment restoration, Notion integration, and TODO tracking",
-      "total_files": 15,
-      "sandbox_size": "~50KB",
-      "todo_count": 8,
-      "completion_pct": 85
+      "status": "complete"
     },
     {
       "shorthand_id": "SANDBOX3",
       "source": "manus",
       "category": "SANDBOX",
-      "session_id": "backup-system-v4-contextual-naming",
-      "session_name": "Manus Backup & Continue System v4.0 - Contextual Naming",
+      "session_name": "Backup System v4.0 - Contextual Naming",
       "created_date": "2025-12-31",
-      "last_backup": "2025-12-31",
       "backup_folder": "2025-12-31_backup-system-v4-contextual-naming",
-      "status": "active",
-      "tags": [
-        "system",
-        "infrastructure",
-        "backup",
-        "contextual-naming",
-        "v4"
-      ],
-      "description": "Implemented AI-generated contextual naming system with multi-category counters (VACATION1, WEBSITE2, API1, etc.)",
-      "total_files": 13,
-      "sandbox_size": "~128KB",
-      "todo_count": 6,
-      "completion_pct": 90
+      "status": "active"
     },
     {
       "shorthand_id": "BOOK1",
       "source": "manus",
       "category": "BOOK",
-      "session_id": "gatekeepers-v37-fixes",
       "session_name": "Gatekeepers Society V37 Fixes & Production",
       "created_date": "2025-12-31",
-      "last_backup": "2025-12-31",
       "backup_folder": "2025-12-31_gatekeepers-v37-fixes",
       "status": "complete",
-      "tags": [
-        "book",
-        "production",
-        "pdf",
-        "manuscript",
-        "fixes"
-      ],
-      "description": "Fixed all critical issues in The Gatekeepers Society V37 manuscript - clock-star images, manuscript artifacts, validation text",
-      "total_files": 59,
-      "sandbox_size": "152M",
-      "todo_count": 3,
-      "completion_pct": 95,
-      "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/2025-12-31_gatekeepers-v37-fixes",
-      "notion_url": "https://www.notion.so/2dbff518007781459475fee55b710c56"
+      "sandbox_size": "152M"
+    },
+    {
+      "shorthand_id": "PROJECTX1",
+      "source": "claude",
+      "category": "PROJECT",
+      "session_name": "Gatekeepers Verification Documentation",
+      "created_date": "2026-01-01",
+      "backup_folder": "PROJECTX1",
+      "status": "incomplete",
+      "description": "Master verification docs - INCOMPLETE: master docs not uploaded",
+      "missing_files": ["MASTER_DESIGN_RULES.md", "BUILD_INSTRUCTIONS.md", "VERIFICATION_CHECKLIST.md", "COMPREHENSIVE_CONTINUATION_PROMPT.md"]
+    },
+    {
+      "shorthand_id": "AUTOMATIONX1",
+      "source": "claude",
+      "category": "AUTOMATION",
+      "session_name": "Cross-AI Orchestration System Design",
+      "created_date": "2026-01-01",
+      "backup_folder": "AUTOMATIONX1",
+      "status": "complete",
+      "description": "Cross-AI Orchestration System v1.0 - CROSS-RESTORE command and xrr iOS shortcut",
+      "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/AUTOMATIONX1"
     }
   ],
-  "category_examples": {
-    "SANDBOX/SANDBOXX": "System tools, backup infrastructure, Manus/Claude configuration",
-    "VACATION/VACATIONX": "Travel planning, flight tickets, hotel bookings, trip itineraries",
-    "WEBSITE/WEBSITEX": "Web development, site redesign, landing pages",
-    "API/APIX": "API integrations, backend development, webhooks",
-    "DATA/DATAX": "Data analysis, spreadsheets, visualizations, dashboards",
-    "REPORT/REPORTX": "Reports, presentations, documents, summaries",
-    "EMAIL/EMAILX": "Email campaigns, newsletters, communication templates",
-    "MEETING/MEETINGX": "Meeting prep, agendas, notes, follow-ups",
-    "PROJECT/PROJECTX": "Project management, planning, coordination",
-    "RESEARCH/RESEARCHX": "Research tasks, investigations, competitive analysis",
-    "DESIGN/DESIGNX": "UI/UX design, graphics, branding, creative work",
-    "CODE/CODEX": "General coding, scripts, development tasks",
-    "DOCS/DOCSX": "Documentation, guides, manuals, knowledge bases",
-    "FINANCE/FINANCEX": "Financial analysis, budgets, invoices, expenses",
-    "HEALTH/HEALTHX": "Health tracking, medical, wellness, fitness",
-    "TRAVEL/TRAVELX": "General travel logistics, transportation, maps",
-    "SHOPPING/SHOPPINGX": "Shopping lists, product research, purchases",
-    "LEARNING/LEARNINGX": "Courses, tutorials, skill development, education",
-    "AUTOMATION/AUTOMATIONX": "Workflow automation, scripts, integrations",
-    "MISC/MISCX": "Anything that doesn't fit other categories",
-    "BOOK/BOOKX": "Book production, manuscript editing, PDF generation, publishing"
-  },
-  "source_convention": {
-    "manus": "{CATEGORY}{N} - e.g., VACATION1, PROJECT2",
-    "claude": "{CATEGORY}X{N} - e.g., VACATIONX1, PROJECTX2 (X denotes Claude origin)"
-  },
   "commands": {
     "restore": "RESTORE {ID}",
-    "restore_latest": "RESTORE LATEST",
     "list": "LIST BACKUPS",
-    "backup": "BACKUP & CONTINUE"
-  },
-  "notion": {
-    "database_id": "33e63115-e073-4137-8f07-318660d56d09",
-    "database_url": "https://www.notion.so/33e63115e07341378f07318660d56d09",
-    "parent_page_url": "https://www.notion.so/2dbff518007781239528f3298aaecd79"
+    "backup": "BACKUP & CONTINUE",
+    "cross_restore": "CROSS-RESTORE: Claude Sandbox={CLAUDE_ID} Manus Sandbox={MANUS_ID} Task: {description}"
   }
 }
