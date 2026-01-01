@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .star { fill: #A6894D; stroke: #8B7355; stroke-width: 14.4; }
+      .clock-face { fill: #F5F0E6; stroke: #3D2E1F; stroke-width: 12.0; }
+      .hand { stroke: #3D2E1F; stroke-linecap: round; }
+      .center-dot { fill: #3D2E1F; stroke: #3D2E1F; stroke-width: 4.8; }
+    </style>
+  </defs>
+  
+  <!-- Five-pointed star (DOMINANT ELEMENT) -->
+  <polygon class="star" points="600.0,60.0 726.9616144951742,425.25232921501134 1113.5705187993829,433.13082303752844 805.4282075197532,666.7476707849886 917.4040362379355,1036.8691769624716 600.0,816.0 282.59596376206457,1036.8691769624716 394.5717924802468,666.7476707849887 86.42948120061715,433.1308230375282 473.0383855048258,425.2523292150114"/>
+  
+  <!-- Clock face (40% of total diameter) -->
+  <circle class="clock-face" cx="600" cy="600" r="240.0"/>
+  
+  <!-- Roman numerals -->
+  <text x="600.0" y="444.0" text-anchor="middle" dominant-baseline="middle" font-family="serif" font-size="84.0" fill="#3D2E1F">XII</text>
+  <text x="756.0" y="600.0" text-anchor="middle" dominant-baseline="middle" font-family="serif" font-size="84.0" fill="#3D2E1F">III</text>
+  <text x="600.0" y="756.0" text-anchor="middle" dominant-baseline="middle" font-family="serif" font-size="84.0" fill="#3D2E1F">VI</text>
+  <text x="444.0" y="600.0" text-anchor="middle" dominant-baseline="middle" font-family="serif" font-size="84.0" fill="#3D2E1F">IX</text>
+
+  
+  <!-- Hour hand (5:47) -->
+  <line class="hand" x1="600" y1="600" x2="612.225947086934" y2="707.3057604130714" stroke-width="21.599999999999998"/>
+  
+  <!-- Minute hand (5:47) -->
+  <line class="hand" x1="600" y1="600" x2="435.67120307672064" y2="565.0708359426164" stroke-width="14.4"/>
+  
+  <!-- Center dot -->
+  <circle class="center-dot" cx="600" cy="600" r="30.0"/>
+</svg>
