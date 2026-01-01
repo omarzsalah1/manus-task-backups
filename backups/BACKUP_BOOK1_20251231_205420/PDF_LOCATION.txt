@@ -1,0 +1,3 @@
+Note: Large PDF files (127 MB each) excluded from GitHub backup due to 100 MB limit
+The fixed PDF is available in Google Drive: Gatekeepers_Book/V37_BACKUP_JAN01_2026/
+Or rebuild from source: cd V37_FINAL_SOURCE && python3 build_book_v19_presidential.py

@@ -1,0 +1,757 @@
+/**
+ * THE GATEKEEPERS SOCIETY - Presidential Edition Design System v2
+ * Interior typography and layout CSS
+ * Implements complete design specification with clock-star motif integration
+ */
+
+/* ============================================================================
+   FONT IMPORTS
+   ============================================================================ */
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('file:///home/ubuntu/Gatekeepers_v12/book_source/design_assets/Cinzel-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('file:///home/ubuntu/Gatekeepers_v12/book_source/design_assets/EBGaramond-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('file:///home/ubuntu/Gatekeepers_v12/book_source/design_assets/CormorantGaramond-Italic.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+/* ============================================================================
+   COLOR PALETTE (Presidential Edition)
+   ============================================================================ */
+
+:root {
+    /* Primary Colors */
+    --presidential-brown: #3D2E1F;    /* Body text */
+    --deep-mahogany: #4A3728;         /* Chapter titles */
+    --antique-gold: #8B7355;          /* Accent/Motifs */
+    --warm-gold: #A6894D;             /* Clock-star fill */
+    --muted-gold: #9C8356;            /* Decorative rules */
+    --aged-cream: #F5F0E6;            /* Page background */
+    --warm-gray: #6B5D4D;             /* Secondary text */
+}
+
+/* ============================================================================
+   PAGE SETUP
+   ============================================================================ */
+
+@page {
+    size: 6in 9in;
+    margin-top: 0.625in;
+    margin-bottom: 0.875in;
+    margin-inside: 0.875in;
+    margin-outside: 0.75in;
+    background-color: var(--aged-cream);
+    
+    @bottom-center {
+        content: counter(page);
+        font-family: 'EB Garamond', serif;
+        font-size: 9pt;
+        color: var(--warm-gray);
+        font-variant-numeric: oldstyle-nums;
+    }
+}
+
+/* Front matter uses roman numerals */
+@page :blank {
+    @bottom-center {
+        content: none;
+    }
+}
+
+@page frontmatter {
+    @bottom-center {
+        content: counter(page, lower-roman);
+    }
+}
+
+/* Chapter openers and special pages have no page numbers */
+@page chapter-opener {
+    @bottom-center {
+        content: none;
+    }
+}
+
+@page title-page {
+    @bottom-center {
+        content: none;
+    }
+}
+
+@page copyright-page {
+    @bottom-center {
+        content: none;
+    }
+}
+
+@page dedication-page {
+    @bottom-center {
+        content: none;
+    }
+}
+
+@page blank-verso {
+    @bottom-center {
+        content: none;
+    }
+}
+
+/* ============================================================================
+   BODY & BASE TYPOGRAPHY
+   ============================================================================ */
+
+body {
+    font-family: 'EB Garamond', 'Palatino', 'Georgia', serif;
+    font-size: 11pt;
+    line-height: 14pt;
+    color: var(--presidential-brown);
+    background-color: var(--aged-cream);
+    text-align: justify;
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+    widows: 2;
+    orphans: 2;
+}
+
+p {
+    margin: 0;
+    text-indent: 0.25in;
+}
+
+/* No indent on first paragraph after headings */
+h1 + p,
+h2 + p,
+h3 + p,
+.chapter-opener + p,
+.section-break + p {
+    text-indent: 0;
+}
+
+/* ============================================================================
+   HEADINGS
+   ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--deep-mahogany);
+    text-align: center;
+    page-break-after: avoid;
+}
+
+h1 {
+    font-size: 26pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 2in;
+    margin-bottom: 0.5in;
+}
+
+h2 {
+    font-size: 18pt;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: 0.75in;
+    margin-bottom: 0.375in;
+}
+
+h3 {
+    font-size: 14pt;
+    margin-top: 0.5in;
+    margin-bottom: 0.25in;
+}
+
+/* ============================================================================
+   FRONT MATTER - HALF-TITLE PAGE
+   ============================================================================ */
+
+.half-title-page {
+    page: title-page;
+    text-align: center;
+    padding-top: 3in;
+}
+
+.half-title-page .clock-star {
+    display: block;
+    width: 1.5in;
+    height: 1.5in;
+    margin: 0 auto 0.5in auto;
+}
+
+.half-title-page h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 18pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--deep-mahogany);
+    margin: 0;
+}
+
+/* ============================================================================
+   FRONT MATTER - TITLE PAGE
+   ============================================================================ */
+
+.title-page {
+    page: title-page;
+    text-align: center;
+    padding-top: 1.75in;
+    page-break-inside: avoid;
+    page-break-after: always;
+}
+
+.title-page .clock-star {
+    display: block;
+    width: 1.5in;
+    height: 1.5in;
+    margin: 0 auto 0.4in auto;
+}
+
+.title-page .title {
+    font-family: 'Cinzel', serif;
+    font-size: 30pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--deep-mahogany);
+    margin: 0 0 0.3in 0;
+    line-height: 1.4;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+}
+
+.title-page .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--presidential-brown);
+    margin: 0 0 0.5in 0;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+}
+
+.title-page .author {
+    font-family: 'Cinzel', serif;
+    font-size: 14pt;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--antique-gold);
+    margin: 0;
+    page-break-before: avoid;
+    page-break-after: avoid;
+}
+
+/* ============================================================================
+   FRONT MATTER - COPYRIGHT PAGE
+   ============================================================================ */
+
+.copyright-page {
+    page: copyright-page;
+    text-align: center;
+}
+
+/* ============================================================================
+   FRONT MATTER - DEDICATION
+   ============================================================================ */
+
+.dedication-page {
+    page: dedication-page;
+    text-align: center;
+    padding-top: 3in;
+}
+
+.dedication-page p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12pt;
+    font-style: italic;
+    text-indent: 0;
+    margin-bottom: 0.5in;
+}
+
+.dedication-page .clock-star {
+    display: block;
+    width: 0.5in;
+    height: 0.5in;
+    margin: 0 auto;
+}
+
+/* ============================================================================
+   BLANK VERSO PAGES
+   ============================================================================ */
+
+.blank-verso {
+    page: blank-verso;
+}
+
+/* ============================================================================
+   CHAPTER OPENERS
+   ============================================================================ */
+
+.chapter-opener {
+    page: chapter-opener;
+    text-align: center;
+    padding-top: 2in;
+}
+
+.chapter-opener .clock-star {
+    display: block;
+    width: 1.5in;
+    height: 1.5in;
+    margin: 0 auto 0.5in auto;
+}
+
+.chapter-opener .chapter-label {
+    font-family: 'Cinzel', serif;
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--antique-gold);
+    margin: 0 0 0.25in 0;
+}
+
+.chapter-opener .decorative-rule {
+    width: 2in;
+    height: 0.5pt;
+    background-color: var(--antique-gold);
+    margin: 0 auto 0.375in auto;
+    border: none;
+}
+
+.chapter-opener .chapter-title {
+    font-family: 'Cinzel', serif;
+    font-size: 26pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--deep-mahogany);
+    margin: 0 0 0.25in 0;
+    line-height: 1.3;
+}
+
+.chapter-opener .chapter-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12pt;
+    font-style: italic;
+    color: var(--presidential-brown);
+    margin: 0 0 0.375in 0;
+    text-align: center;
+}
+
+.chapter-opener .opening-text {
+    text-align: justify;
+    margin-top: 0.5in;
+}
+
+.chapter-opener .opening-text .first-words {
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================================================
+   SECTION BREAKS (Clock-Star Motif)
+   ============================================================================ */
+
+.section-break {
+    text-align: center;
+    margin: 24pt 0;
+    page-break-inside: avoid;
+    /* No clock-star - uses HR styling instead */
+}
+
+/* Section breaks with decorative line (no clock-star) */
+hr {
+    border: none;
+    text-align: center;
+    margin: 24pt 0;
+    height: 12pt;
+    position: relative;
+}
+
+hr::before {
+    content: '';
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 50%;
+    border-top: 0.5pt solid var(--antique-gold);
+}
+
+hr::after {
+    content: '◆';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8pt;
+    color: var(--antique-gold);
+    background: var(--aged-cream);
+    padding: 0 6pt;
+}
+
+/* ============================================================================
+   CHAPTER ENDINGS
+   ============================================================================ */
+
+.chapter-end {
+    text-align: center;
+    margin-top: 24pt;
+    page-break-after: always;
+    /* No clock-star - natural chapter ending */
+}
+
+/* ============================================================================
+   RUNNING HEADERS
+   ============================================================================ */
+
+@page body-page:left {
+    @top-center {
+        content: "THE GATEKEEPERS SOCIETY";
+        font-family: 'Cinzel', serif;
+        font-size: 8pt;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--warm-gray);
+        border-bottom: 0.25pt solid var(--warm-gray);
+        padding-bottom: 6pt;
+    }
+}
+
+@page body-page:right {
+    @top-center {
+        content: string(chapter-title);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 9pt;
+        font-style: italic;
+        color: var(--warm-gray);
+        border-bottom: 0.25pt solid var(--warm-gray);
+        padding-bottom: 6pt;
+    }
+}
+
+/* ============================================================================
+   IMAGES AND DIAGRAMS
+   ============================================================================ */
+
+/* Constrain all images to page width */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 18pt auto 24pt auto;
+    page-break-inside: avoid;
+}
+
+/* Portraits */
+.portrait {
+    max-width: 3.5in;
+    height: auto;
+    display: block;
+    margin: 18pt auto;
+    page-break-inside: avoid;
+}
+
+/* Diagrams and charts */
+.diagram, .chart, .graphic {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 18pt auto;
+    page-break-inside: avoid;
+}
+
+/* Photos */
+.photo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 18pt auto;
+    page-break-inside: avoid;
+}
+
+/* ============================================================================
+   SPECIAL ELEMENTS
+   ============================================================================ */
+
+/* Epigraphs */
+.epigraph {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11pt;
+    font-style: italic;
+    text-align: right;
+    margin: 0 0.5in 18pt 0.5in;
+    text-indent: 0;
+}
+
+.epigraph-attribution {
+    font-variant: small-caps;
+    font-size: 10pt;
+    margin-top: 6pt;
+}
+
+/* Block quotes */
+blockquote {
+    font-size: 10pt;
+    margin: 12pt 0 12pt 0.375in;
+    text-indent: 0;
+}
+
+/* Pull quotes */
+.pull-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13pt;
+    font-style: italic;
+    color: var(--deep-mahogany);
+    text-align: center;
+    margin: 18pt 0.5in;
+    padding: 12pt 0;
+    border-top: 1pt dotted var(--warm-gray);
+    border-bottom: 1pt dotted var(--warm-gray);
+    text-indent: 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    margin: 18pt auto;
+    border-collapse: collapse;
+    font-size: 9pt;
+}
+
+thead {
+    font-family: 'Cinzel', serif;
+    font-variant: small-caps;
+    background-color: var(--antique-gold);
+    color: var(--aged-cream);
+}
+
+thead th {
+    padding: 6pt;
+    text-align: left;
+    border-bottom: 0.5pt solid var(--warm-gray);
+}
+
+tbody td {
+    padding: 6pt;
+    border-bottom: 0.5pt solid var(--warm-gray);
+}
+
+/* ============================================================================
+   BACK MATTER
+   ============================================================================ */
+
+.back-matter-opener {
+    page-break-before: right;
+    text-align: center;
+    padding-top: 2.5in;
+}
+
+.back-matter-opener .clock-star {
+    display: block;
+    width: 1.0in;
+    height: 1.0in;
+    margin: 0 auto 0.5in auto;
+}
+
+.back-matter-opener h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 18pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--deep-mahogany);
+    margin: 0 0 0.375in 0;
+}
+
+.back-matter-opener .decorative-rule {
+    width: 2in;
+    height: 0.5pt;
+    background-color: var(--antique-gold);
+    margin: 0 auto 0.75in auto;
+    border: none;
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+.page-break {
+    page-break-after: always;
+}
+
+.no-break {
+    page-break-inside: avoid;
+}
+
+.centered {
+    text-align: center;
+    text-indent: 0;
+}
+
+.small-caps {
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================================================
+   GOLDEN PIN DIVIDER (Major Section Breaks)
+   ============================================================================ */
+
+/* Golden vintage divider container */
+div.golden-divider {
+    text-align: center;
+    margin: 1.5em 0;
+    page-break-inside: avoid;
+}
+
+div.golden-divider img {
+    display: inline-block;
+    width: 2.7in;
+    height: auto;
+}
+
+/* Legacy support for img.golden-divider */
+img.golden-divider {
+    display: block;
+    width: 2.7in;
+    height: auto;
+    margin: 1.5em auto;
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+
+/* ========================================
+   TABLE OF CONTENTS
+   ======================================== */
+
+.toc-page {
+    page-break-before: always;
+    padding: 2in 1in;
+}
+
+.toc-page h1 {
+    font-family: var(--font-display);
+    font-size: 24pt;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: var(--antique-gold);
+    margin-bottom: 1.5in;
+    text-transform: uppercase;
+}
+
+.toc-page p {
+    font-family: 'EB Garamond', serif;
+    font-size: 11pt;
+    line-height: 1.8;
+    margin: 0.25in 0;
+    text-indent: 0;
+    color: var(--text-primary);
+}
+
+.toc-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'EB Garamond', serif;
+    font-size: 11pt;
+    line-height: 1.8;
+    margin: 0.25in 0;
+    color: var(--text-primary);
+}
+
+.toc-title {
+    flex-shrink: 0;
+    padding-right: 0.5em;
+}
+
+.toc-dots {
+    flex-grow: 1;
+    border-bottom: 1px dotted var(--warm-gray);
+    margin: 0 0.3em;
+    min-width: 1em;
+}
+
+.toc-page-num {
+    flex-shrink: 0;
+    padding-left: 0.5em;
+    font-variant-numeric: oldstyle-nums;
+}
+
+/* ========================================
+   GOLDEN PIN DIVIDER
+   ======================================== */
+
+img.golden-divider {
+    display: block;
+    width: 2.7in;
+    height: auto;
+    margin: 1.5em auto;
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+
+/* ========================================
+   FIGURE BLOCKS
+   ======================================== */
+
+/* Keep figure captions and images together on same page */
+div.figure-block {
+    page-break-inside: avoid;
+    margin: 1.5em 0;
+}
+
+div.figure-block p {
+    page-break-after: avoid;
+}
+
+div.figure-block img {
+    page-break-before: avoid;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1em auto;
+}
+
+/* ============================================================================
+   BACK MATTER STYLING
+   ============================================================================ */
+
+.back-matter {
+    page-break-before: always;
+    margin-top: 2in;
+}
+
+.back-matter h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 24pt;
+    text-align: center;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5em;
+    page-break-after: avoid;
+}
+
+.back-matter p {
+    font-family: 'EB Garamond', serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 1em;
+}
+
+.back-matter img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    page-break-inside: avoid;
+}

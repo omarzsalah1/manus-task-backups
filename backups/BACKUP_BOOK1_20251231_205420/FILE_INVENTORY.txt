@@ -1,0 +1,103 @@
+=== FILE INVENTORY ===
+Generated: Wed Dec 31 20:54:43 EST 2025
+
+./.context_id - 6
+./.session_name - 43
+./ENVIRONMENT.txt - 3.4K
+./FILE_INVENTORY.txt - 64
+./GITHUB_REPO_IMPLEMENTATION_PLAN.md - 16K
+./THE_GATEKEEPERS_SOCIETY_V37_FIXED.pdf - 127M
+./V32_COMPLETE_DESIGN_STANDARDS.md - 17K
+./V32_VS_V37_VISUAL_COMPARISON.pdf - 325K
+./V37_523_BASELINE_AUDIT.md - 15K
+./V37_AUDIT_AND_IMPLEMENTATION_SUMMARY.md - 15K
+./V37_ENHANCED_IMPLEMENTATION_PLAN.md - 33K
+./V37_FINAL_SOURCE/PORTRAIT_FIXES_APPLIED.md - 5.1K
+./V37_FINAL_SOURCE/THE_GATEKEEPERS_SOCIETY_V37_CONDENSED.pdf - 2.5M
+./V37_FINAL_SOURCE/THE_GATEKEEPERS_SOCIETY_V37_MASTER.md - 845K
+./V37_FINAL_SOURCE/THE_GATEKEEPERS_SOCIETY_V37_PRESIDENTIAL.html - 900K
+./V37_FINAL_SOURCE/THE_GATEKEEPERS_SOCIETY_V37_PRESIDENTIAL.pdf - 127M
+./V37_FINAL_SOURCE/THE_GATEKEEPERS_SOCIETY_V37_WITH_COVERS.pdf - 1.6M
+./V37_FINAL_SOURCE/TOC_GENERATED.md - 511
+./V37_FINAL_SOURCE/V37_523_FULL_TEXT.txt - 781K
+./V37_FINAL_SOURCE/V37_DELIVERY_REPORT.md - 5.9K
+./V37_FINAL_SOURCE/V37_FINAL_DELIVERY_REPORT.md - 5.0K
+./V37_FINAL_SOURCE/V37_QA_REPORT.md - 5.4K
+./V37_FINAL_SOURCE/book_source/design_assets/clock_star_full_0.5in_150px.png - 8.4K
+./V37_FINAL_SOURCE/book_source/design_assets/clock_star_full_1.0in_300px.png - 19K
+./V37_FINAL_SOURCE/book_source/design_assets/clock_star_full_1.5in_450px.png - 29K
+./V37_FINAL_SOURCE/book_source/design_assets/divider_FINAL_highres.png - 2.0K
+./V37_FINAL_SOURCE/book_source/design_assets/presidential_edition_v2.css - 17K
+./V37_FINAL_SOURCE/book_source/portraits/01_sherman_adams_eisenhower_CORRECT.png - 5.9M
+./V37_FINAL_SOURCE/book_source/portraits/03_hr_haldeman_nixon_CORRECT.png - 5.8M
+./V37_FINAL_SOURCE/book_source/portraits/04_donald_rumsfeld_ford_CORRECT.png - 7.5M
+./V37_FINAL_SOURCE/book_source/portraits/05_dick_cheney_ford_CORRECT.png - 6.8M
+./V37_FINAL_SOURCE/book_source/portraits/06_hamilton_jordan_carter_CORRECT.png - 6.2M
+./V37_FINAL_SOURCE/book_source/portraits/08_james_baker_reagan_CORRECT.png - 7.1M
+./V37_FINAL_SOURCE/book_source/portraits/09_john_sununu_bush_CORRECT.png - 7.0M
+./V37_FINAL_SOURCE/book_source/portraits/11_donald_regan_reagan_CORRECT.png - 7.0M
+./V37_FINAL_SOURCE/book_source/portraits/12_howard_baker_reagan_CORRECT.png - 6.8M
+./V37_FINAL_SOURCE/book_source/portraits/14_leon_panetta_clinton_CORRECT.png - 7.1M
+./V37_FINAL_SOURCE/book_source/portraits/15_erskine_bowles_clinton_CORRECT.png - 6.7M
+./V37_FINAL_SOURCE/book_source/portraits/16_john_podesta_clinton_CORRECT.png - 6.2M
+./V37_FINAL_SOURCE/book_source/portraits/17_andy_card_bush_GOLD_CORRECT.png - 6.7M
+./V37_FINAL_SOURCE/book_source/portraits/19_rahm_emanuel_obama_GOLD_CORRECT.png - 6.8M
+./V37_FINAL_SOURCE/book_source/portraits/20_bill_daley_obama_CORRECT.png - 5.3M
+./V37_FINAL_SOURCE/book_source/portraits/22_denis_mcdonough_obama_CORRECT.png - 7.4M
+./V37_FINAL_SOURCE/book_source/portraits/23_reince_priebus_trump_CORRECT.png - 6.9M
+./V37_FINAL_SOURCE/book_source/portraits/24_john_kelly_trump_CORRECT.png - 6.4M
+./V37_FINAL_SOURCE/book_source/portraits/25_mick_mulvaney_trump_CORRECT.png - 7.5M
+./V37_FINAL_SOURCE/book_source/portraits/26_mark_meadows_trump_CORRECT.png - 6.4M
+./V37_FINAL_SOURCE/book_source/portraits/27_ron_klain_biden_CORRECT.png - 6.5M
+./V37_FINAL_SOURCE/book_source/portraits/28_jeff_zients_biden_CORRECT.png - 6.2M
+./V37_FINAL_SOURCE/build_book_v19_presidential.py - 6.6K
+./V37_FINAL_SOURCE/build_v37_master.py - 2.4K
+./V37_FINAL_SOURCE/divider_FINAL_highres.png - 2.0K
+./V37_FINAL_SOURCE/presidential_edition.css - 17K
+./V37_FINAL_SOURCE/resolve_diagrams.py - 2.3K
+./V37_FINAL_SOURCE/v37_rebuild.log - 877
+./V37_FIXED_page_40_chapter1.png - 240K
+./V37_FIXED_page_8_prologue.png - 40K
+./V37_FIXES_VERIFICATION_REPORT.md - 11K
+./clock_star_v3.svg - 1.9K
+./verify_build.py - 8.2K
+
+=== DIRECTORY TREE ===
+[4.0K]  .
+├── [3.3K]  ENVIRONMENT.txt
+├── [3.7K]  FILE_INVENTORY.txt
+├── [ 16K]  GITHUB_REPO_IMPLEMENTATION_PLAN.md
+├── [127M]  THE_GATEKEEPERS_SOCIETY_V37_FIXED.pdf
+├── [ 16K]  V32_COMPLETE_DESIGN_STANDARDS.md
+├── [325K]  V32_VS_V37_VISUAL_COMPARISON.pdf
+├── [ 14K]  V37_523_BASELINE_AUDIT.md
+├── [ 14K]  V37_AUDIT_AND_IMPLEMENTATION_SUMMARY.md
+├── [ 32K]  V37_ENHANCED_IMPLEMENTATION_PLAN.md
+├── [4.0K]  V37_FINAL_SOURCE
+│   ├── [5.1K]  PORTRAIT_FIXES_APPLIED.md
+│   ├── [2.4M]  THE_GATEKEEPERS_SOCIETY_V37_CONDENSED.pdf
+│   ├── [845K]  THE_GATEKEEPERS_SOCIETY_V37_MASTER.md
+│   ├── [900K]  THE_GATEKEEPERS_SOCIETY_V37_PRESIDENTIAL.html
+│   ├── [127M]  THE_GATEKEEPERS_SOCIETY_V37_PRESIDENTIAL.pdf
+│   ├── [1.5M]  THE_GATEKEEPERS_SOCIETY_V37_WITH_COVERS.pdf
+│   ├── [ 511]  TOC_GENERATED.md
+│   ├── [781K]  V37_523_FULL_TEXT.txt
+│   ├── [5.8K]  V37_DELIVERY_REPORT.md
+│   ├── [4.9K]  V37_FINAL_DELIVERY_REPORT.md
+│   ├── [5.3K]  V37_QA_REPORT.md
+│   ├── [4.0K]  book_source
+│   │   ├── [4.0K]  design_assets
+│   │   └── [4.0K]  portraits
+│   ├── [6.5K]  build_book_v19_presidential.py
+│   ├── [2.4K]  build_v37_master.py
+│   ├── [2.0K]  divider_FINAL_highres.png
+│   ├── [ 17K]  presidential_edition.css
+│   ├── [2.2K]  resolve_diagrams.py
+│   └── [ 877]  v37_rebuild.log
+├── [239K]  V37_FIXED_page_40_chapter1.png
+├── [ 39K]  V37_FIXED_page_8_prologue.png
+├── [ 10K]  V37_FIXES_VERIFICATION_REPORT.md
+├── [1.9K]  clock_star_v3.svg
+└── [8.2K]  verify_build.py
+
+4 directories, 31 files
