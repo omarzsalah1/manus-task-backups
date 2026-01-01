@@ -42,7 +42,7 @@
     "AUTOMATIONX": 1,
     "MISC": 0,
     "MISCX": 0,
-    "BOOK": 1,
+    "BOOK": 2,
     "BOOKX": 0,
     "DECK": 1,
     "DECKX": 0
@@ -60,6 +60,22 @@
       "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/2026-01-01_gatekeepers-cover-final",
       "notion_url": "https://www.notion.so/2dbff518007781048883f56f1df58819",
       "restore_command": "RESTORE BOOKCOVER1"
+    },
+    {
+      "shorthand_id": "BOOK2",
+      "source": "manus",
+      "category": "BOOK",
+      "session_name": "The Gatekeepers Society: Pencil Drawings & Presidential Schedules",
+      "created_date": "2026-01-01",
+      "backup_folder": "2026-01-01_gatekeepers-pencil-drawings",
+      "status": "complete",
+      "description": "12 Paul Kidby ethereal pencil drawings (2 presidential moments + 10 technology), comprehensive schedules for all 11 presidents, complete GitHub integration",
+      "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/2026-01-01_gatekeepers-pencil-drawings",
+      "notion_url": "PENDING",
+      "files_count": 38,
+      "total_size": "173M",
+      "todo_items": 0,
+      "restore_command": "RESTORE BOOK2"
     },
     {
       "shorthand_id": "SANDBOX1",
