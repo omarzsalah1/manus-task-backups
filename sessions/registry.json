@@ -42,7 +42,7 @@
     "AUTOMATIONX": 1,
     "MISC": 0,
     "MISCX": 0,
-    "BOOK": 2,
+    "BOOK": 3,
     "BOOKX": 0,
     "DECK": 1,
     "DECKX": 0
@@ -76,6 +76,23 @@
       "total_size": "173M",
       "todo_items": 0,
       "restore_command": "RESTORE BOOK2"
+    },
+    {
+      "shorthand_id": "BOOK3",
+      "source": "manus",
+      "category": "BOOK",
+      "session_name": "The Gatekeepers Society: Official Captions Integration",
+      "created_date": "2026-01-01",
+      "backup_folder": "2026-01-01_gatekeepers-official-captions",
+      "status": "complete",
+      "description": "Integrated official captions from Chapter 8 for 10 presidential technology drawings, synced to Gatekeepers repository",
+      "github_url": "https://github.com/omarzsalah1/manus-task-backups/tree/master/backups/2026-01-01_gatekeepers-official-captions",
+      "notion_url": "PENDING",
+      "files_count": 2,
+      "total_size": "20KB",
+      "todo_items": 0,
+      "repos_synced": ["omarzsalah1/Gatekeepers"],
+      "restore_command": "RESTORE BOOK3"
     },
     {
       "shorthand_id": "SANDBOX1",
