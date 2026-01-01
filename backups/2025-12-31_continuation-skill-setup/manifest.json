@@ -1,0 +1,42 @@
+{
+  "backup_id": "2025-12-31_continuation-skill-setup",
+  "backup_date": "2025-12-31T19:12:00+00:00",
+  "task_name": "Manus Backup & Continue Skill Setup",
+  "task_objective": "Create a reusable Comprehensive Continuation & Backup skill system",
+  "github_repo": "omarzsalah1/manus-task-backups",
+  "files": [
+    {
+      "path": "sandbox/README.md",
+      "description": "Main repository documentation",
+      "type": "markdown"
+    },
+    {
+      "path": "sandbox/TRIGGER-PHRASE.md",
+      "description": "Trigger phrase reference for iOS/macOS Shortcuts",
+      "type": "markdown"
+    },
+    {
+      "path": "sandbox/templates/continuation-template.md",
+      "description": "Template for generating continuation prompts",
+      "type": "markdown"
+    },
+    {
+      "path": "sandbox/scripts/backup-inventory.sh",
+      "description": "Script for generating file manifests",
+      "type": "bash"
+    },
+    {
+      "path": "CONTINUATION.md",
+      "description": "Detailed continuation prompt for this task",
+      "type": "markdown"
+    },
+    {
+      "path": "manifest.json",
+      "description": "This file - backup metadata and inventory",
+      "type": "json"
+    }
+  ],
+  "total_files": 6,
+  "status": "complete",
+  "notes": "Initial setup of the backup and continuation system"
+}
