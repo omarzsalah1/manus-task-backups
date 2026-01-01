@@ -1,13 +1,33 @@
 {
-  "schema_version": "3.0",
-  "description": "Registry of all named sandbox sessions with shorthand IDs for easy restoration",
-  "counter": {
-    "next_sandbox_number": 3,
-    "description": "Auto-incrementing counter for SANDBOX IDs. Never decreases, ensures no collisions."
+  "schema_version": "4.0",
+  "description": "Registry of all named sessions with AI-generated contextual shorthand IDs",
+  "counters": {
+    "SANDBOX": 3,
+    "VACATION": 0,
+    "WEBSITE": 0,
+    "API": 0,
+    "DATA": 0,
+    "REPORT": 0,
+    "EMAIL": 0,
+    "MEETING": 0,
+    "PROJECT": 0,
+    "RESEARCH": 0,
+    "DESIGN": 0,
+    "CODE": 0,
+    "DOCS": 0,
+    "FINANCE": 0,
+    "HEALTH": 0,
+    "TRAVEL": 0,
+    "SHOPPING": 0,
+    "LEARNING": 0,
+    "AUTOMATION": 0,
+    "MISC": 0
   },
+  "counter_description": "Each category has its own auto-incrementing counter. AI selects the appropriate category based on task context.",
   "sessions": [
     {
       "shorthand_id": "SANDBOX1",
+      "category": "SANDBOX",
       "session_id": "continuation-skill-v1",
       "session_name": "Backup & Continue Skill Setup",
       "created_date": "2025-12-31",
@@ -23,6 +43,7 @@
     },
     {
       "shorthand_id": "SANDBOX2",
+      "category": "SANDBOX",
       "session_id": "backup-system-v2-enhancement",
       "session_name": "Backup & Continue System v2.0 Enhancement",
       "created_date": "2025-12-31",
@@ -37,10 +58,32 @@
       "completion_pct": 85
     }
   ],
+  "category_examples": {
+    "SANDBOX": "System tools, backup infrastructure, Manus configuration",
+    "VACATION": "Travel planning, flight tickets, hotel bookings, trip itineraries",
+    "WEBSITE": "Web development, site redesign, landing pages",
+    "API": "API integrations, backend development, webhooks",
+    "DATA": "Data analysis, spreadsheets, visualizations, dashboards",
+    "REPORT": "Reports, presentations, documents, summaries",
+    "EMAIL": "Email campaigns, newsletters, communication templates",
+    "MEETING": "Meeting prep, agendas, notes, follow-ups",
+    "PROJECT": "Project management, planning, coordination",
+    "RESEARCH": "Research tasks, investigations, competitive analysis",
+    "DESIGN": "UI/UX design, graphics, branding, creative work",
+    "CODE": "General coding, scripts, development tasks",
+    "DOCS": "Documentation, guides, manuals, knowledge bases",
+    "FINANCE": "Financial analysis, budgets, invoices, expenses",
+    "HEALTH": "Health tracking, medical, wellness, fitness",
+    "TRAVEL": "General travel logistics, transportation, maps",
+    "SHOPPING": "Shopping lists, product research, purchases",
+    "LEARNING": "Courses, tutorials, skill development, education",
+    "AUTOMATION": "Workflow automation, scripts, integrations",
+    "MISC": "Anything that doesn't fit other categories"
+  },
   "commands": {
-    "restore": "RESTORE SANDBOX{N}",
+    "restore": "RESTORE {CATEGORY}{N}",
     "restore_latest": "RESTORE LATEST",
-    "list": "LIST SANDBOXES",
+    "list": "LIST BACKUPS",
     "backup": "BACKUP & CONTINUE"
   },
   "notion": {
