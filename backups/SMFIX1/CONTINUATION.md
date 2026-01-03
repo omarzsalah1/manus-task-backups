@@ -3,74 +3,61 @@
 ## Session ID
 SMFIX1
 
-## Category
-BUGFIX
-
-## Priority
-HIGH - Blocking T5 test completion
+## Status
+✅ DIAGNOSED - API BUG CONFIRMED
 
 ## Problem Statement
 Supermemory `memory` (save) works, but `recall` returns empty content despite showing match percentages.
 
-## Symptoms
-1. Save works: `memory` action returned ID: syDbKeQqZpkfQkmxpWh4Yi
-2. Recall broken: Query returns "Memory 1 (77% match)" but content is BLANK
-3. Profile summary populates correctly
-4. Individual memory contents don't display
+## DIAGNOSIS RESULTS
 
-## Test Evidence
+### Test Performed
+1. Saved test memory with unique keywords: "purple elephant flying submarine"
+2. Memory ID returned: CGdjRzFvmqtpEcQb2TyXj9
+3. Immediate recall with same keywords: "No memories found"
+4. Recall with includeProfile=true: REVEALED THE BUG
 
-### Save (WORKED)
-```json
-{
-  "action": "save",
-  "content": "XRR Protocol Test Results 2026-01-03: All core tests passed..."
-}
-// Result: Saved memory (id: syDbKeQqZpkfQkmxpWh4Yi) in sm_project_default project
+### What Works
+- `mcp-supermemory-ai:memory` save → Returns ID ✅
+- `mcp-supermemory-ai:recall` User Profile section → Returns summarized facts ✅
+- `mcp-supermemory-ai:recall` Match percentages → Shows 84%, 83%, etc. ✅
+- `api-supermemory-ai:search` → Returns profile summaries ✅
+
+### What's Broken
+- `mcp-supermemory-ai:recall` Memory Content → EMPTY despite match percentages ❌
+
+### Evidence
+Profile section correctly shows:
+```
+- The Supermemory recall diagnostic test is identified as SMFIX1 TEST.
+- The Supermemory recall diagnostic test utilizes keywords "purple elephant flying submarine".
+- SMFIX1 TEST is scheduled for 2026-01-03 12:15 UTC.
 ```
 
-### Recall (BROKEN)
-```json
-{
-  "query": "XRR protocol test results"
-}
-// Result: 
-// ### Memory 1 (77% match)
-// [EMPTY - no content displayed]
-// ### Memory 2 (70% match)
-// [EMPTY - no content displayed]
+But Memory sections show:
+```
+### Memory 1 (84% match)
+[EMPTY]
+### Memory 2 (83% match)
+[EMPTY]
 ```
 
-## Available Tools
-- `mcp-supermemory-ai:memory` - save/forget
-- `mcp-supermemory-ai:recall` - search
-- `mcp-supermemory-ai:whoAmI` - user info
-- `api-supermemory-ai:addMemory` - alternative save
-- `api-supermemory-ai:search` - alternative search
+## Root Cause
+Supermemory API response format strips actual memory content from the "Relevant Memories" section while correctly:
+1. Storing the memory
+2. Indexing it for search
+3. Calculating match scores
+4. Extracting facts to User Profile
 
-## TODO
+## Workaround
+Use `includeProfile=true` and rely on the User Profile section for distilled facts from memories. Not ideal for verbatim recall but functional for context.
 
-| Priority | Task |
-|----------|------|
-| HIGH | Test alternative API tools (api-supermemory-ai:search) |
-| HIGH | Check if whoAmI returns valid user/project |
-| HIGH | Try saving and immediately recalling same content |
-| MEDIUM | Check if containerTag parameter helps |
-| MEDIUM | Compare mcp-supermemory-ai vs api-supermemory-ai behavior |
+## Recommendation
+1. Report bug to Supermemory team
+2. For critical persistence, use GitHub handoffs (100% reliable)
+3. Use Supermemory for contextual facts, not verbatim storage
 
-## Hypothesis
-Possible causes:
-1. Indexing delay - memories saved but not yet searchable
-2. Project scoping issue - saved to wrong project
-3. API response parsing - content field not being extracted
-4. Tool version mismatch between save/recall endpoints
-
-## Success Criteria
-- Save a memory with known content
-- Recall that memory and see the ACTUAL CONTENT displayed
-- Document which tool combination works
-
-## Restore Command
+## Pickup Command
 ```
 pickup SMFIX1
 ```
