@@ -1,0 +1,375 @@
+/* The Gatekeepers Society V39 - Complete Book Styles */
+/* Designer Brief Compliant + Professional Table Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* ========== PAGE SETUP ========== */
+
+@page {
+  size: 6in 9in;
+  margin: 0.75in 0.5in 0.75in 0.75in; /* top right bottom left (inside=0.75", outside=0.5") */
+  background-color: #F5F0E6; /* Designer brief: Aged Cream */
+  
+  @bottom-center {
+    content: counter(page);
+    font-family: 'EB Garamond', serif;
+    font-size: 10pt;
+    color: #3D2E1F;
+  }
+}
+
+@page :blank {
+  @bottom-center { content: none; }
+  @top-center { content: none; }
+}
+
+/* Running headers */
+@page :left {
+  @top-center {
+    content: string(chapter-title);
+    font-family: 'Garamond', 'Cormorant Garamond', serif;
+    font-size: 10pt;
+    font-style: italic;
+    color: #3D2E1F;
+  }
+}
+
+@page :right {
+  @top-center {
+    content: "THE GATEKEEPERS SOCIETY";
+    font-family: 'Garamond', 'Cormorant Garamond', serif;
+    font-size: 10pt;
+    font-style: italic;
+    color: #3D2E1F;
+  }
+}
+
+@page cover {
+  margin: 0;
+  @bottom-center { content: none; }
+  @top-center { content: none; }
+}
+
+/* ========== TYPOGRAPHY ========== */
+
+body {
+  font-family: 'EB Garamond', serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  color: #3D2E1F; /* Designer brief: Presidential Brown */
+  background-color: #F5F0E6; /* Designer brief: Aged Cream */
+  text-align: justify;
+  hyphens: auto;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  color: #3D2E1F;
+  page-break-after: avoid;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+h1 {
+  font-size: 24pt;
+  font-weight: 700;
+  text-align: center;
+  page-break-before: always;
+  margin-top: 2in;
+  string-set: chapter-title content();
+  letter-spacing: 0.05em; /* Tracked per designer brief */
+  text-transform: uppercase; /* All caps per designer brief */
+}
+
+h2 {
+  font-family: 'Garamond', 'Cormorant Garamond', serif;
+  font-size: 16pt;
+  font-weight: 600;
+  margin-top: 1.25em;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Garamond', 'Cormorant Garamond', serif;
+  font-size: 13pt;
+  font-weight: 600;
+  font-style: italic;
+  color: #8B7355; /* Antique Gold for subtitles */
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+/* ========== PARAGRAPHS ========== */
+
+p {
+  margin: 0 0 0.5em 0;
+  text-indent: 0.25in;
+  orphans: 2;
+  widows: 2;
+}
+
+p:first-of-type,
+h1 + p,
+h2 + p,
+h3 + p {
+  text-indent: 0;
+}
+
+/* ========== TABLES - PROFESSIONAL STYLING ========== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  page-break-inside: avoid;
+  font-family: 'EB Garamond', serif;
+  font-size: 10pt;
+  background-color: #FFFFFF;
+  border: 2px solid #8B7355; /* Antique Gold border */
+}
+
+thead {
+  background-color: #8B7355; /* Antique Gold header */
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+thead th {
+  padding: 0.5em 0.75em;
+  text-align: left;
+  border-bottom: 2px solid #64503B; /* Shadow color */
+  font-family: 'Cinzel', serif;
+  font-size: 9pt;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  border-bottom: 1px solid #B49B73; /* Highlights color */
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(181, 155, 115, 0.1); /* Light highlight */
+}
+
+tbody tr:hover {
+  background-color: rgba(139, 115, 85, 0.15); /* Slightly darker on hover */
+}
+
+tbody td {
+  padding: 0.5em 0.75em;
+  vertical-align: top;
+  border-right: 1px solid #B49B73;
+}
+
+tbody td:last-child {
+  border-right: none;
+}
+
+/* Strong emphasis in tables */
+tbody td strong {
+  color: #3D2E1F;
+  font-weight: 600;
+}
+
+/* Italic text in tables */
+tbody td em {
+  font-style: italic;
+  color: #64503B;
+}
+
+/* ========== BLOCKQUOTES ========== */
+
+blockquote {
+  margin: 1em 0.5in;
+  padding-left: 0.5em;
+  border-left: 2px solid #8B7355;
+  font-style: italic;
+  color: #64503B; /* Shadow color */
+}
+
+/* ========== STRONG EMPHASIS ========== */
+
+strong {
+  font-weight: 600;
+  color: #3D2E1F;
+}
+
+/* ========== LISTS ========== */
+
+ul, ol {
+  margin: 0.75em 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin: 0.25em 0;
+}
+
+/* ========== PORTRAIT BLOCKS ========== */
+
+.portrait-block {
+  margin: 1em 0;
+  padding: 0.75em;
+  background-color: rgba(139, 115, 85, 0.1);
+  border-left: 3px solid #8B7355;
+  page-break-inside: avoid;
+}
+
+.portrait-block img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5em auto;
+}
+
+/* ========== CLOCK-STAR ICONS ========== */
+
+.clock-star {
+  width: 1.5in;
+  height: 1.5in;
+  display: block;
+  margin: 1em auto;
+}
+
+/* ========== CHAPTER DIVIDERS ========== */
+
+.chapter-divider {
+  page-break-before: always;
+  page-break-after: always;
+  text-align: center;
+  padding-top: 3in;
+}
+
+.chapter-divider img {
+  width: 1.5in;
+  height: 1.5in;
+  display: block;
+  margin: 0 auto 1em auto;
+}
+
+.chapter-divider h1 {
+  margin-top: 0.5em;
+}
+
+/* ========== SECTION DIVIDERS ========== */
+
+.section-divider {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.section-divider img {
+  width: 4in;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ========== TABLE OF CONTENTS ========== */
+
+.toc {
+  page-break-after: always;
+}
+
+.toc h1 {
+  text-align: center;
+  margin-bottom: 1.5em;
+  font-size: 28pt;
+  letter-spacing: 0.1em;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc li {
+  margin: 0.75em 0;
+  text-indent: 0;
+  font-family: 'EB Garamond', serif;
+  font-size: 12pt;
+}
+
+.toc li strong {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.toc li em {
+  font-family: 'Garamond', 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+/* ========== COVER PAGES ========== */
+
+.cover-page {
+  page: cover;
+  width: 6in;
+  height: 9in;
+  margin: 0;
+  padding: 0;
+  page-break-before: always;
+  page-break-after: always;
+}
+
+.cover-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ========== TITLE PAGE ========== */
+
+.title-page {
+  page-break-after: always;
+  text-align: center;
+  padding-top: 1.5in;
+}
+
+.title-page .clock-star {
+  margin-bottom: 1.5em;
+}
+
+.title-page h1 {
+  font-size: 32pt;
+  margin: 0.5em 0;
+  page-break-before: auto;
+}
+
+.title-page .subtitle {
+  font-family: 'Garamond', 'Cormorant Garamond', serif;
+  font-size: 16pt;
+  font-style: italic;
+  color: #3D2E1F; /* Presidential Brown - more visible */
+  margin: 1em 0;
+}
+
+.title-page .author {
+  font-family: 'Cinzel', serif;
+  font-size: 14pt;
+  letter-spacing: 0.1em;
+  color: #3D2E1F; /* Presidential Brown */
+  margin-top: 2em;
+}
+
+/* ========== PAGE BREAKS ========== */
+
+.page-break {
+  page-break-after: always;
+}
+
+.avoid-break {
+  page-break-inside: avoid;
+}
+
+/* ========== PRINT OPTIMIZATIONS ========== */
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
